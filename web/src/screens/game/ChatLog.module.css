@@ -1,0 +1,36 @@
+.chat {
+  position: relative; background: var(--surface); border-radius: var(--r-lg); padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 6px; }
+.title { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.count { color: var(--muted); white-space: nowrap; }
+.lines { overflow-y: auto; height: 300px; margin: 0 -6px; padding: 0 6px; overscroll-behavior: contain; }
+.tall .lines { height: calc(100vh - 200px); min-height: 320px; }
+.line { display: flex; gap: 10px; padding: 9px 0; border-top: 1px solid var(--surface-3); position: relative; }
+.pinned { background: var(--surface-2); border-radius: 12px; padding: 9px 10px; margin: 0 -10px; border-top-color: transparent; }
+.dot { width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; flex: none; }
+.body { margin: 0; font-size: 15px; line-height: 1.5; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.said { color: var(--text-soft); }
+.pinNote { display: block; font-family: var(--font-meta); font-size: 12px; color: var(--lantern); }
+.pin {
+  flex: none; width: 32px; height: 32px; border-radius: 8px; border: 0; background: none; color: var(--muted);
+  cursor: pointer; font-size: 16px; opacity: 0; transition: opacity 0.15s;
+}
+.line:hover .pin, .pin:focus-visible, .pinned .pin { opacity: 1; }
+.pinned .pin { color: var(--lantern); }
+@media (hover: none) { .pin { opacity: 0.6; } }
+.sys { padding: 8px 0; border-top: 1px solid var(--surface-3); font-size: 14px; color: var(--muted); }
+.sysStrong { color: var(--text); font-weight: 700; }
+.secretLine { color: var(--text); }
+.secretTag { font-family: var(--font-meta); font-size: 11px; letter-spacing: 0.08em; color: var(--lavender); text-transform: uppercase; }
+.dayRule { padding: 12px 0 4px; color: var(--muted); }
+.empty { color: var(--muted); font-size: 15px; padding: 10px 0; }
+.jump {
+  position: absolute; right: 18px; bottom: 14px; min-height: 36px; padding: 0 14px; border-radius: var(--r-pill);
+  border: 0; background: var(--lantern); color: var(--bg); font: inherit; font-weight: 700; font-size: 14px;
+  cursor: pointer; box-shadow: 3px 3px 0 var(--shadow);
+}
+@media (max-width: 760px) {
+  .lines { height: 45vh; }
+}

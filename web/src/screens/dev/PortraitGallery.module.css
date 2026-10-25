@@ -1,0 +1,35 @@
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 28px var(--gutter) 48px;
+}
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+  margin: 0 0 4px;
+}
+.lede { color: var(--muted); margin: 0 0 24px; }
+.grid {
+  display: grid;
+  grid-template-columns: minmax(150px, 200px) repeat(5, minmax(72px, 1fr));
+  gap: 12px 16px;
+  align-items: center;
+  overflow-x: auto;
+}
+.head { color: var(--muted); }
+.who { display: flex; flex-direction: column; gap: 2px; }
+.name { font-family: var(--font-display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+.voice { color: var(--coral-text); font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+.cell { display: flex; justify-content: center; }
+.hero {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.heroPortrait {
+  border: 5px solid var(--bg);
+  box-shadow: 6px 6px 0 var(--shadow);
+}

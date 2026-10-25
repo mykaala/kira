@@ -1,0 +1,11 @@
+.page { max-width: var(--page-max); margin: 0 auto; padding: 20px var(--gutter) 28px; display: flex; flex-direction: column; gap: 18px; }
+.columns { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.main { flex: 999 1 620px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.failure {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--surface-2); border: 2px solid var(--coral); border-radius: var(--r-md); padding: 12px 16px;
+}
+.centerPage { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 24px var(--gutter); }
+.centerInner { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 520px; }
+.bigTitle { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 40px; letter-spacing: -0.03em; }
+.soft { color: var(--text-soft); margin: 0; }

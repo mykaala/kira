@@ -1,0 +1,10 @@
+.page { max-width: 900px; margin: 0 auto; padding: 24px var(--gutter) 40px; display: flex; flex-direction: column; gap: 18px; }
+.head { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.title { margin: 0; flex: 1; font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -0.02em; }
+.toggle {
+  min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-radius: 12px;
+  background: var(--surface); cursor: pointer; font-family: var(--font-meta); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.toggle input { accent-color: var(--lantern); }
+.columns { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.chat { flex: 999 1 560px; min-width: 0; }

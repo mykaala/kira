@@ -1,0 +1,41 @@
+.page { max-width: 1320px; margin: 0 auto; padding: 24px var(--gutter) 40px; display: flex; flex-direction: column; gap: 32px; }
+.hero { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; }
+.eyebrow { color: var(--lantern); }
+.title {
+  margin: 6px 0 0; font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(52px, 7vw, 84px); line-height: 0.95; letter-spacing: -0.035em;
+}
+.pitch { max-width: 360px; color: var(--text-soft); margin: 0; line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.card {
+  background: var(--surface); border: 3px solid var(--line); border-radius: 24px; box-shadow: var(--shadow-card);
+  overflow: hidden; display: flex; flex-direction: column; transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-card-hover); }
+.featured { border-color: var(--lantern); }
+.art { height: 220px; position: relative; }
+.art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.badge {
+  position: absolute; top: 16px; left: 16px; background: var(--lantern); color: var(--bg); border-radius: var(--r-pill);
+  padding: 4px 12px; font-family: var(--font-meta); font-weight: 700; font-size: 12px; letter-spacing: 0.1em;
+}
+.soon { background: var(--surface-2); color: var(--muted); }
+.body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.cardTitle { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 40px; letter-spacing: -0.03em; line-height: 1; }
+.lede { margin: 0; color: var(--text-soft); flex: 1; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--surface-2); border-radius: 10px; padding: 6px 10px;
+  font-family: var(--font-meta); font-size: 13px; color: var(--text-soft);
+}
+.continue {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--surface); border-radius: var(--r-lg); padding: 18px 22px;
+}
+.who { display: flex; align-items: center; gap: 16px; }
+.faces { display: flex; }
+.faces > * { border: 3px solid var(--surface); border-radius: 50%; }
+.faces > * + * { margin-left: -12px; }
+.continueText { display: flex; flex-direction: column; gap: 2px; }
+.continueTitle { font-family: var(--font-display); font-weight: 800; font-size: 18px; }
+.muted { color: var(--muted); font-size: 15px; }

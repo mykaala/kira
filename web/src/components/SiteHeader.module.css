@@ -1,0 +1,10 @@
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; }
+.word { font-family: var(--font-display); font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+.nav { display: flex; gap: 4px; }
+.link {
+  min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 12px;
+  color: var(--muted); text-decoration: none; font-weight: 700;
+}
+.link:hover { background: var(--surface-2); color: var(--text); }
+.active { background: var(--surface); color: var(--text); }

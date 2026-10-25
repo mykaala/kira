@@ -1,0 +1,1079 @@
+{
+ "claims": [],
+ "days": 6,
+ "events": [
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 0,
+   "target": null,
+   "text": "Day 1: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "result",
+   "phase": "night",
+   "seq": 1,
+   "target": "p2",
+   "text": "Your investigation: Marguerite is not mafia.",
+   "vis": "private:p1"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "result",
+   "phase": "night",
+   "seq": 2,
+   "target": "p3",
+   "text": "You protected Tobiah tonight.",
+   "vis": "private:p4"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 3,
+   "target": null,
+   "text": "Day 1: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 4,
+   "target": null,
+   "text": "Day 1 begins. No one has died yet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 5,
+   "target": null,
+   "text": "Day 1: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 6,
+   "target": null,
+   "text": "kit has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 7,
+   "target": "p5",
+   "text": "i don't trust ines, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p1",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 8,
+   "target": null,
+   "text": "why did bram change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 9,
+   "target": null,
+   "text": "i don't trust marguerite, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 10,
+   "target": "p5",
+   "text": "why did kit change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 11,
+   "target": null,
+   "text": "i'm fine with ines for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 12,
+   "target": "p2",
+   "text": "something about juno feels off",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 13,
+   "target": "p1",
+   "text": "i'm fine with hollis for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 14,
+   "target": null,
+   "text": "something about kit feels off",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 15,
+   "target": null,
+   "text": "something about juno feels off",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 16,
+   "target": null,
+   "text": "Day 1: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 17,
+   "target": "p5",
+   "text": "Juno voted for Ines.",
+   "vis": "public"
+  },
+  {
+   "actor": "p1",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 18,
+   "target": "p3",
+   "text": "Hollis voted for Tobiah.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 19,
+   "target": "p3",
+   "text": "Marguerite voted for Tobiah.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 20,
+   "target": "p1",
+   "text": "Tobiah voted for Hollis.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 21,
+   "target": "p3",
+   "text": "Kit voted for Tobiah.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 22,
+   "target": "p2",
+   "text": "Ines voted for Marguerite.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 23,
+   "target": null,
+   "text": "Bram abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 24,
+   "target": "p3",
+   "text": "Tobiah was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 25,
+   "target": null,
+   "text": "Day 2: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 26,
+   "target": "p1",
+   "text": "The mafia chose Hollis.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "result",
+   "phase": "night",
+   "seq": 27,
+   "target": "p5",
+   "text": "You protected Ines tonight.",
+   "vis": "private:p4"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 28,
+   "target": null,
+   "text": "Day 2: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 29,
+   "target": "p1",
+   "text": "Hollis was killed in the night.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 30,
+   "target": null,
+   "text": "Day 2: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 31,
+   "target": "p2",
+   "text": "why did bram change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 32,
+   "target": "p0",
+   "text": "i'm fine with juno for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 33,
+   "target": "p6",
+   "text": "i'm fine with marguerite for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 34,
+   "target": null,
+   "text": "i'm fine with ines for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 35,
+   "target": "p5",
+   "text": "i don't trust marguerite, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 36,
+   "target": "p6",
+   "text": "something about juno feels off",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 37,
+   "target": "p6",
+   "text": "something about tobiah feels off",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 38,
+   "target": "p6",
+   "text": "why did juno change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 39,
+   "target": null,
+   "text": "Day 2: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 40,
+   "target": "p2",
+   "text": "Juno voted for Marguerite.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 41,
+   "target": "p4",
+   "text": "Marguerite voted for Kit.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 42,
+   "target": null,
+   "text": "Kit abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 43,
+   "target": "p2",
+   "text": "Ines voted for Marguerite.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 44,
+   "target": "p5",
+   "text": "Bram voted for Ines.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 45,
+   "target": "p2",
+   "text": "Marguerite was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 46,
+   "target": null,
+   "text": "Day 3: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 47,
+   "target": "p0",
+   "text": "The mafia chose Juno.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "result",
+   "phase": "night",
+   "seq": 48,
+   "target": "p0",
+   "text": "You protected Juno tonight.",
+   "vis": "private:p4"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 49,
+   "target": null,
+   "text": "Day 3: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 50,
+   "target": null,
+   "text": "No one died.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 51,
+   "target": null,
+   "text": "Day 3: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 52,
+   "target": "p6",
+   "text": "i'm fine with hollis for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 53,
+   "target": "p4",
+   "text": "i'm fine with marguerite for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 54,
+   "target": "p6",
+   "text": "i don't trust tobiah, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 55,
+   "target": null,
+   "text": "i don't trust bram, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 56,
+   "target": null,
+   "text": "i don't trust ines, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 57,
+   "target": "p4",
+   "text": "hollis has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 58,
+   "target": "p0",
+   "text": "something about tobiah feels off",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 59,
+   "target": null,
+   "text": "Day 3: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 60,
+   "target": null,
+   "text": "Juno abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 61,
+   "target": "p5",
+   "text": "Kit voted for Ines.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 62,
+   "target": "p6",
+   "text": "Ines voted for Bram.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 63,
+   "target": null,
+   "text": "Bram abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 64,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 65,
+   "target": null,
+   "text": "Day 4: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 66,
+   "target": "p5",
+   "text": "The mafia chose Ines.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 67,
+   "target": null,
+   "text": "Day 4: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 68,
+   "target": "p5",
+   "text": "Ines was killed in the night.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 69,
+   "target": null,
+   "text": "Day 4: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 70,
+   "target": null,
+   "text": "ines has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 71,
+   "target": null,
+   "text": "bram has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 72,
+   "target": "p4",
+   "text": "why did juno change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 73,
+   "target": "p6",
+   "text": "marguerite has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 74,
+   "target": "p0",
+   "text": "why did hollis change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 75,
+   "target": "p0",
+   "text": "why did ines change their story?",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 76,
+   "target": null,
+   "text": "Day 4: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 77,
+   "target": null,
+   "text": "Juno abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 78,
+   "target": "p6",
+   "text": "Kit voted for Bram.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 79,
+   "target": "p4",
+   "text": "Bram voted for Kit.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 80,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 81,
+   "target": null,
+   "text": "Day 5: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 82,
+   "target": "p0",
+   "text": "The mafia chose Juno.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "result",
+   "phase": "night",
+   "seq": 83,
+   "target": "p0",
+   "text": "You protected Juno tonight.",
+   "vis": "private:p4"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 84,
+   "target": null,
+   "text": "Day 5: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 85,
+   "target": null,
+   "text": "No one died.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 86,
+   "target": null,
+   "text": "Day 5: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 87,
+   "target": null,
+   "text": "marguerite has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 88,
+   "target": null,
+   "text": "something about tobiah feels off",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 89,
+   "target": "p0",
+   "text": "i'm fine with marguerite for now",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 90,
+   "target": "p0",
+   "text": "hollis has been way too quiet",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 91,
+   "target": null,
+   "text": "i don't trust hollis, honestly",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 5,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 92,
+   "target": null,
+   "text": "i'm fine with juno for now",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 93,
+   "target": null,
+   "text": "Day 5: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 5,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 94,
+   "target": null,
+   "text": "Juno abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 5,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 95,
+   "target": "p6",
+   "text": "Kit voted for Bram.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 5,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 96,
+   "target": "p4",
+   "text": "Bram voted for Kit.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 97,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 6,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 98,
+   "target": null,
+   "text": "Day 6: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 6,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 99,
+   "target": "p0",
+   "text": "The mafia chose Juno.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 6,
+   "kind": "result",
+   "phase": "night",
+   "seq": 100,
+   "target": "p6",
+   "text": "You protected Bram tonight.",
+   "vis": "private:p4"
+  },
+  {
+   "actor": null,
+   "day": 6,
+   "kind": "game_over",
+   "phase": "night",
+   "seq": 101,
+   "target": "mafia",
+   "text": "The mafia wins! Juno was villager, Hollis was detective, Marguerite was villager, Tobiah was mafia, Kit was doctor, Ines was villager, Bram was mafia.",
+   "vis": "public"
+  }
+ ],
+ "players": [
+  {
+   "alive": false,
+   "id": "p0",
+   "is_human": false,
+   "name": "Juno",
+   "role": "villager"
+  },
+  {
+   "alive": false,
+   "id": "p1",
+   "is_human": false,
+   "name": "Hollis",
+   "role": "detective"
+  },
+  {
+   "alive": false,
+   "id": "p2",
+   "is_human": false,
+   "name": "Marguerite",
+   "role": "villager"
+  },
+  {
+   "alive": false,
+   "id": "p3",
+   "is_human": false,
+   "name": "Tobiah",
+   "role": "mafia"
+  },
+  {
+   "alive": true,
+   "id": "p4",
+   "is_human": false,
+   "name": "Kit",
+   "role": "doctor"
+  },
+  {
+   "alive": false,
+   "id": "p5",
+   "is_human": false,
+   "name": "Ines",
+   "role": "villager"
+  },
+  {
+   "alive": true,
+   "id": "p6",
+   "is_human": false,
+   "name": "Bram",
+   "role": "mafia"
+  }
+ ],
+ "seed": 22,
+ "winner": "mafia"
+}

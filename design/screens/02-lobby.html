@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kira — Indie lobby</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=Atkinson+Hyperlegible:wght@400;700&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>
+body{margin:0;background:#1D1830}
+a{color:#FFB547}a:hover{color:#FFD08A}
+.i-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #0E0B19 !important}
+.i-ghost:hover{background:#352C52 !important}
+.i-seat:hover svg{transform:scale(1.05)}
+.i-seat svg{transition:transform .15s}
+</style>
+
+</head>
+<body>
+
+
+<div style="min-height: 900px; background: #1D1830; color: #F4EBDD; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; box-sizing: border-box; padding: 24px 24px 40px; background-image: radial-gradient(rgba(244,235,221,0.07) 1px, transparent 1.5px); background-size: 28px 28px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+
+  <header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <a href="01-game-select.html" aria-label="Back to games" class="i-ghost" style="width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; background: #2A2342; color: #F4EBDD"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></a>
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Kira</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 13px; color: #B8ADCB; text-transform: uppercase; letter-spacing: 0.1em">/ Mafia / Set the table</span>
+    </div>
+    <span style="font-family: 'Space Mono', monospace; font-size: 13px; background: #2A2342; border-radius: 999px; padding: 8px 14px">8 of 10 seats filled</span>
+  </header>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+
+    <section style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: center">
+      <h1 style="margin: 0; align-self: flex-start; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(40px, 4.4vw, 60px); letter-spacing: -0.03em; line-height: 1">Who’s at the table tonight?</h1>
+      <p style="margin: 0; align-self: flex-start; color: #B8ADCB; font-size: 17px">Tap a seat to swap someone out. Roles are dealt when the lantern goes dark.</p>
+
+      <div style="position: relative; width: min(100%, 620px); aspect-ratio: 1 / 1; margin-top: 8px">
+        <div style="position: absolute; inset: 17%; border-radius: 50%; background: #3A2F5C; border: 6px solid #4A3F6E; box-shadow: inset 0 -14px 0 #2F2650, 8px 8px 0 #0E0B19; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px">
+          <svg width="54" height="66" viewBox="0 0 36 44" aria-hidden="true"><rect x="12" y="0" width="12" height="5" rx="2" fill="#B8ADCB"></rect><path d="M6 8 H30 L27 38 H9 Z" fill="#352C52" stroke="#B8ADCB" stroke-width="2.5"></path><path d="M18 14 C24 22 24 28 18 32 C12 28 12 22 18 14 Z" fill="#FFB547"></path><rect x="4" y="38" width="28" height="5" rx="2" fill="#B8ADCB"></rect></svg>
+          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">2 among 8</span>
+          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: #B8ADCB; letter-spacing: 0.08em">MAFIA HIDING</span>
+        </div>
+
+        <button type="button" class="i-seat" aria-label="Seat: Ines, the Analyst" style="position: absolute; left: 50%; top: 8%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#5CC8B8"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#1F6F66"></path><rect x="52" y="80" width="16" height="16" fill="#E8B48A"></rect><circle cx="60" cy="28" r="11" fill="#2B1E2F"></circle><ellipse cx="60" cy="60" rx="24" ry="27" fill="#E8B48A"></ellipse><path d="M36 58 Q36 32 60 32 Q84 32 84 58 Q74 42 60 42 Q46 42 36 58Z" fill="#2B1E2F"></path><circle cx="50" cy="62" r="7" fill="none" stroke="#1D1830" stroke-width="2.5"></circle><circle cx="70" cy="62" r="7" fill="none" stroke="#1D1830" stroke-width="2.5"></circle><path d="M57 62 H63" stroke="#1D1830" stroke-width="2.5"></path><circle cx="50" cy="62" r="2.4" fill="#1D1830"></circle><circle cx="70" cy="62" r="2.4" fill="#1D1830"></circle><path d="M54 76 H66" stroke="#1D1830" stroke-width="3" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Ines</span>
+        </button>
+
+        <button type="button" class="i-seat" aria-label="Seat: Bram, the Hothead" style="position: absolute; left: 79.7%; top: 20.3%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#FF7A59"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#7A2E1E"></path><rect x="52" y="80" width="16" height="16" fill="#F2C9A0"></rect><ellipse cx="60" cy="60" rx="25" ry="27" fill="#F2C9A0"></ellipse><path d="M36 66 Q38 90 60 90 Q82 90 84 66 Q74 80 60 80 Q46 80 36 66Z" fill="#B5542B"></path><path d="M34 52 Q36 30 60 30 Q84 30 86 52Z" fill="#3B5BA9"></path><path d="M80 50 L102 54 L82 57Z" fill="#3B5BA9"></path><path d="M44 55 L56 59 M76 55 L64 59" stroke="#1D1830" stroke-width="3.5" stroke-linecap="round"></path><circle cx="51" cy="64" r="2.6" fill="#1D1830"></circle><circle cx="69" cy="64" r="2.6" fill="#1D1830"></circle><path d="M53 77 Q60 72 67 77" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Bram</span>
+        </button>
+
+        <button type="button" class="i-seat" aria-label="Seat: Odile, the Quiet One" style="position: absolute; left: 92%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#9B8BD9"></rect><path d="M30 62 Q30 28 60 28 Q90 28 90 62 L92 112 L28 112Z" fill="#17121F"></path><path d="M28 120 Q28 94 60 94 Q92 94 92 120Z" fill="#4B3F87"></path><rect x="52" y="80" width="16" height="16" fill="#8A5A3B"></rect><ellipse cx="60" cy="61" rx="23" ry="27" fill="#8A5A3B"></ellipse><path d="M37 52 Q48 38 66 40 Q80 42 84 56 Q70 46 56 50 Q46 52 37 52Z" fill="#17121F"></path><path d="M45 64 H55 M65 64 H75" stroke="#1D1830" stroke-width="3" stroke-linecap="round"></path><path d="M56 77 H64" stroke="#1D1830" stroke-width="3" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Odile</span>
+        </button>
+
+        <button type="button" class="i-seat" aria-label="Seat: Tobiah, the Charmer" style="position: absolute; left: 79.7%; top: 79.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#FFB547"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#2A2342"></path><path d="M46 92 L60 106 L74 92Z" fill="#F4EBDD"></path><rect x="52" y="80" width="16" height="14" fill="#C98B5E"></rect><ellipse cx="60" cy="60" rx="25" ry="28" fill="#C98B5E"></ellipse><path d="M34 56 Q38 28 64 30 Q88 32 86 54 Q72 40 48 46 Q40 48 34 56Z" fill="#3A2418"></path><path d="M44 54 Q50 50 56 54 M64 52 Q70 46 76 50" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path><circle cx="50" cy="62" r="2.6" fill="#1D1830"></circle><circle cx="70" cy="62" r="2.6" fill="#1D1830"></circle><path d="M48 72 Q60 84 72 72" stroke="#1D1830" stroke-width="3" fill="#F4EBDD" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Tobiah</span>
+        </button>
+
+        <div style="position: absolute; left: 50%; top: 92%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px">
+          <span style="width: 92px; height: 92px; border-radius: 50%; border: 4px dashed #FFB547; display: grid; place-items: center; background: #2A2342; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: #FFB547; box-sizing: border-box">You</span>
+          <span style="background: #FFB547; color: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Your seat</span>
+        </div>
+
+        <button type="button" class="i-seat" aria-label="Seat: Marguerite, the Elder" style="position: absolute; left: 20.3%; top: 79.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#8FB573"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#4E6B3A"></path><rect x="52" y="80" width="16" height="14" fill="#E8B48A"></rect><ellipse cx="60" cy="62" rx="24" ry="27" fill="#E8B48A"></ellipse><g fill="#EFE8F2"><circle cx="38" cy="48" r="10"></circle><circle cx="48" cy="36" r="11"></circle><circle cx="62" cy="32" r="11"></circle><circle cx="76" cy="38" r="10"></circle><circle cx="84" cy="50" r="9"></circle></g><path d="M45 64 Q50 60 55 64 M65 64 Q70 60 75 64" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M54 76 Q60 80 66 76" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Marguerite</span>
+        </button>
+
+        <button type="button" class="i-seat" aria-label="Seat: Kit, the Wildcard" style="position: absolute; left: 8%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#E86FA8"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#1D1830"></path><rect x="52" y="80" width="16" height="14" fill="#F2C9A0"></rect><ellipse cx="60" cy="61" rx="24" ry="27" fill="#F2C9A0"></ellipse><path d="M34 54 L36 26 L46 40 L54 18 L62 38 L72 20 L76 40 L86 28 L86 54 Q70 42 34 54Z" fill="#2E8B6E"></path><path d="M45 63 Q50 59 55 63" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path><circle cx="70" cy="63" r="2.8" fill="#1D1830"></circle><path d="M50 74 Q62 82 72 70" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Kit</span>
+        </button>
+
+        <button type="button" class="i-seat" aria-label="Seat: Juno, the Peacemaker" style="position: absolute; left: 20.3%; top: 20.3%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; color: #F4EBDD; cursor: pointer">
+          <svg width="92" height="92" viewBox="0 0 120 120" style="border-radius: 50%; border: 4px solid #1D1830; box-shadow: 4px 4px 0 #0E0B19" aria-hidden="true"><rect width="120" height="120" fill="#6FA8E8"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#2F5C9A"></path><rect x="52" y="80" width="16" height="14" fill="#8A5A3B"></rect><ellipse cx="60" cy="62" rx="24" ry="27" fill="#8A5A3B"></ellipse><path d="M36 58 Q38 42 60 42 Q82 42 84 58 L84 50 Q60 36 36 50Z" fill="#17121F"></path><ellipse cx="56" cy="40" rx="30" ry="10" fill="#FF7A59"></ellipse><circle cx="56" cy="29" r="3" fill="#FF7A59"></circle><circle cx="51" cy="64" r="2.6" fill="#1D1830"></circle><circle cx="69" cy="64" r="2.6" fill="#1D1830"></circle><path d="M53 76 Q60 81 67 76" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+          <span style="background: #1D1830; border-radius: 8px; padding: 2px 10px; font-weight: 700; font-size: 15px">Juno</span>
+        </button>
+      </div>
+    </section>
+
+    <aside style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+      <section style="background: #2A2342; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 14px; box-shadow: 8px 8px 0 #0E0B19">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Up close</h2>
+          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: #B8ADCB">SEAT 2 · SELECTED</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center">
+          <svg width="88" height="88" viewBox="0 0 120 120" style="border-radius: 20px; flex: none" aria-hidden="true"><rect width="120" height="120" fill="#FF7A59"></rect><path d="M28 120 Q28 92 60 92 Q92 92 92 120Z" fill="#7A2E1E"></path><rect x="52" y="80" width="16" height="16" fill="#F2C9A0"></rect><ellipse cx="60" cy="60" rx="25" ry="27" fill="#F2C9A0"></ellipse><path d="M36 66 Q38 90 60 90 Q82 90 84 66 Q74 80 60 80 Q46 80 36 66Z" fill="#B5542B"></path><path d="M34 52 Q36 30 60 30 Q84 30 86 52Z" fill="#3B5BA9"></path><path d="M80 50 L102 54 L82 57Z" fill="#3B5BA9"></path><path d="M44 55 L56 59 M76 55 L64 59" stroke="#1D1830" stroke-width="3.5" stroke-linecap="round"></path><circle cx="51" cy="64" r="2.6" fill="#1D1830"></circle><circle cx="69" cy="64" r="2.6" fill="#1D1830"></circle><path d="M53 77 Q60 72 67 77" stroke="#1D1830" stroke-width="3" fill="none" stroke-linecap="round"></path></svg>
+          <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+            <strong style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px">Bram Holt</strong>
+            <span style="color: #FF7A59; font-weight: 700">The Hothead</span>
+            <span style="color: #B8ADCB; font-size: 15px">“If you’re quiet, you’re guilty.”</span>
+          </div>
+        </div>
+        <dl style="margin: 0; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 10px 12px; align-items: center; font-size: 15px">
+          <dt style="color: #B8ADCB">Talkative</dt><dd style="margin: 0; height: 10px; border-radius: 99px; background: #1D1830"><span style="display: block; width: 90%; height: 100%; border-radius: 99px; background: #FFB547"></span></dd>
+          <dt style="color: #B8ADCB">Suspicious</dt><dd style="margin: 0; height: 10px; border-radius: 99px; background: #1D1830"><span style="display: block; width: 80%; height: 100%; border-radius: 99px; background: #FFB547"></span></dd>
+          <dt style="color: #B8ADCB">Good liar</dt><dd style="margin: 0; height: 10px; border-radius: 99px; background: #1D1830"><span style="display: block; width: 25%; height: 100%; border-radius: 99px; background: #FFB547"></span></dd>
+        </dl>
+        <div style="display: flex; gap: 10px">
+          <button type="button" class="i-ghost" style="flex: 1; min-height: 46px; border-radius: 12px; border: 2px solid #4A3F6E; background: transparent; color: #F4EBDD; font-weight: 700; font-size: 15px; cursor: pointer">Swap for Hollis</button>
+          <button type="button" class="i-ghost" style="flex: 1; min-height: 46px; border-radius: 12px; border: 2px solid #4A3F6E; background: transparent; color: #F4EBDD; font-weight: 700; font-size: 15px; cursor: pointer">Empty seat</button>
+        </div>
+      </section>
+
+      <section style="background: #2A2342; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">House rules</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 0; background: #5CC8B8; color: #1D1830; font-weight: 700; font-size: 15px; cursor: pointer">✓ Doctor</button>
+          <button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 0; background: #5CC8B8; color: #1D1830; font-weight: 700; font-size: 15px; cursor: pointer">✓ Detective</button>
+          <button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 2px solid #4A3F6E; background: transparent; color: #B8ADCB; font-weight: 700; font-size: 15px; cursor: pointer">+ Jester</button>
+          <button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 2px solid #4A3F6E; background: transparent; color: #B8ADCB; font-weight: 700; font-size: 15px; cursor: pointer">+ Bodyguard</button>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: #B8ADCB">HOW SHARP ARE THEY?</span>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; background: #1D1830; border-radius: 14px; padding: 5px">
+            <button type="button" style="min-height: 42px; border: 0; border-radius: 10px; background: transparent; color: #B8ADCB; font-weight: 700; font-size: 15px; cursor: pointer">Cozy</button>
+            <button type="button" aria-pressed="true" style="min-height: 42px; border: 0; border-radius: 10px; background: #FFB547; color: #1D1830; font-weight: 700; font-size: 15px; cursor: pointer">Tricky</button>
+            <button type="button" style="min-height: 42px; border: 0; border-radius: 10px; background: transparent; color: #B8ADCB; font-weight: 700; font-size: 15px; cursor: pointer">Merciless</button>
+          </div>
+        </div>
+      </section>
+
+      <a href="03-discussion.html" class="i-btn" style="display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 60px; border-radius: 16px; background: #FFB547; color: #1D1830; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 21px; box-shadow: 4px 4px 0 #0E0B19; transition: transform .15s, box-shadow .15s">Blow out the lantern
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      </a>
+    </aside>
+  </div>
+</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+.panel {
+  flex: 1 1 300px; min-width: 0; background: var(--surface); border-radius: var(--r-lg); padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 10px; position: sticky; top: 16px;
+}
+.title { font-family: var(--font-display); font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.notes {
+  min-height: 320px; resize: vertical; border-radius: 12px; border: 2px solid var(--line);
+  background: var(--bg); color: var(--text); padding: 12px; font: inherit; font-size: 15px; line-height: 1.6;
+}
+.notes:focus-visible { outline: 3px solid var(--lantern); outline-offset: 2px; }
+.secret { padding-top: 12px; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--surface-3); }
+.secretLabel { color: var(--muted); }
+.secretText { margin: 0; font-size: 15px; line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .panel { position: static; }
+  .notes { min-height: 160px; }
+}

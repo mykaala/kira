@@ -1,0 +1,115 @@
+/* Kira design tokens: Direction B, "Lantern Hour" (design/UI_SPEC.md §1–2). */
+:root {
+  /* ground & surfaces */
+  --bg: #1d1830;
+  --surface: #2a2342;
+  --surface-2: #352c52;
+  --surface-3: #3a2f5c;
+  --line: #4a3f6e;
+  --shadow: #0e0b19;
+
+  /* text */
+  --text: #f4ebdd;
+  --text-soft: #d8cfe3;
+  --muted: #b8adcb;
+  --dead: #8c82a3;
+
+  /* accents (text on lantern, coral or teal fills is always --bg) */
+  --lantern: #ffb547;
+  --lantern-hover: #ffd08a;
+  --coral: #ff7a59;
+  --coral-text: #ff9a80;
+  --teal: #5cc8b8;
+  --lavender: #9b8bd9;
+  --pink: #e86fa8; /* Jester */
+  --sky: #6fa8e8; /* Bodyguard */
+
+  /* the cast's signature colours (portrait backdrop, log dot); match cast.ts */
+  --c-ines: #5cc8b8;
+  --c-bram: #ff7a59;
+  --c-odile: #9b8bd9;
+  --c-tobiah: #ffb547;
+  --c-kit: #e86fa8;
+  --c-marguerite: #8fb573;
+  --c-juno: #6fa8e8;
+  --c-hollis: #b8adcb;
+
+  /* shape */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+  --shadow-hard: 4px 4px 0 var(--shadow);
+  --shadow-hard-hover: 6px 6px 0 var(--shadow);
+  --shadow-card: 8px 8px 0 var(--shadow);
+  --shadow-card-hover: 10px 10px 0 var(--shadow);
+
+  /* type */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-meta: "Space Mono", ui-monospace, monospace;
+
+  /* layout */
+  --page-max: 1392px;
+  --gutter: 24px;
+
+  color-scheme: dark;
+}
+
+@media (max-width: 640px) {
+  :root { --gutter: 16px; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+/* Lantern Hour pages: the night ground with a faint dot grid. */
+.lantern-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(244, 235, 221, 0.07) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.45;
+  overflow-x: clip; /* tilted cards and shadows never cause a sideways scroll */
+}
+.lantern-page *,
+.lantern-page *::before,
+.lantern-page *::after { box-sizing: border-box; }
+.lantern-page :focus-visible {
+  outline: 3px solid var(--lantern);
+  outline-offset: 2px;
+}
+
+/* Meta text: phase labels, timers, chips, counts. */
+.meta {
+  font-family: var(--font-meta);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lantern-page *,
+  .lantern-page *::before,
+  .lantern-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

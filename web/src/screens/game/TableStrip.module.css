@@ -1,0 +1,66 @@
+.strip {
+  position: relative; display: flex; flex-wrap: wrap; gap: 12px;
+  background: var(--surface); border-radius: var(--r-lg); padding: 14px;
+}
+.seatWrap { position: relative; flex: 1 1 130px; min-width: 0; }
+.seat {
+  width: 100%; display: flex; gap: 10px; align-items: center; padding: 8px;
+  border-radius: 16px; border: 2px solid transparent; background: none; color: var(--text);
+  text-align: left; cursor: pointer; font: inherit;
+}
+.seat:hover { background: var(--surface-2); }
+.speaking, .speaking:hover { background: var(--lantern); color: var(--bg); }
+.speaking .status { color: var(--bg) !important; }
+.speaking .face { box-shadow: 0 0 0 3px var(--bg); }
+.you { border: 2px dashed var(--lantern); cursor: default; }
+.you:hover { background: none; }
+.face { border-radius: 50%; flex: none; position: relative; }
+.ring { box-shadow: 0 0 0 3px var(--cue); }
+.youFace {
+  width: 56px; height: 56px; border-radius: 50%; flex: none; display: grid; place-items: center;
+  background: var(--surface-2); font-family: var(--font-display); font-weight: 800; color: var(--lantern);
+}
+.text { display: flex; flex-direction: column; min-width: 0; }
+.name { font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status {
+  font-family: var(--font-meta); font-size: 12px; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.lean { color: var(--coral-text); }
+.guess { font-family: var(--font-meta); font-size: 11px; color: var(--lantern); }
+.tick {
+  position: absolute; right: -2px; bottom: -2px; width: 20px; height: 20px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--teal); color: var(--bg); font-size: 12px; font-weight: 700;
+}
+.gone { flex: 0 1 auto; display: flex; gap: 6px; align-items: center; padding: 8px 4px 8px 14px; border-left: 2px solid var(--line); }
+.ghost {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--bg); color: var(--dead); font-weight: 700; font-size: 14px; text-decoration: line-through;
+}
+.goneLabel { font-family: var(--font-meta); font-size: 12px; color: var(--dead); padding-left: 4px; }
+
+.popover {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 20; width: 260px;
+  background: var(--surface-2); border-radius: var(--r-md); padding: 14px;
+  box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px;
+}
+.popTitle { font-family: var(--font-display); font-weight: 800; font-size: 17px; }
+.sub { color: var(--muted); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.row3 { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
+.opt {
+  min-height: 44px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface);
+  color: var(--text); font-weight: 700; font-size: 14px; cursor: pointer; text-transform: capitalize;
+}
+.opt:hover { border-color: var(--muted); }
+.on { background: var(--opt); border-color: var(--opt); color: var(--bg); }
+.note {
+  min-height: 44px; border-radius: 10px; border: 2px solid var(--line); background: var(--bg);
+  color: var(--text); padding: 0 12px; font: inherit; font-size: 15px;
+}
+
+@media (max-width: 760px) {
+  .strip { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .seatWrap { flex: 0 0 150px; }
+  .popover { position: fixed; top: auto; bottom: 16px; left: 16px; right: 16px; width: auto; }
+}
