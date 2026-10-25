@@ -1,0 +1,1229 @@
+{
+ "claims": [
+  {
+   "actor": "p1",
+   "day": 1,
+   "result": null,
+   "role": "villager",
+   "seq": 6,
+   "target": null,
+   "true": false
+  },
+  {
+   "actor": "p3",
+   "day": 1,
+   "result": "mafia",
+   "role": "detective",
+   "seq": 8,
+   "target": "p6",
+   "true": false
+  },
+  {
+   "actor": "p8",
+   "day": 1,
+   "result": "mafia",
+   "role": "detective",
+   "seq": 12,
+   "target": "p3",
+   "true": true
+  },
+  {
+   "actor": "p3",
+   "day": 3,
+   "result": null,
+   "role": "villager",
+   "seq": 78,
+   "target": null,
+   "true": false
+  },
+  {
+   "actor": "p3",
+   "day": 4,
+   "result": null,
+   "role": "doctor",
+   "seq": 99,
+   "target": null,
+   "true": false
+  }
+ ],
+ "days": 5,
+ "events": [
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 0,
+   "target": null,
+   "text": "Day 1: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "result",
+   "phase": "night",
+   "seq": 1,
+   "target": "p3",
+   "text": "Your investigation: Dee is MAFIA.",
+   "vis": "private:p8"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "result",
+   "phase": "night",
+   "seq": 2,
+   "target": "p0",
+   "text": "You protected Ana tonight.",
+   "vis": "private:p1"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 3,
+   "target": null,
+   "text": "Day 1: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 4,
+   "target": null,
+   "text": "Day 1 begins. No one has died yet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 5,
+   "target": null,
+   "text": "Day 1: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p1",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 6,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 7,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 8,
+   "target": null,
+   "text": "Hmm, Bo seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 9,
+   "target": null,
+   "text": "Hmm, Ivy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 10,
+   "target": null,
+   "text": "I think Bo is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 11,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p8",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 12,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 13,
+   "target": null,
+   "text": "Hmm, Ana seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 14,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 15,
+   "target": null,
+   "text": "Hmm, Bo seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p1",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 16,
+   "target": null,
+   "text": "Hmm, Ivy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 1,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 17,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 18,
+   "target": null,
+   "text": "Day 1: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 19,
+   "target": "p1",
+   "text": "Ana voted for Bo.",
+   "vis": "public"
+  },
+  {
+   "actor": "p1",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 20,
+   "target": "p5",
+   "text": "Bo voted for Fay.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 21,
+   "target": "p5",
+   "text": "Cy voted for Fay.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 22,
+   "target": "p2",
+   "text": "Dee voted for Cy.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 23,
+   "target": "p6",
+   "text": "Eli voted for Gus.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 24,
+   "target": "p1",
+   "text": "Fay voted for Bo.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 25,
+   "target": "p8",
+   "text": "Gus voted for Ivy.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 26,
+   "target": "p2",
+   "text": "Hal voted for Cy.",
+   "vis": "public"
+  },
+  {
+   "actor": "p8",
+   "day": 1,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 27,
+   "target": "p4",
+   "text": "Ivy voted for Eli.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 1,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 28,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 29,
+   "target": null,
+   "text": "Day 2: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 30,
+   "target": "p1",
+   "text": "The mafia chose Bo.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "result",
+   "phase": "night",
+   "seq": 31,
+   "target": "p2",
+   "text": "Your investigation: Cy is not mafia.",
+   "vis": "private:p8"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "result",
+   "phase": "night",
+   "seq": 32,
+   "target": "p8",
+   "text": "You protected Ivy tonight.",
+   "vis": "private:p1"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 33,
+   "target": null,
+   "text": "Day 2: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 34,
+   "target": "p1",
+   "text": "Bo was killed in the night.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 35,
+   "target": null,
+   "text": "Day 2: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 36,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 37,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 38,
+   "target": null,
+   "text": "Hmm, Eli seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 39,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 40,
+   "target": null,
+   "text": "I think Fay is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 41,
+   "target": null,
+   "text": "I think Eli is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 42,
+   "target": null,
+   "text": "I think Ana is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 43,
+   "target": null,
+   "text": "Hmm, Ana seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 44,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 45,
+   "target": null,
+   "text": "I think Cy is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 46,
+   "target": null,
+   "text": "Hmm, Ana seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p8",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 47,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 48,
+   "target": null,
+   "text": "I think Hal is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 49,
+   "target": null,
+   "text": "Hmm, Eli seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 50,
+   "target": null,
+   "text": "Hmm, Hal seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 51,
+   "target": null,
+   "text": "I think Hal is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 52,
+   "target": null,
+   "text": "Hmm, Fay seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 53,
+   "target": null,
+   "text": "Day 2: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 54,
+   "target": "p8",
+   "text": "Ana voted for Ivy.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 55,
+   "target": "p3",
+   "text": "Cy voted for Dee.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 56,
+   "target": "p5",
+   "text": "Dee voted for Fay.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 57,
+   "target": null,
+   "text": "Eli abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 58,
+   "target": "p3",
+   "text": "Fay voted for Dee.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 59,
+   "target": "p7",
+   "text": "Gus voted for Hal.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 60,
+   "target": null,
+   "text": "Hal abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p8",
+   "day": 2,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 61,
+   "target": "p2",
+   "text": "Ivy voted for Cy.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 2,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 62,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 63,
+   "target": null,
+   "text": "Day 3: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 64,
+   "target": "p8",
+   "text": "The mafia chose Ivy.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "result",
+   "phase": "night",
+   "seq": 65,
+   "target": "p3",
+   "text": "Your investigation: Dee is MAFIA.",
+   "vis": "private:p8"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 66,
+   "target": null,
+   "text": "Day 3: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 67,
+   "target": "p8",
+   "text": "Ivy was killed in the night.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 68,
+   "target": null,
+   "text": "Day 3: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 69,
+   "target": null,
+   "text": "I think Fay is lying.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 70,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 71,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 72,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 73,
+   "target": null,
+   "text": "Hmm, Ana seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 74,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 75,
+   "target": null,
+   "text": "Hmm, Fay seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 76,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 77,
+   "target": null,
+   "text": "Hmm, Ana seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 3,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 78,
+   "target": null,
+   "text": "Hmm, Hal seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 79,
+   "target": null,
+   "text": "Day 3: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p0",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 80,
+   "target": "p7",
+   "text": "Ana voted for Hal.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 81,
+   "target": "p4",
+   "text": "Cy voted for Eli.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 82,
+   "target": "p6",
+   "text": "Dee voted for Gus.",
+   "vis": "public"
+  },
+  {
+   "actor": "p4",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 83,
+   "target": "p0",
+   "text": "Eli voted for Ana.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 84,
+   "target": "p4",
+   "text": "Fay voted for Eli.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 85,
+   "target": "p4",
+   "text": "Gus voted for Eli.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 3,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 86,
+   "target": null,
+   "text": "Hal abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 3,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 87,
+   "target": "p4",
+   "text": "Eli was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 88,
+   "target": null,
+   "text": "Day 4: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 89,
+   "target": "p0",
+   "text": "The mafia chose Ana.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "morning",
+   "seq": 90,
+   "target": null,
+   "text": "Day 4: morning",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "morning",
+   "phase": "morning",
+   "seq": 91,
+   "target": "p0",
+   "text": "Ana was killed in the night.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "discussion",
+   "seq": 92,
+   "target": null,
+   "text": "Day 4: discussion",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 93,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 94,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 95,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 96,
+   "target": null,
+   "text": "Hmm, Fay seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 97,
+   "target": null,
+   "text": "Hmm, Gus seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 98,
+   "target": null,
+   "text": "Hmm, Dee seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 99,
+   "target": null,
+   "text": "Hmm, Cy seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 4,
+   "kind": "say",
+   "phase": "discussion",
+   "seq": 100,
+   "target": null,
+   "text": "Hmm, Fay seems quiet.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "phase",
+   "phase": "vote",
+   "seq": 101,
+   "target": null,
+   "text": "Day 4: vote",
+   "vis": "public"
+  },
+  {
+   "actor": "p2",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 102,
+   "target": null,
+   "text": "Cy abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p3",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 103,
+   "target": null,
+   "text": "Dee abstained.",
+   "vis": "public"
+  },
+  {
+   "actor": "p5",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 104,
+   "target": "p3",
+   "text": "Fay voted for Dee.",
+   "vis": "public"
+  },
+  {
+   "actor": "p6",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 105,
+   "target": "p7",
+   "text": "Gus voted for Hal.",
+   "vis": "public"
+  },
+  {
+   "actor": "p7",
+   "day": 4,
+   "kind": "vote",
+   "phase": "vote",
+   "seq": 106,
+   "target": "p2",
+   "text": "Hal voted for Cy.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 4,
+   "kind": "elimination",
+   "phase": "vote",
+   "seq": 107,
+   "target": null,
+   "text": "No one was eliminated.",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "phase",
+   "phase": "night",
+   "seq": 108,
+   "target": null,
+   "text": "Day 5: night",
+   "vis": "public"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "mafia_choice",
+   "phase": "night",
+   "seq": 109,
+   "target": "p6",
+   "text": "The mafia chose Gus.",
+   "vis": "channel:mafia"
+  },
+  {
+   "actor": null,
+   "day": 5,
+   "kind": "game_over",
+   "phase": "night",
+   "seq": 110,
+   "target": "mafia",
+   "text": "The mafia wins! Ana was villager, Bo was doctor, Cy was villager, Dee was mafia, Eli was villager, Fay was mafia, Gus was villager, Hal was villager, Ivy was detective.",
+   "vis": "public"
+  }
+ ],
+ "players": [
+  {
+   "alive": false,
+   "id": "p0",
+   "is_human": true,
+   "name": "Ana",
+   "role": "villager"
+  },
+  {
+   "alive": false,
+   "id": "p1",
+   "is_human": false,
+   "name": "Bo",
+   "role": "doctor"
+  },
+  {
+   "alive": true,
+   "id": "p2",
+   "is_human": false,
+   "name": "Cy",
+   "role": "villager"
+  },
+  {
+   "alive": true,
+   "id": "p3",
+   "is_human": false,
+   "name": "Dee",
+   "role": "mafia"
+  },
+  {
+   "alive": false,
+   "id": "p4",
+   "is_human": false,
+   "name": "Eli",
+   "role": "villager"
+  },
+  {
+   "alive": true,
+   "id": "p5",
+   "is_human": false,
+   "name": "Fay",
+   "role": "mafia"
+  },
+  {
+   "alive": false,
+   "id": "p6",
+   "is_human": false,
+   "name": "Gus",
+   "role": "villager"
+  },
+  {
+   "alive": true,
+   "id": "p7",
+   "is_human": false,
+   "name": "Hal",
+   "role": "villager"
+  },
+  {
+   "alive": false,
+   "id": "p8",
+   "is_human": false,
+   "name": "Ivy",
+   "role": "detective"
+  }
+ ],
+ "seed": 303,
+ "winner": "mafia"
+}
