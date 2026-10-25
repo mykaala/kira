@@ -2,8 +2,21 @@
 
 This guide covers every way to run Kira: playing in the browser, playing without an API key, watching AI-only games, running the Milestone 1 gate, and running the tests. For what the game is and why it is built this way, see [design.md](docs/design.md).
 
+## Quickest way to play
+
+From the repo root, one command starts the backend and the web app and opens the browser (Mafia and Out of Place):
+
+```
+./start.sh          # real AI players (needs OPENAI_API_KEY in backend/.env)
+./start.sh --fake   # free scripted AI players, no key needed
+```
+
+It installs anything missing on the first run and picks free ports (8000 and 5173 unless something else is using
+them). Press Ctrl+C to stop everything it started.
+
 ## Contents
 
+- [Quickest way to play](#quickest-way-to-play)
 - [One-time setup](#one-time-setup)
 - [Which mode do I want?](#which-mode-do-i-want)
 - [Play in the browser](#play-in-the-browser)

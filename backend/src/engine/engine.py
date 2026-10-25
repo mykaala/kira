@@ -28,11 +28,16 @@ def mode_of(state: GameState) -> ModeConfig:
 
 
 def new_game(
-    mode: ModeConfig, names: list[str], human_index: int | None, seed: int, extra_roles: tuple[str, ...] = ()
+    mode: ModeConfig,
+    names: list[str],
+    human_index: int | None,
+    seed: int,
+    extra_roles: tuple[str, ...] = (),
+    options: dict | None = None,  # this game's own switches over the mode's; the mode reads them, if it does
 ) -> GameState:
     roles = mode.roles_for(len(names), extra_roles)
     players = [Player(id=f"p{i}", name=n, is_human=(i == human_index)) for i, n in enumerate(names)]
-    state = GameState(mode=mode.name, seed=seed, players=players)
+    state = GameState(mode=mode.name, seed=seed, players=players, options=dict(options or {}))
     state.rng("roles").shuffle(roles)
     for p, role in zip(players, roles):
         p.role = role
@@ -202,6 +207,7 @@ def _end_phase(state: GameState) -> None:
     if winner := mode.win_check(state):
         state.winner = winner
         roles = ", ".join(f"{p.name} was {p.role}" for p in state.players)
-        _emit(state, NewEvent(kind="game_over", target=winner, text=f"The {winner} wins! {roles}."))
+        text = mode.end_text(state, winner, roles) if mode.end_text else f"The {winner} wins! {roles}."
+        _emit(state, NewEvent(kind="game_over", target=winner, text=text))
         return
     _enter_phase(state, mode.next_phase(state) if mode.next_phase else mode.transitions[state.phase])

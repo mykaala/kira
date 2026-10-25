@@ -15,6 +15,7 @@ How to run everything: [documentation.md](documentation.md). UI source of truth:
 - No player's view may contain another player's role or private/channel events (`tests/test_leak.py`).
 - `backend/.env` holds the OpenAI key: never read, print or commit it. `.env.example` has placeholders only.
 - Never shown during a game: a character's voice label (`voice`, e.g. "The Analyst"), or a dead player's role.
+  One exception, Out of Place only: a player voted out is shown to have been a civilian (never a role at the place).
 - Prompt = shared block (identical for every agent, over 1,100 tokens) + persona + dynamic view. One fixed JSON
   schema per call type listing the whole cast; legality is checked in code. Breaking either kills caching.
 - Game names and text must be our own; reused mechanics need credit (Secret Hitler is CC BY-NC-SA 4.0).

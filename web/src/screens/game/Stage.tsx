@@ -7,7 +7,7 @@ import styles from "./Stage.module.css";
 
 const MAX_REACTIONS = 3;
 
-function Frame({ night, label, children }: { night?: boolean; label: string; children: React.ReactNode }) {
+export function Frame({ night, label, children }: { night?: boolean; label: string; children: React.ReactNode }) {
   return (
     <section aria-label={label} className={`${styles.stage} ${night ? styles.night : ""}`}>
       <div className={styles.glow} aria-hidden="true" />
@@ -103,7 +103,7 @@ const NIGHT_VERB: Record<string, { verb: string; title: string }> = {
 };
 
 /** A tray of portraits to pick from: the night action or the day vote. */
-function PickTray({ title, kicker, seats, choices, onPick, chosen, ballots, footer, night }: {
+export function PickTray({ title, kicker, seats, choices, onPick, chosen, ballots, footer, night }: {
   title: string;
   kicker: string;
   seats: Seat[];

@@ -12,7 +12,13 @@ class SpyFakeLLM:
     QUESTIONS = ["what do u usually wear here", "how long do people stay", "who do u come with", "is it loud"]
     ANSWERS = ["depends on the day", "mostly with friends lol", "pretty loud ngl", "a couple hours tops"]
 
-    def __init__(self, seed: int = 0, delay_s: float = 0.0, leak_rate: float = 0.1, guess_rate: float = 0.3):
+    def __init__(
+        self,
+        seed: int = 0,
+        delay_s: float = 0.0,
+        leak_rate: float = 0.1,
+        guess_rate: float = 0.3,
+    ):
         self.rng = random.Random(seed)
         self.delay_s, self.leak_rate, self.guess_rate = delay_s, leak_rate, guess_rate
 
@@ -31,10 +37,15 @@ class SpyFakeLLM:
             out = {"text": self.rng.choice(self.ANSWERS) + leak}
         elif name == "vote":
             out = {"target": self.rng.choice(self._legal(task, "target"))}
-        elif name == "spy_guess":
-            legal = self._legal(task, "location") or LOCATION_NAMES
-            last = "last chance" in task.lower() or "caught you" in task
-            out = {"location": self.rng.choice(legal) if last or self.rng.random() < self.guess_rate else None}
+        elif name == "guess":  # free text: a pool name, a dressed-up one, or a place off the pool
+            last = "caught you" in task
+            place = self.rng.choice(LOCATION_NAMES)
+            words = self.rng.choice([place, f"a public {place}", "airport", "some kind of market"])
+            out = {"guess": words if last or self.rng.random() < self.guess_rate else None}
+        elif name == "role_judge":
+            out = {"fits_role": self.rng.random() < 0.8, "fits_place": self.rng.random() < 0.9}
+        elif name == "guess_judge":
+            out = {"reason": "fake ruling", "match": self.rng.random() < 0.2}
         else:  # judge
             out = {"fits": self.rng.sample(LOCATION_NAMES, self.rng.randint(1, 12))}
         text = json.dumps(out)

@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     model_spy_guess: str = "gpt-5.6-luna"
     model_last_chance: str = "gpt-5.6-luna"
     model_judge: str = "gpt-5.6-luna"  # offline specificity judge, self-play harness only
+    model_guess_judge: str = "gpt-5.6-luna"  # does a free-text spy guess name the secret location
+    model_roles: str = "gpt-5.6-terra"  # offline role-bank generator only (scripts/spy_roles_gen.py), never in a game
+    model_role_audit: str = "gpt-5.6-luna"  # offline: which places each role title fits (scripts/spy_roles_audit.py)
+    model_role_judge: str = "gpt-5.6-luna"  # offline: does a civilian's answer fit its own role and the place
     reasoning_effort: str = "low"
     # per-role overrides, off when empty: e.g. MODEL_MAFIA_DISCUSSION=gpt-5.6-terra
     model_mafia_discussion: str = ""
@@ -32,6 +36,7 @@ class Settings(BaseSettings):
     connect_backoff_s: list[float] = [2, 5, 10, 20, 30]  # waits before giving up on an unreachable API
     max_output_tokens: int = 1500  # discussion; includes reasoning tokens; 600 cut replies off mid-JSON
     max_output_tokens_action: int = 400  # votes and night moves answer {"action": ...} only
+    max_output_tokens_guess: int = 800  # spy guesses, last chances and the guess judge; 400 came back empty
     phrase_cap: int = 2  # uses per game, across the table, of each capped stock phrase
     reveal_role_on_death: bool = (
         False  # roles stay hidden until the game ends (results and review); true reveals on death
@@ -48,6 +53,7 @@ class Settings(BaseSettings):
     max_games_per_ip_per_hour: int = 20
     discussion_pause_s: float = 1.2  # beat between AI speakers so the human can read and interject
     human_turn_timeout_s: float = 180.0  # the human's discussion turn is skipped after this
+    spy_idle_timeout_s: float = 1800.0  # Out of Place: a game waiting this long on the person ends
 
     def model_for(self, call_type: str, role: str | None = None) -> str:
         return self.override_for(call_type, role) or getattr(self, f"model_{call_type}")

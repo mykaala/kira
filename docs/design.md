@@ -219,6 +219,83 @@ OpenAI caches a prompt prefix of 1,024 tokens or more, and the response schema s
 
 The JSON schema is **one fixed schema per call type**, listing every cast name (plus a human player's name), never the per-call legal subset. Who may actually be picked (alive, not yourself, no teammate kill, no repeat doctor save) is checked in code, with one retry, then a default. This raised the cached share of input from 28% / 10% / 5% (discussion / vote / night) to 73% / 67% / 73% and cut cost per game from $0.027 to $0.016.
 
+## Spy: Out of Place
+
+Working title "Out of Place" (one constant, `TITLE` in `engine/modes/spy_location.py`). Code name `spy_location`.
+
+**Credit.** The idea of a hidden-location party game with one spy is borrowed from Spyfall (Alexandr Ushan). Our location list, names and every line of text are our own. Nothing in the UI names the original.
+
+**Rules as implemented**
+- 5 to 8 players (one human, 4 to 7 AIs). One spy; everyone else is a civilian and knows the same secret place, drawn from a 40-place pool in 10 clusters of four that share features (for example hot and wet, or transport).
+- The game runs in voting rounds. In each round every player still in asks one question (`asks_per_player`, default 1); the target answers in public, then asks next. Within a round you can't ask the player who just asked you unless nobody else is left. A seeded random player still in opens each new round.
+- The spy may name the place on its own ask turn. The guess is free text, one place, at most six words, no "or" or commas, one retry. The server rules on it: exact name, alias, name plus a describing word, a typo, another pool place, part of a name, or a judge call. Every ruling records its rule and reason.
+- Each round ends in a vote, only after its last question. No early votes. A tie gets one revote between the tied players; a second tie accuses nobody.
+- A vote that accuses the spy lets the spy name the place once: right is a draw, wrong is a civilian win.
+- A vote that accuses a civilian puts that player out of the game, and everyone sees they were a civilian (the only role shown during play, never their role at the place). A second tie puts nobody out. Either way the spy has survived a vote, and a new round starts with the players still in.
+- The spy wins after surviving `spy_survive_votes` votes (default 2), or as soon as only the spy and one civilian are left. With `spy_survive_votes=1` the game is exactly the old single-vote game (`tests/test_spy_k1_parity.py` replays recorded games).
+- A human who is voted out watches: no more turns, still knows the place, and can skip ahead to the results. AI prompts list players who are out as known civilians and show the round and the survival count.
+
+- Location roles (`roles`, default off): at the deal each civilian gets a distinct secret role at the place from `engine/modes/spy_roles.py` (ten per place, our own wording, generated offline by `scripts/spy_roles_gen.py` and reviewed; see `docs/spy-roles.md` and the audit in `docs/spy-roles-audit.md`). At least `min_generic_roles_per_game` (default 2) are generic; the draw is seeded with seed + "roles". The spy has no role. A role is a private event its owner sees in their role card; nobody else sees it until the results. The shared prompt block gains a ROLES section (questions stay general about role-linked topics, answers come from your own role, never say your title or the place, an off-role answer is a hint, not proof). A civilian line that says its own role title is retried once (the person gets a soft warning). `insider_tell` is for review and the offline consistency judge only, never a game prompt. `ask_angle` (default off) gives each ask turn a seeded topic.
+
+**Config defaults** (`SPY_MODE.options`): `asks_per_player=1`, `spy_survive_votes=2`, `roles=False`, `min_generic_roles_per_game=2`, `ask_angle=False`, `tie_revote=True`, `last_chance_guess=True`, `last_chance_result="draw"`, `giveaway_check=False`, `last_chance_shortlist=False`. Self-play saves every option in each run summary.
+
+**Prompts.** No AI prompt contains any place name except a civilian's own, in the role card. The shared block is byte-identical for every agent and call type, and every player's words are quoted as untrusted speech, so nothing marks which seat is the human. The guard is `tests/test_spy_privacy.py` and the `nolist` scan in `scripts/spy_controls.py`.
+
+**Playing it in the browser.** The human seat is a normal player: the game waits on their turns (ask, answer, vote, revote, last chance), streams AI lines over SSE, and shows a notice when an AI turn falls back to a default move. An API outage plays a default move with a notice; a last chance that never comes through ends the game as "no result". A game idle for 30 minutes ends. Memory is single-process.
+
+**Known issues**
+- Human text is cleaned and capped (25 words, 200 characters, no markup or control characters), but it is not yet run through the full intent-validation pipeline. Players can write anything the cleaning allows.
+- Guessing draws on the 40-place pool. A place outside the pool is ruled "another place" or left to the judge, which can be wrong at the edges.
+- One worker, in-memory games: a restart ends every game in progress.
+- There is no deploy command yet; run the backend and web app locally as in `documentation.md`.
+- The spy still wins most games (spy score about 60% at K=2); see the findings below. Balance is not tuned further.
+
+## Spy: findings
+
+Self-play with the real game model (gpt-5.6-luna), 30 games per arm on seeds 7000-7029 unless noted. Spy score = spy wins plus half of draws. "Random" is the chance that a whole vote lands on the spy when everyone still in votes uniformly at random for someone else, with the same revote rule and the same numbers of players still in. At 30 games an arm, differences of 10 points are within noise.
+
+**How many votes the spy must survive (K).** K=2 is the default.
+
+| | K=1 | K=2 | K=3 |
+|---|---|---|---|
+| Spy / civilian / draw | 23 / 3 / 4 | 17 / 10 / 3 | 17 / 8 / 5 |
+| Spy score | 83% | 62% | 65% |
+| Votes landing on the spy vs random | 25% vs 15% | 32% vs 16% | 20% vs 17% |
+| Cost per game | $0.006 | $0.009 | $0.011 |
+
+K=2 pooled over two runs (60 games): spy score 62%; round-1 votes land on the spy 34% (random 15%), round-2 votes 35% (random 18%); the spy's own-turn guesses are right 15 of 18, last chances 14 of 27; $0.0097 a game. Each extra round mostly feeds the spy's guess: round-2 guesses were right 12 of 14.
+
+The two K=2 runs differed a lot in round-1 last chances (2 of 8 right, then 10 of 11). The prompts (byte-identical apart from game state), the matcher, the alias file, the judge's rulings on repeated guesses and every game model setting were the same. Same-seed games still play out differently because the model samples, so treat the pooled numbers as the estimate.
+
+**Location roles** (K=2). Roles are on by default in the lobby and off in self-play unless asked for.
+
+| | Roles off | Roles on | Roles + angle |
+|---|---|---|---|
+| Spy score | 62% | 67% | 57% |
+| Civilian answers that fit only the true group of places | 44% | 38% | 34% |
+| Spy answers that fit the true place | 96% | 92% | 71% |
+| Own role title said (raw / posted) | n/a | 0% / 0% | 0% / 0% |
+| Contrast: answer's place picked out of its group of 4 (chance 25%) | 71% | 65% | 61% |
+| Contrast: answer's role picked out of 4 at its place (chance 25%) | n/a | 86% | 91% |
+| Cost per game, play only | $0.0068 | $0.0071 | $0.0078 |
+
+Roles make civilian answers clearly role-specific (86-91% of answers can be traced back to their own role among four), and slightly less tied to one group of places, without changing who wins at this sample size. The angle shifts questions toward clothes and who people deal with, and makes the spy's own answers fit the true place less often.
+
+**Judge caveats.**
+- A yes/no "does this fit the role and the place" judge said yes to all 440 answers. It measured nothing and was replaced by the 4-way contrast tests (`scripts/spy_contrast.py`).
+- The role audit (`docs/spy-roles-audit.md`, one call per title, title only) is noisy: in 64 of 400 rows it left out the role's own place, and 13 titles got no place at all. Re-judging the 37 disputed titles three times flipped 3 of them between samples. Use its counts as rough guides, not as truth.
+- The specificity judge lists every place an answer fits; it rates almost every civilian answer as fitting the true place (98%), so it is a fair check of plausibility but says little about how much an answer gives away.
+
+**Manual playtest checklist** (the full list is `docs/spy-manual-checklist.md`)
+- [ ] Lobby: Advanced shows "Roles on" by default; both toggles survive a reload; a new game uses them.
+- [ ] As a civilian with roles on: "Your secret" shows the place and your role card (wear, do, deal with), and nobody else's role appears anywhere until the results.
+- [ ] Typing your own role title in a question or answer gives the soft warning ("That says your role"), with Send anyway / Edit it.
+- [ ] Round counter and "the spy has survived x of 2 votes" are right after each vote; a civilian voted out fades as "out · civilian".
+- [ ] Voted out yourself: watching mode, Next works with Auto off, "Skip to the end" opens the results.
+- [ ] As the spy: no role card; naming the place works on any ask turn and at the last chance.
+- [ ] Results: each round's vote and revote, who was voted out, every role at the place on the cards.
+- [ ] Mafia still plays from start to finish.
+
 ## Milestones
 
 The build runs in five milestones. Each ends at a gate that must pass before the next one starts, and each stands alone if you need to pause for exams.

@@ -13,7 +13,17 @@ const GAP_MS: Record<string, number> = {
   phase: 2200,
   result: 1800,
   mafia_choice: 1800,
+  // Out of Place
+  first: 1200,
+  ask: 700,
+  answer: 1400,
+  accused: 2600,
+  guess: 2400,
+  last_guess: 2400,
+  outcome: 3000,
 };
+// lines typed out letter by letter when someone else says them
+const TYPED = new Set(["say", "ask", "answer"]);
 const DEFAULT_GAP_MS = 400;
 const SPEED: Record<Speed, { gap: number; cps: number }> = {
   slow: { gap: 1.6, cps: 18 },
@@ -25,17 +35,19 @@ const TICK_MS = 40;
 /** Subscribes to a game's SSE stream and plays it back at a readable pace: AI messages are typed
  * out, and votes, deaths and phase changes are revealed one at a time. History replayed on
  * (re)connect appears instantly. */
-export function useGame(gameId: string | null, speed: Speed = "normal") {
+export function useGame<S extends { you: string } = Status, R = unknown>(gameId: string | null, speed: Speed = "normal") {
   const [events, setEvents] = useState<GameEvent[]>([]);
-  const [status, setStatus] = useState<Status | null>(null);
+  const [status, setStatus] = useState<S | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({}); // "" = typing indicator
   const [acted, setActed] = useState<Set<string>>(new Set());
   const [reveal, setReveal] = useState<GameEvent[] | null>(null);
   const [gone, setGone] = useState(false);
   const [failure, setFailure] = useState<string | null>(null);
+  const [notices, setNotices] = useState<string[]>([]); // things that went wrong but didn't stop the game
+  const [revealData, setRevealData] = useState<R | null>(null); // the whole end-of-game payload
   const queue = useRef<GameEvent[]>([]);
   const seen = useRef<Set<number>>(new Set()); // a reconnect replays history; show each event once
-  const pendingStatus = useRef<Status | null>(null);
+  const pendingStatus = useRef<S | null>(null);
   const timer = useRef<number | null>(null);
   const live = useRef(false); // false while the history replay is arriving
   const replayed = useRef<Set<number>>(new Set()); // history events: shown instantly
@@ -50,6 +62,8 @@ export function useGame(gameId: string | null, speed: Speed = "normal") {
     setReveal(null);
     setGone(false);
     setFailure(null);
+    setNotices([]);
+    setRevealData(null);
     queue.current = [];
     seen.current = new Set();
     live.current = false;
@@ -57,7 +71,7 @@ export function useGame(gameId: string | null, speed: Speed = "normal") {
 
     const show = (e: GameEvent) => {
       setEvents((es) => [...es, e]);
-      if (e.kind === "say" && e.actor) setDrafts(({ [e.actor!]: _, ...rest }) => rest);
+      if (TYPED.has(e.kind) && e.actor) setDrafts(({ [e.actor!]: _, ...rest }) => rest);
       if (e.kind === "phase") setActed(new Set());
     };
     const after = (e: GameEvent) => {
@@ -80,13 +94,16 @@ export function useGame(gameId: string | null, speed: Speed = "normal") {
     };
     const drain = () => {
       timer.current = null;
+      // history replayed on (re)connect appears at once, in one pass: no timer per event, so a long
+      // history isn't slowed by timer throttling in a background tab
+      while (queue.current.length && replayed.current.has(queue.current[0].seq)) show(queue.current.shift()!);
       const next = queue.current.shift();
       if (!next) {
         if (pendingStatus.current) setStatus(pendingStatus.current);
         return;
       }
       const you = pendingStatus.current?.you;
-      if (!replayed.current.has(next.seq) && next.kind === "say" && next.actor && next.actor !== you) {
+      if (!replayed.current.has(next.seq) && TYPED.has(next.kind) && next.actor && next.actor !== you) {
         typeOut(next);
         return;
       }
@@ -130,7 +147,13 @@ export function useGame(gameId: string | null, speed: Speed = "normal") {
       if (data) setFailure(JSON.parse(data).message);
     });
     es.addEventListener("reveal", (m) => {
-      setReveal(JSON.parse((m as MessageEvent).data).events);
+      const data = JSON.parse((m as MessageEvent).data);
+      setReveal(data.events);
+      setRevealData(data);
+    });
+    es.addEventListener("notice", (m) => {
+      const { text } = JSON.parse((m as MessageEvent).data);
+      setNotices((n) => (n.includes(text) ? n : [...n, text]));
     });
     es.addEventListener("acted", (m) => {
       const { pid } = JSON.parse((m as MessageEvent).data);
@@ -143,7 +166,7 @@ export function useGame(gameId: string | null, speed: Speed = "normal") {
     };
   }, [gameId]);
 
-  return { events, status, drafts, acted, reveal, gone, failure };
+  return { events, status, drafts, acted, reveal, gone, failure, notices, revealData };
 }
 
 export async function post(path: string, body: unknown, timeoutMs = 10000) {
@@ -159,6 +182,10 @@ export async function post(path: string, body: unknown, timeoutMs = 10000) {
     throw new Error("The game server isn't answering. Is the backend running? Restart it and try again.");
   }
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.detail ?? `Server error (${res.status})`);
+  if (!res.ok) {
+    // a detail object (e.g. a soft warning to confirm) travels as JSON in the message
+    const detail = typeof data.detail === "object" && data.detail !== null ? JSON.stringify(data.detail) : data.detail;
+    throw new Error(detail ?? `Server error (${res.status})`);
+  }
   return data;
 }

@@ -2,6 +2,7 @@ import { Button } from "../../components/Button";
 import { Portrait } from "../../components/Portrait";
 import { SiteHeader } from "../../components/SiteHeader";
 import type { CharacterId } from "../../cast";
+import { useSpyConfig } from "../../spy/useSpyConfig";
 import styles from "./GameSelect.module.css";
 
 type Game = {
@@ -12,6 +13,7 @@ type Game = {
   bluff: number; // out of 3
   cta: string;
   playable: boolean;
+  badge?: string;
   background: string;
   scene: React.ReactNode;
 };
@@ -72,13 +74,14 @@ const GAMES: Game[] = [
     ),
   },
   {
-    id: "spyfall",
-    title: "Spyfall",
+    id: "out-of-place",
+    title: "", // the server's working title (/api/spy/config): one name, kept in one place
     pitch: "Everyone knows where you are, except the spy. Ask well, answer carefully.",
-    chips: ["4–8 seats", "~8 min"],
+    chips: ["5–8 seats", "~8 min"],
     bluff: 1,
-    cta: "Coming soon",
-    playable: false,
+    cta: "Pick the place →",
+    playable: true,
+    badge: "NEW",
     background: "#5A3550",
     scene: (
       <>
@@ -108,12 +111,15 @@ function Bluff({ level }: { level: number }) {
 }
 
 /** "Who's lying tonight?": pick a game, or pick up an unfinished one. */
-export function GameSelect({ lastGame, lastCast, onPick, onContinue }: {
+export function GameSelect({ lastGame, lastCast, onPick, onContinue, lastSpyGame, onContinueSpy }: {
   lastGame: string | null;
+  lastSpyGame?: string | null;
+  onContinueSpy?: (gameId: string) => void;
   lastCast: CharacterId[];
   onPick: (game: string) => void;
   onContinue: (gameId: string) => void;
 }) {
+  const spyTitle = useSpyConfig()?.title ?? "";
   return (
     <div className="lantern-page">
       <div className={styles.page}>
@@ -133,17 +139,17 @@ export function GameSelect({ lastGame, lastCast, onPick, onContinue }: {
             <article key={g.id} className={`${styles.card} ${g.playable ? styles.featured : ""}`}>
               <div className={styles.art} style={{ background: g.background }}>
                 <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true">{g.scene}</svg>
-                {g.playable ? <span className={styles.badge}>MOST PLAYED</span> : <span className={`${styles.badge} ${styles.soon}`}>SOON</span>}
+                {g.playable ? <span className={styles.badge}>{g.badge ?? "MOST PLAYED"}</span> : <span className={`${styles.badge} ${styles.soon}`}>SOON</span>}
               </div>
               <div className={styles.body}>
-                <h2 className={styles.cardTitle}>{g.title}</h2>
+                <h2 className={styles.cardTitle}>{g.id === "out-of-place" ? spyTitle : g.title}</h2>
                 <p className={styles.lede}>{g.pitch}</p>
                 <div className={`meta ${styles.chips}`}>
                   {g.chips.map((c) => <span key={c} className={styles.chip}>{c}</span>)}
                   <span className={styles.chip}><Bluff level={g.bluff} /></span>
                 </div>
-                <Button variant={g.playable ? "lantern" : "surface"} size="large" block disabled={!g.playable}
-                        onClick={() => onPick(g.id)}>
+                <Button variant={g.playable ? "lantern" : "surface"} size="large" block
+                        disabled={!g.playable || (g.id === "out-of-place" && !spyTitle)} onClick={() => onPick(g.id)}>
                   {g.cta}
                 </Button>
               </div>
@@ -165,6 +171,15 @@ export function GameSelect({ lastGame, lastCast, onPick, onContinue }: {
               </div>
             </div>
             <Button variant="ghost" onClick={() => onContinue(lastGame)}>Pick up where you left off</Button>
+          </div>
+        )}
+        {lastSpyGame && onContinueSpy && (
+          <div className={styles.continue}>
+            <div className={styles.continueText}>
+              <strong className={styles.continueTitle}>Unfinished game · {spyTitle || "…"}</strong>
+              <span className={styles.muted}>The question round is waiting for you.</span>
+            </div>
+            <Button variant="ghost" onClick={() => onContinueSpy(lastSpyGame)}>Pick up where you left off</Button>
           </div>
         )}
       </div>

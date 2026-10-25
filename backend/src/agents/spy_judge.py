@@ -84,3 +84,85 @@ async def judge_answers(llm: LLM, settings: Settings, log: CostLog, items: list[
         return {}
 
     return list(await asyncio.gather(*(one(i) for i in items)))
+
+
+ROLE_JUDGE_SYSTEM = """You check answers from a party game. Each civilian is at a known location and has a secret role
+there, described by a card. You get the location, the card, the question the civilian was asked, and their answer.
+Decide two things:
+- fits_role: would a person with exactly this role plausibly give this answer to this question? Short or casual
+  answers count if they are consistent with the role.
+- fits_place: would someone at this location plausibly give this answer to this question?
+Answer with JSON only."""
+
+ROLE_JUDGE_SCHEMA = {
+    "name": "role_judge",
+    "strict": True,
+    "schema": {
+        "type": "object",
+        "additionalProperties": False,
+        "required": ["fits_role", "fits_place"],
+        "properties": {"fits_role": {"type": "boolean"}, "fits_place": {"type": "boolean"}},
+    },
+}
+
+
+async def judge_roles(llm: LLM, settings: Settings, log: CostLog, items: list[dict], parallel: int = 8) -> list[dict]:
+    """Role consistency, offline. Each item is {"game_id", "place", "card" (the whole bank entry, insider tell
+    included: the judge may see it, no player ever does), "question", "answer"}; returns {"fits_role",
+    "fits_place"} per item, or {} where the call failed twice."""
+    sem = asyncio.Semaphore(parallel)
+    model = settings.model_for("role_judge")
+
+    async def one(item: dict) -> dict:
+        card = item["card"]
+        messages = [
+            {"role": "system", "content": ROLE_JUDGE_SYSTEM},
+            {
+                "role": "user",
+                "content": f"Location: {item['place']}\nRole: {card['title']}. Wears: {card['wears']}. Does: "
+                f"{card['does']}. Deals with: {card['deals_with']}. Insider detail: {card['insider_tell']}\n"
+                f"Question: {item['question']}\nAnswer: {item['answer']}",
+            },
+        ]
+        async with sem:
+            for attempt in range(2):
+                usage, raw, start, error, out = Usage(), "", time.perf_counter(), None, None
+                try:
+                    async with asyncio.timeout(settings.call_timeout_s * 2):
+                        async for chunk in llm.stream(
+                            model=model,
+                            messages=messages,
+                            schema=ROLE_JUDGE_SCHEMA,
+                            max_tokens=settings.max_output_tokens,
+                            reasoning_effort=settings.effort_for("role_judge"),
+                            usage=usage,
+                        ):
+                            raw += chunk
+                    d = json.loads(raw)
+                    out = {"fits_role": bool(d["fits_role"]), "fits_place": bool(d["fits_place"])}
+                except Exception as e:  # noqa: BLE001 - a failed judgement is retried, then skipped
+                    error = f"{type(e).__name__}: {e}"
+                log.call(
+                    game_id=item["game_id"],
+                    player="judge",
+                    call_type="role_judge",
+                    model=model,
+                    attempt=attempt,
+                    input_tokens=usage.input_tokens,
+                    cached_tokens=usage.cached_tokens,
+                    output_tokens=usage.output_tokens,
+                    reasoning_tokens=usage.reasoning_tokens,
+                    cost_usd=cost_usd(
+                        settings.prices, model, usage.input_tokens, usage.cached_tokens, usage.output_tokens
+                    ),
+                    latency_ms=(time.perf_counter() - start) * 1000,
+                    valid=int(out is not None),
+                    error=error,
+                    prompt=json.dumps(messages),
+                    response=raw,
+                )
+                if out is not None:
+                    return out
+        return {}
+
+    return list(await asyncio.gather(*(one(i) for i in items)))

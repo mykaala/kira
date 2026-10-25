@@ -95,6 +95,7 @@ class GameState(BaseModel):
     last_deaths: list[str] = Field(default_factory=list)  # deaths from the phase that just ended
     claims: list[Claim] = Field(default_factory=list)  # public role claims, each marked true or false
     accusations: dict[str, str] = Field(default_factory=dict)  # public: player id -> who they accuse now
+    options: dict = Field(default_factory=dict)  # this game's own mode switches, over the mode's (Out of Place)
 
     def player(self, pid: str) -> Player:
         for p in self.players:
