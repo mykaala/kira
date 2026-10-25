@@ -48,6 +48,8 @@ class ModeConfig(BaseModel):
     judge_claim: Callable[[GameState, Player, ClaimIn], tuple[str | None, bool]] | None = None
     # a private per-day plan for this player (e.g. the mafia's bluffing intent), or None
     intent: Callable[[GameState, Player], dict | None] | None = None
+    # the phase after this one, for modes whose order depends on the game (overrides `transitions`)
+    next_phase: Callable[[GameState], str] | None = None
 
     def roles_for(self, n: int, extras: tuple[str, ...] = ()) -> list[str]:
         if n not in self.roles_by_count:

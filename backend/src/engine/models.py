@@ -89,6 +89,7 @@ class GameState(BaseModel):
     round: int = 0
     queue: list[str] = Field(default_factory=list)  # sequential phase: speakers still to go
     submitted: dict[str, str] = Field(default_factory=dict)  # simultaneous phase: pid -> action
+    submitted_text: dict[str, str] = Field(default_factory=dict)  # simultaneous phase: pid -> words with the action
     events: list[Event] = Field(default_factory=list)
     winner: str | None = None
     last_deaths: list[str] = Field(default_factory=list)  # deaths from the phase that just ended

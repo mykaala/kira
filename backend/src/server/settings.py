@@ -16,6 +16,12 @@ class Settings(BaseSettings):
     model_discussion: str = "gpt-5.6-luna"
     model_vote: str = "gpt-5.6-luna"
     model_night: str = "gpt-5.6-luna"
+    # hidden-location game (spy_location); its votes use model_vote
+    model_ask: str = "gpt-5.6-luna"
+    model_answer: str = "gpt-5.6-luna"
+    model_spy_guess: str = "gpt-5.6-luna"
+    model_last_chance: str = "gpt-5.6-luna"
+    model_judge: str = "gpt-5.6-luna"  # offline specificity judge, self-play harness only
     reasoning_effort: str = "low"
     # per-role overrides, off when empty: e.g. MODEL_MAFIA_DISCUSSION=gpt-5.6-terra
     model_mafia_discussion: str = ""
