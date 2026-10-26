@@ -41,6 +41,8 @@ export function SpyGameScreen({ gameId, onExit, onRematch, onSettings }: {
   const [marks, setMarks] = usePersisted<Marks>(`kira:${gameId}:marks`, {});
   const [guess, setGuess] = useState("");
   const [voting, setVoting] = useState(false);
+  const [votedIn, setVotedIn] = useState<string | null>(null); // the vote ("round:phase") the server took yours for
+  const sending = useRef(false); // set synchronously, so a fast double click can't send two votes
   const [toasts, setToasts] = useState<ToastItem[]>([]);
   const [view, setView] = useState<"table" | "results" | "review">("table");
   const [skipped, setSkipped] = useState(false); // voted out and skipped ahead: results as soon as they're in
@@ -92,11 +94,16 @@ export function SpyGameScreen({ gameId, onExit, onRematch, onSettings }: {
       return { ok: false, ...parseError((e as Error).message) };
     }
   };
+  const voteKey = `${status.round}:${status.phase}`;
   const vote = async (pid: string) => {
+    if (sending.current) return;
+    sending.current = true;
     setVoting(true);
     const r = await move({ type: "vote", target: pid });
+    sending.current = false;
     setVoting(false);
-    if (!r.ok) toast(r.error ?? "Your vote didn't go through.", () => vote(pid));
+    if (r.ok) setVotedIn(voteKey);
+    else toast(r.error ?? "Your vote didn't go through.", () => vote(pid));
   };
   const call = (path: string, body: unknown = {}) =>
     post(`/api/games/${gameId}/${path}`, body).catch((e) => toast((e as Error).message, () => call(path, body)));
@@ -116,7 +123,8 @@ export function SpyGameScreen({ gameId, onExit, onRematch, onSettings }: {
 
   let stage: React.ReactNode;
   if (status.phase === "vote" || status.phase === "revote") {
-    stage = <SpyVoteStage status={status} seats={seats} events={events} onVote={vote} busy={voting} />;
+    stage = <SpyVoteStage status={status} seats={seats} events={events} onVote={vote} busy={voting}
+                          voted={votedIn === voteKey} />;
   } else if (status.phase === "last_chance") {
     stage = <LastChanceStage status={status} seats={seats} />;
   } else {

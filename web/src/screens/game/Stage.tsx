@@ -103,7 +103,7 @@ const NIGHT_VERB: Record<string, { verb: string; title: string }> = {
 };
 
 /** A tray of portraits to pick from: the night action or the day vote. */
-export function PickTray({ title, kicker, seats, choices, onPick, chosen, ballots, footer, night }: {
+export function PickTray({ title, kicker, seats, choices, onPick, chosen, ballots, footer, night, muted }: {
   title: string;
   kicker: string;
   seats: Seat[];
@@ -113,6 +113,7 @@ export function PickTray({ title, kicker, seats, choices, onPick, chosen, ballot
   ballots?: Record<string, string[]>;
   footer?: React.ReactNode;
   night?: boolean;
+  muted?: boolean;
 }) {
   const voter = (pid: string) => seats.find((s) => s.id === pid);
   return (
@@ -122,7 +123,7 @@ export function PickTray({ title, kicker, seats, choices, onPick, chosen, ballot
           <h2 className={styles.trayTitle}>{title}</h2>
           <span className={`meta ${styles.kicker}`}>{kicker}</span>
         </div>
-        <div className={styles.picks}>
+        <div className={`${styles.picks} ${muted ? styles.muted : ""}`}>
           {seats.filter((s) => s.alive).map((s) => {
             const canPick = !!onPick && choices.has(s.id);
             const votes = ballots?.[s.id] ?? [];

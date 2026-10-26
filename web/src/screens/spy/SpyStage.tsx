@@ -77,12 +77,13 @@ export function QAStage({ status, seats, events, drafts }: {
 }
 
 /** The vote (or the revote between the tied players): ballots appear one by one as they're revealed. */
-export function SpyVoteStage({ status, seats, events, onVote, busy }: {
+export function SpyVoteStage({ status, seats, events, onVote, busy, voted }: {
   status: SpyStatus;
   seats: SpySeat[];
   events: GameEvent[];
   onVote: (pid: string) => void;
   busy: boolean;
+  voted: boolean; // the server has your vote; status.turn lags until the reveals finish
 }) {
   const phase = status.phase === "revote" ? "revote" : "vote";
   const ballots: Record<string, string[]> = {};
@@ -92,7 +93,7 @@ export function SpyVoteStage({ status, seats, events, onVote, busy }: {
     if (e.kind === "vote" && e.phase === phase && e.target && e.actor) (ballots[e.target] ??= []).push(e.actor);
   }
   const counted = Object.values(ballots).flat().length;
-  const myTurn = status.turn && (status.turn.type === "vote" || status.turn.type === "revote");
+  const myTurn = !voted && status.turn && (status.turn.type === "vote" || status.turn.type === "revote");
   const choices = new Set(myTurn && !busy ? status.turn!.targets : []);
   const living = seats.filter((s) => s.alive);
   const shown = phase === "revote" ? living.filter((s) => status.revote_between.includes(s.id) || s.you) : living;
@@ -104,6 +105,7 @@ export function SpyVoteStage({ status, seats, events, onVote, busy }: {
       choices={choices}
       onPick={myTurn ? onVote : undefined}
       ballots={ballots}
+      muted={voted}
       footer={<span className="meta">{myTurn ? "Pick a portrait to lock your vote" : "Waiting for the others…"}</span>}
     />
   );

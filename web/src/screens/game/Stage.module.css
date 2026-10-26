@@ -77,6 +77,7 @@
 }
 .pick:hover:not(:disabled) { transform: translate(-2px, -2px); box-shadow: var(--shadow-hard-hover); }
 .pick:disabled { cursor: default; }
+.muted .pick > :not(.ballots) { opacity: 0.5; } /* your pick is in: faces fade, ballots stay bright */
 .chosen { border-color: var(--lantern); box-shadow: var(--shadow-hard); }
 .pickName { font-family: var(--font-display); font-weight: 800; font-size: 17px; }
 .youSmall {
