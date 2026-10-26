@@ -8,7 +8,6 @@
 .back:hover { background: var(--surface-2); }
 .word { font-family: var(--font-display); font-weight: 800; font-size: 24px; }
 .path { color: var(--muted); }
-.filled { background: var(--surface); border-radius: var(--r-pill); padding: 8px 14px; }
 .columns { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
 .left { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: center; }
 .title {
@@ -33,54 +32,80 @@
 }
 .step:disabled { opacity: 0.4; cursor: default; }
 .stepValue { min-width: 2ch; text-align: center; font-family: var(--font-display); font-weight: 800; font-size: 24px; }
-.roles { display: flex; flex-wrap: wrap; gap: 8px; }
-.role {
-  min-height: 44px; padding: 0 14px; border-radius: 12px; border: 2px solid var(--line); background: none;
-  color: var(--text); font-family: var(--font-display); font-weight: 800; font-size: 16px; cursor: pointer;
+.hint { color: var(--muted); font-size: 15px; margin: 0; }
+.error { color: var(--coral-text); margin: 0; }
+
+/* Mafia: the whole lobby on one screen. The table takes what height is left (--fit), swaps happen in its
+ * middle, and house rules and roles share one card. Out of Place reuses the classes above, not these. */
+.fit .title { font-size: clamp(28px, 3vw + 8px, 40px); }
+.heading { align-self: stretch; display: flex; flex-direction: column; gap: 4px; }
+.row { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: end; }
+.sharp {
+  min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 12px; white-space: nowrap;
+  background: var(--bg); color: var(--text); text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 16px;
 }
-.role[aria-pressed="true"] { background: var(--teal); border-color: var(--teal); color: var(--bg); }
-.role:disabled { cursor: default; opacity: 1; }
-.roleHint { color: var(--muted); font-size: 14px; margin: -6px 0 0; }
+.sharp:hover { color: var(--lantern); }
+
+.roles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); gap: 8px; }
+.role {
+  width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 0 10px 0 12px; border-radius: 12px; border: 2px solid var(--line); border-left: 6px solid var(--line);
+  background: none; color: var(--text); font: inherit; transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+button.role { cursor: pointer; }
+button.role:hover { transform: translate(-1px, -1px); }
+.fixed, .role[aria-pressed="true"] { border-left-color: var(--tone); background: var(--surface-2); }
+.roleName { font-family: var(--font-display); font-weight: 800; font-size: 16px; white-space: nowrap; }
+.always {
+  flex: none; width: 36px; height: 22px; border-radius: var(--r-pill); display: grid; place-items: center;
+  background: var(--tone); color: var(--bg); font-weight: 800; font-size: 13px;
+}
+.switch {
+  flex: none; width: 36px; height: 22px; border-radius: var(--r-pill); background: var(--bg); position: relative;
+  transition: background 0.2s;
+}
+.switch::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--muted); transition: transform 0.2s cubic-bezier(0.34, 1.4, 0.64, 1), background 0.2s;
+}
+.role[aria-pressed="true"] .switch { background: var(--tone); }
+.role[aria-pressed="true"] .switch::after { transform: translateX(14px); background: var(--bg); }
+
+
+/* The middle of the table (cqi: the table's width). */
+.count { font-family: var(--font-display); font-weight: 800; font-size: clamp(18px, 4.2cqi, 26px); }
+.hiding { color: var(--muted); }
+.redraw {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; min-height: 36px; padding: 0 14px; border-radius: var(--r-pill); border: 2px solid var(--line);
+  background: none; color: var(--text); font-family: var(--font-display); font-weight: 800; font-size: 14px; cursor: pointer;
+}
+.redraw:hover:not(:disabled) { border-color: var(--lantern); color: var(--lantern); }
+.redraw:disabled { opacity: 0.4; cursor: default; }
+.swap { display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.6cqi, 12px); padding: 0 8%; animation: rise 0.25s; }
+.swapTitle { font-family: var(--font-display); font-weight: 800; font-size: clamp(15px, 3.2cqi, 20px); }
+.swapTitle strong { color: var(--lantern); }
+.swapFaces { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.swapFace { padding: 0; border: 0; background: none; border-radius: 50%; cursor: pointer; }
+.swapFace svg {
+  width: clamp(32px, 9cqi, 56px); height: clamp(32px, 9cqi, 56px); border-radius: 50%; border: 3px dashed var(--line);
+  transition: transform 0.15s, border-color 0.15s;
+}
+.swapFace:hover svg, .swapFace:focus-visible svg { transform: translateY(-3px); border: 3px solid var(--lantern); }
+.swapActions { display: flex; gap: 6px; }
+@keyframes rise { from { transform: translateY(6px); opacity: 0; } }
+
+@media (min-width: 900px) and (min-height: 640px) {
+  .fit { height: 100vh; height: 100dvh; padding-block: 16px; gap: 16px; }
+  .fit .columns { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 32px; }
+  .fit .left { --fit: calc(100dvh - 210px); }
+  .fit .columns { align-items: stretch; }
+  .fit .right { min-height: 0; justify-content: center; } /* house rules and the button sit mid-height */
+}
+
+/* A segmented choice (Out of Place: your role). */
 .seg { display: flex; gap: 6px; background: var(--bg); border-radius: var(--r-md); padding: 6px; }
 .segBtn {
   flex: 1; min-height: 44px; border-radius: 10px; border: 0; background: none; color: var(--text-soft);
   font-family: var(--font-display); font-weight: 800; font-size: 17px; cursor: pointer;
 }
 .segBtn[aria-pressed="true"] { background: var(--lantern); color: var(--bg); }
-.custom { color: var(--lantern); }
-
-.details { background: var(--surface); border-radius: var(--r-lg); }
-.summary {
-  list-style: none; cursor: pointer; padding: 18px 22px; min-height: 44px; display: flex; align-items: center;
-  justify-content: space-between; gap: 12px; font-family: var(--font-display); font-weight: 800; font-size: 22px;
-}
-.summary::-webkit-details-marker { display: none; }
-.summaryTitle { white-space: nowrap; }
-.chev { transition: transform 0.2s; color: var(--muted); }
-.details[open] .chev { transform: rotate(180deg); }
-.summaryNote {
-  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
-  font-family: var(--font-meta); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
-}
-.detailsBody { padding: 0 22px 22px; display: flex; flex-direction: column; gap: 18px; }
-.switchRow { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; cursor: pointer; }
-.switchRow input { accent-color: var(--lantern); width: 22px; height: 22px; }
-.bench { display: flex; flex-wrap: wrap; gap: 8px; }
-.benchBtn {
-  min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px 4px 4px;
-  border-radius: var(--r-pill); border: 2px dashed var(--line); background: none; color: var(--text);
-  font: inherit; font-weight: 700; cursor: pointer;
-}
-.benchBtn:hover:not(:disabled) { border-color: var(--muted); }
-.benchBtn:disabled { opacity: 0.45; cursor: default; }
-
-.upClose { display: flex; flex-direction: column; gap: 14px; background: var(--surface-2); border-radius: var(--r-md); padding: 18px; }
-.upHead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.who { display: flex; gap: 16px; align-items: center; }
-.whoText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.fullName { font-family: var(--font-display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
-.voice { font-family: var(--font-display); font-weight: 700; color: var(--coral-text); }
-.quote { color: var(--text-soft); font-size: 15px; }
-.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.hint { color: var(--muted); font-size: 15px; margin: 0; }
-.error { color: var(--coral-text); margin: 0; }

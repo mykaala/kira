@@ -28,3 +28,24 @@ export const CHARACTER_COLOR: Record<CharacterId, string> = {
 
 export const isCharacterId = (id: string | undefined | null): id is CharacterId =>
   !!id && (CHARACTER_IDS as readonly string[]).includes(id);
+
+const shuffled = <T,>(xs: readonly T[]) => {
+  const out = [...xs];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+};
+
+/** A fresh random table of n. When there's a choice, it isn't the same people as `not`. */
+export function drawCast(n: number, not: CharacterId[] = []): CharacterId[] {
+  for (let tries = 0; tries < 6; tries++) {
+    const cast = shuffled(CHARACTER_IDS).slice(0, n);
+    if (n === CHARACTER_IDS.length || cast.some((c) => !not.includes(c))) return cast;
+  }
+  return shuffled(CHARACTER_IDS).slice(0, n);
+}
+
+/** Everyone not at the table. */
+export const benchOf = (cast: CharacterId[]) => CHARACTER_IDS.filter((id) => !cast.includes(id));

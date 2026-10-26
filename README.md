@@ -101,12 +101,12 @@ Everyone knows where you are except the spy. Ask the right questions, spot the o
 ### 2a. How a round goes
 
 1. **Deal.** One player is the spy. Everyone else sees the same secret place, picked from 40 of our own in 10 clusters of look-alikes (for example hot spring, sauna, swimming pool, water park). The spy sees nothing.
-2. **Questions.** Each player asks one other player a question, and they answer. The spy can use their turn to guess the place.
+2. **Questions.** Each player asks one other player a question, and they answer. The spy can name the place at any point, even on someone else's turn.
 3. **Vote.** After the last question, everyone votes for the spy.
 
 | What happens                              | Result                                                                                |
 | ----------------------------------------- | ------------------------------------------------------------------------------------- |
-| The spy names the place on their own turn | Right: spy wins. Wrong: civilians win                                                 |
+| The spy names the place, on anyone's turn | Right: spy wins. Wrong: civilians win                                                 |
 | The vote lands on the spy                 | The spy gets one last chance to name the place. Right: **draw**. Wrong: civilians win |
 | The vote lands on a civilian              | Spy wins                                                                              |
 | The vote ties                             | One revote among the tied players. Tie again: spy wins                                |
@@ -258,9 +258,9 @@ Every call logs its model, input, cached, output and reasoning tokens, cost, lat
 
 | Next                                                                    |            |
 | ----------------------------------------------------------------------- | ---------- |
-| Playable Spyfall in the browser                                         | now        |
-| Lobby, opponent slider, AI cast, hidden personalities, post-game review | soon       |
-| Secret Hitler-style game on the same engine                             | after that |
+| Playable Spyfall in the browser                                         | done       |
+| Lobby, AI cast, difficulty, How to Play pages, post-game review         | done       |
+| Secret Hitler-style game on the same engine                             | next       |
 | A link you can just play                                                | eventually |
 
 <a id="credits"></a>

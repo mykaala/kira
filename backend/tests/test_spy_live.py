@@ -126,6 +126,35 @@ async def test_a_civilian_naming_the_place_gets_a_soft_warning(tmp_path):
     assert warned and any(warned[0] in e.text for e in game.state.events if e.kind in ("ask", "answer"))
 
 
+async def test_the_spy_names_the_place_while_an_ai_is_up(tmp_path):
+    runner = make_runner(tmp_path, llm=SpyFakeLLM(seed=1, leak_rate=0, delay_s=0.02))
+    game = new_live(tmp_path, role=SPY, seed=3, runner=runner)
+    game.task = asyncio.create_task(game.run())
+    rng, sent = random.Random(0), False
+    while not game.task.done():
+        st = game.status
+        if st and st["turn"]:  # the person's own turn: play it, without guessing
+            m = default_move(game, rng)
+            game.submit(m if m["type"] != "guess" else {"type": "ask", "target": st["turn"]["targets"][0], "text": "x"})
+        elif st and st["can_guess"] and game.state.phase == "answer" and not sent:
+            game.submit({"type": "guess", "text": location(game.state)})  # mid-answer, an AI's turn
+            sent = True
+        await asyncio.sleep(0.01)
+    assert sent and game.state.winner == SPY
+    assert [g["kind"] for g in game.guesses] == ["guess"]
+    assert not any(e.kind == "answer" for e in game.state.events[-4:])  # the answer never came
+
+
+async def test_a_civilian_can_t_name_the_place(tmp_path):
+    game = new_live(tmp_path, role=CIVILIAN, seed=3)
+    game.task = asyncio.create_task(game.run())
+    await asyncio.sleep(0.05)
+    with pytest.raises(IllegalMove):
+        game.submit({"type": "guess", "text": location(game.state)})
+    assert game.status["can_guess"] is False
+    game.task.cancel()
+
+
 async def test_an_idle_game_ends_with_a_notice(tmp_path):
     game = new_live(tmp_path, seed=7, idle_timeout_s=0.05)
     game.task = asyncio.create_task(game.run())

@@ -1,0 +1,84 @@
+.page { max-width: 1040px; margin: 0 auto; padding: 24px var(--gutter) 56px; display: flex; flex-direction: column; gap: 40px; }
+.back { align-self: flex-start; color: var(--muted); text-decoration: none; font-family: var(--font-display); font-weight: 800; margin-bottom: -24px; }
+.back:hover { color: var(--text); }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px 40px; align-items: center; }
+.heroText { display: flex; flex-direction: column; gap: 10px; }
+.eyebrow { color: var(--lantern); }
+.title {
+  margin: 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.95; letter-spacing: -0.035em;
+}
+.goal { margin: 0; font-size: 20px; color: var(--text-soft); max-width: 30ch; }
+.art {
+  position: relative; aspect-ratio: 400 / 220; border-radius: var(--r-xl); overflow: hidden;
+  border: 3px solid var(--line); box-shadow: var(--shadow-card); transform: rotate(1.5deg);
+}
+.art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.section { display: flex; flex-direction: column; gap: 16px; }
+.heading {
+  margin: 0; display: flex; align-items: baseline; gap: 12px;
+  font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3vw, 30px); letter-spacing: -0.02em;
+}
+.num { color: var(--lantern); font-size: 13px; }
+.note { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Role cards: tilted a touch, like the role cards on the results screen. */
+.roles { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.role {
+  --c: var(--line); display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px;
+  background: var(--surface); border-radius: var(--r-lg); border-top: 8px solid var(--c);
+  box-shadow: var(--shadow-card); transform: rotate(var(--tilt)); transition: transform 0.2s;
+}
+.role:hover { transform: rotate(0deg) translateY(-4px); }
+.roleTop { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; color: var(--muted); }
+.roleName { font-family: var(--font-display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; color: var(--c); }
+.roleLine { color: var(--text-soft); }
+
+/* Round steps: numbered stops on one dashed line, across on wide screens and down on narrow ones. */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
+.steps::before { content: ""; position: absolute; top: 21px; left: 22px; right: 22px; border-top: 3px dashed var(--line); }
+.step { position: relative; display: flex; flex-direction: column; gap: 6px; }
+.stepNum {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 4px;
+  background: var(--lantern); color: var(--bg); box-shadow: var(--shadow-hard);
+  font-family: var(--font-display); font-weight: 800; font-size: 20px;
+}
+.stepTitle { font-family: var(--font-display); font-weight: 800; font-size: 20px; }
+.stepLine { color: var(--text-soft); font-size: 15px; }
+
+.ends { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.end {
+  --c: var(--line); background: var(--surface); border-radius: var(--r-lg); padding: 16px 18px;
+  border-left: 8px solid var(--c); color: var(--text-soft);
+}
+.endWho { display: block; font-family: var(--font-display); font-weight: 800; font-size: 20px; color: var(--c); margin-bottom: 2px; }
+
+.tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.tips li {
+  background: var(--surface-2); border-radius: var(--r-md); padding: 14px 16px; color: var(--text-soft);
+  border: 2px dashed var(--line);
+}
+
+.teaser { background: var(--surface); border-radius: var(--r-xl); padding: 28px; display: flex; flex-direction: column; gap: 10px; }
+
+.footer { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; padding-top: 8px; }
+.footLink { color: var(--muted); font-family: var(--font-display); font-weight: 800; }
+.footLink:hover { color: var(--text); }
+
+/* Tones last, so they win over the default --c on .role and .end. */
+.coral { --c: var(--coral); }
+.teal { --c: var(--teal); }
+.lavender { --c: var(--lavender); }
+.lantern { --c: var(--lantern); }
+.paper { --c: var(--text); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .art { order: -1; transform: none; }
+  .steps { grid-template-columns: 1fr; }
+  .steps::before { top: 22px; bottom: 22px; left: 21px; right: auto; border-top: 0; border-left: 3px dashed var(--line); }
+  .step { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; }
+  .stepNum { grid-row: span 2; margin: 0; }
+}

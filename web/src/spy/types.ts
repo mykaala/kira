@@ -6,7 +6,7 @@ export type SpyTurnType = "ask" | "answer" | "vote" | "revote" | "last_chance";
 export type SpyTurn = {
   type: SpyTurnType;
   targets: string[]; // player ids you may pick (ask, vote, revote)
-  can_guess: boolean; // the spy on their own ask turn may name the place instead
+  can_guess: boolean; // the spy may name the place instead of asking or answering
   prompt: string;
 };
 
@@ -23,6 +23,7 @@ export type SpyStatus = {
   end_text: string | null;
   turn: SpyTurn | null;
   waiting_on_you: boolean;
+  can_guess: boolean; // you're the spy and questions are under way: you may name the place, on anyone's turn
   asker: string | null;
   answerer: string | null;
   revote_between: string[];

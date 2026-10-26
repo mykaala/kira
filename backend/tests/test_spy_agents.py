@@ -157,6 +157,32 @@ async def test_an_empty_last_chance_voids_the_game(tmp_path):
     assert voided  # some vote landed on the spy
 
 
+async def test_an_ai_spy_may_name_the_place_before_someone_else_asks(tmp_path):
+    settings = Settings(_env_file=None, db_path=tmp_path / "t.db")
+    log = CostLog(settings.db_path)
+    tasks = []
+
+    class Recording(SpyFakeLLM):
+        async def stream(self, *, messages, **kw):
+            tasks.append(messages[-1]["content"])
+            async for chunk in super().stream(messages=messages, **kw):
+                yield chunk
+
+    llm = Recording(seed=1, guess_rate=1)  # every window is taken
+    r = SpyRunner(llm, settings, log, memo_path=tmp_path / "m.json")
+    off_turn = 0
+    for seed in range(20):
+        g = SpyGame(runner=r, log=log, players=6, seed=seed)
+        await g.run()
+        guess = next((i for i, e in enumerate(g.state.events) if e.kind == "guess"), None)
+        if guess is not None:
+            before = next(e for e in reversed(g.state.events[:guess]) if e.kind not in ("phase",))
+            off_turn += before.kind == "answer" and before.actor != spy(g.state).id  # someone else was to ask
+    assert off_turn
+    windows = [t for t in tasks if "before they do you may name" in t]
+    assert windows and all("Your turn to ask" not in t for t in windows)
+
+
 @pytest.mark.parametrize("seat", ["ai", "bot"])
 async def test_fake_games_run_end_to_end_and_summarize(tmp_path, seat):
     settings = Settings(_env_file=None, db_path=tmp_path / "t.db", fake_llm=True)

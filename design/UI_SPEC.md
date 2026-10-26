@@ -82,9 +82,20 @@ Each character also carries traits (talkative, suspicious, good liar, each 0–1
 Header (logo, nav, settings) → hero line "Who's lying tonight?" → three game cards in an auto-fit grid (`minmax(300px,1fr)`) → a "continue unfinished game" strip.
 Each card has an illustrated scene, the title, a one-line pitch, chips (seats, minutes, bluff level) and a CTA. The selected or featured card gets a lantern-coloured border and a lantern CTA. The others use a `--surface-2` CTA.
 
+Each card ends in two buttons: a square **Info** (ⓘ) and the wide **Play** (the game's own label plus an arrow icon). Hovering or keyboard-focusing Info swaps their widths (flex-grow, about 0.3s): Info reads "How to Play" and Play shrinks to its arrow. Touch never hovers, so a tap on Info just opens the page. A game that isn't playable shows an hourglass instead of the arrow.
+
+### How to Play (`#/how/<game>`)
+One page per game, about 150 words: hero (title, one-line goal, the card's art), then six numbered sections: **Who's at the table** (tilted role cards), **How a round goes** (3–4 numbered steps), **How it ends** (win cards), **Table tips** (three), **Watch** (a looping captioned scene acted by the cast with portrait moods, bubbles, tags and vote dots; it starts in view, can be paused and stepped, and Out of Place adds an "As a civilian / As the spy" toggle), and **Your turn** (a one-question quiz). It ends with the Play button. A game that isn't playable gets a short teaser instead. Rules text follows the engine's defaults; keep it in step with `backend/src/engine/modes`.
+
 ### 02 Lobby / opponent selection
 Left: a **round table**. Seats are placed in a circle (as % positions around the centre), and the centre shows the "2 among 8 / Mafia hiding" count. "You" is a dashed lantern-coloured seat at the bottom. Clicking a seat selects it.
-Right: an **Up close** panel for the selected character (portrait, name, archetype, quote, trait bars, Swap / Empty seat), then **House rules** (role toggles, a difficulty segmented control: Cozy / Tricky / Merciless), then the primary CTA "Blow out the lantern".
+Every AI seat always shows its character; a new table is dealt at random. The page fits one screen from 900×640 up: the table takes the height left over (`--fit` on `RoundTable`), and seats scale with it. The table's middle (`RoundTable`'s `center` slot) shows the count and **Redraw**; with a seat picked it shows "Swap Kit for…", the waiting faces, **Empty seat** and **Keep**. New faces pop into their seat.
+Right: one **House rules** card (name; AI players stepper beside a "Tricky · tune ↗" link to the Characters page; a 2×2 grid of role pills, Doctor and Detective fixed with a ✓, Jester and Bodyguard as switches, and one hint line), then the CTA "Blow out the lantern", the column centred vertically. No knobs in the lobby, and no seat count in the header.
+
+Every lobby is built from `screens/lobby/LobbyParts.tsx` (`LobbyFrame`, `SeatTable`, `Stepper`, `SwitchPills`). Out of Place: the same frame and table ("1 among 6 / spy hiding"); its card has name, players (you included), your role (Random / Civilian / Spy) and **Extras** as switch pills (Place roles, Angles).
+
+### Characters
+A one-row **How sharp are they?** card: the heading beside three compact choices (Cozy / Tricky / Merciless), each with a few words on what it means. Below it, each character's card has their three knobs as sliders. A hand-set card gets a lantern outline, "Set by hand", and **Reset to <difficulty>**; **Reset all** appears when any are hand-set.
 
 ### 03 Live discussion (the most important screen)
 Layout from top to bottom:

@@ -1,5 +1,6 @@
 """Out of Place (code name spy_location): one spy, everyone else shares a secret location. Players take
-turns asking each other questions, in rounds; the spy may name the location on their own turn. Each round ends
+turns asking each other questions, in rounds; the spy may name the location at any point while questions are
+asked, on anyone's turn. Each round ends
 in a plurality vote: a caught spy gets a last chance, a wrongly accused civilian is out, and the spy wins after
 surviving enough votes. Credits for the borrowed mechanic are in
 docs/design.md; the location list and every text here are our own."""
@@ -142,7 +143,8 @@ Players take turns. The asker picks another player and asks them one question, i
 in public, then becomes the next asker. You can't ask the player who just asked you, unless nobody else is left.
 {rnd} about {asks}; when the questions run out, everyone votes for who they think
 is the spy (you can't vote for yourself or abstain). Most votes is accused; {tie}.
-On their own turn to ask, the spy may instead name the location: right and the spy wins, wrong and the spy loses.
+At any point during the questions, on anyone's turn, the spy may reveal themselves and name the location: right
+and the spy wins, wrong and the spy loses.
 {caught} {survive}{roles}"""
 
 
@@ -311,6 +313,13 @@ def legal_actions(state: GameState, p: Player) -> list[str]:
     return []
 
 
+def interrupt_actions(state: GameState, p: Player) -> list[str]:
+    """The spy may name the location out of turn, at any point during the questions."""
+    if state.winner or state.phase not in ("ask", "answer") or p.role != SPY or not p.alive:
+        return []
+    return [GUESS + loc for loc in LOCATION_NAMES] + [GUESS_MISS]
+
+
 def default_action(state: GameState, p: Player, legal: list[str], rng: random.Random) -> str:
     """Ask someone, never guess; at the last chance (guesses only), a miss: no valid guess."""
     plain = [a for a in legal if not a.startswith(GUESS)]
@@ -367,7 +376,9 @@ def resolve_ask(state: GameState, actions: dict[str, str]) -> Outcome:
 
 
 def resolve_answer(state: GameState, actions: dict[str, str]) -> Outcome:
-    ((pid, _),) = actions.items()
+    ((pid, action),) = actions.items()
+    if action.startswith(GUESS):  # the spy named the location instead of letting the answer come
+        return Outcome(events=_guess(state, pid, action, "guess"))
     return Outcome(events=[NewEvent(kind="answer", actor=pid, text=state.submitted_text.get(pid) or STOCK_ANSWER)])
 
 
@@ -495,6 +506,20 @@ def intent(state: GameState, p: Player) -> dict | None:
     return _plan(state, p, rng, done, now) | angle
 
 
+def spy_window(state: GameState) -> bool:
+    """Whether the spy, when someone else is about to ask, gets a seeded window to name the location first: only
+    after an answer (new information), likelier as the round goes on. The spy's own ask turns use intent."""
+    the_spy = spy(state)
+    if state.winner or state.phase != "ask" or not the_spy.alive or asker(state) == the_spy.id:
+        return False
+    if next(e.kind for e in reversed(state.events) if e.kind != "phase") != "answer":
+        return False
+    o = SPY_MODE.options | state.options
+    now = round_asks(state)
+    chance = o["spy_guess_base"] + o["spy_guess_slope"] * len(now) / exchange_cap(state)
+    return random.Random(f"{state.seed}:window:{len(asks(state))}").random() < chance
+
+
 def _plan(state: GameState, p: Player, rng: random.Random, done: list, now: list) -> dict:
     o = SPY_MODE.options | state.options
     if p.role == SPY:
@@ -539,7 +564,7 @@ SPY_MODE = ModeConfig(
         "tie_revote": True,  # a vote tie gets one revote between the tied players; a second tie: the spy wins
         "last_chance_result": "draw",  # "draw": a caught spy who names the place right draws; or "spy_wins"
         "shortlist_size": 5,
-        "spy_guess_base": 0.05,  # the spy's chance of a guess window on an ask turn, plus slope x progress
+        "spy_guess_base": 0.05,  # the spy's chance of a guess window per turn, plus slope x progress (spy_window)
         "spy_guess_slope": 0.35,
         "civilian_probe": 0.6,  # a civilian's chance to probe rather than stay vague, per turn
         "roles": False,  # each civilian gets a secret role at the location (spy_roles.py); the spy gets none
@@ -564,6 +589,7 @@ SPY_MODE = ModeConfig(
         + f" {roles}."
     ),
     intent=intent,
+    interrupts=interrupt_actions,
     rules_for=lambda state: rules_text(SPY_MODE.options | state.options),
 )
 

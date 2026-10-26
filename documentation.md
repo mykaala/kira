@@ -27,6 +27,7 @@ them). Press Ctrl+C to stop everything it started.
 - [Run the tests](#run-the-tests)
 - [Settings](#settings)
 - [Troubleshooting](#troubleshooting)
+- [Updates](#updates)
 
 ## One-time setup
 
@@ -75,17 +76,20 @@ cd web
 npm run dev
 ```
 
-Open http://localhost:5173. Pick **Mafia** and press **Light the lantern** (the other two games are coming soon). That opens the lobby, **"Who's at the table tonight?"**:
+Open http://localhost:5173. Each game card has two buttons: **ⓘ** (hover it and it reads **How to Play**) opens that game's rules page, and the play button (**Light the lantern** for Mafia, **Pick the place** for Out of Place) opens its lobby. The third game is coming soon and its ⓘ opens a teaser.
 
-- **House rules** (always shown): your name, how many AI players (4 to 8), the roles, and how sharp the AIs are (**Cozy / Tricky / Merciless**).
-  - Doctor and Detective are always in. **+ Jester** and **+ Bodyguard** each replace a villager.
-- **Advanced settings** (closed by default): by default the table is **Auto**, a random cast, shown as **?** seats. Switch on **Choose who sits down** to pick the cast yourself:
-  - Add people from the bench.
-  - Tap a seat to see them **up close** and turn their three knobs (talkative, suspicious, good liar).
-  - **Swap** or **Empty** a seat.
+**How to Play** (`#/how/mafia`, `#/how/out-of-place`) is a two-minute page: who's at the table, how a round goes, how it ends, three tips, a short animated scene acted by the cast (Out of Place can switch between a civilian's and the spy's view), and a one-question quiz. Its text lives in [web/src/screens/howto/guides.ts](web/src/screens/howto/guides.ts) and follows the engine's defaults.
+
+**The lobby**, "Who's at the table tonight?", fits on one screen from 900×640 up (on a phone it stacks):
+
+- **The table**: every AI seat shows who sits there. A new table is dealt at random; **Redraw**, in the middle of the table, deals a fresh one.
+  - Tap a seat and the middle of the table shows who's waiting: tap one to swap them in, or **Empty seat** (**Keep** or Esc cancels).
+- **House rules**, one card: your name; how many AI players (4 to 8; **+** seats someone at random); how sharp they play (a link to the Characters page, where it's set); and the roles. Doctor and Detective are always in; **Jester** and **Bodyguard** switch on and off, and each replaces a villager.
 - **Blow out the lantern** deals the roles and starts the game.
 
-Your lobby choices are remembered. **Characters** in the top bar shows the whole cast with their voices and knobs. If you have a game in progress, a strip on the game-select page offers to **pick up where you left off**.
+The Out of Place lobby works the same way: the table, Redraw and swaps, then one card with your name, players (you included), your role (Random / Civilian / Spy), and two **Extras**: **Place roles** (each civilian gets a secret role at the place) and **Angles** (AI questions follow a set topic).
+
+Your lobby choices are remembered. **Characters** in the top bar shows the whole cast with their voices, and is where you set how sharp they play. If you have a game in progress, a strip on the game-select page offers to **pick up where you left off**.
 
 **Optional roles**
 
@@ -94,15 +98,15 @@ Your lobby choices are remembered. **Characters** in the top bar shows the whole
 | Jester | alone | Wins alone, and the game ends at once, if the town votes them out. Otherwise loses. To the detective, a jester is "not mafia". |
 | Bodyguard | village | Each night guards one other player. If the mafia attack that player, the bodyguard dies instead. A doctor's save on the target beats both. |
 
-**How sharp are they?** Difficulty shifts every AI's knobs and adds one line of strategy to their instructions:
+**How sharp are they?** On the Characters page: a difficulty for the whole cast, and three knobs per character (talkative, suspicious, good liar). Mafia uses them; Out of Place plays everyone as they are for now.
 
-| Difficulty | Suspicious | Good liar | Strategy |
-|---|---|---|---|
-| Cozy | −0.2 | −0.3 | Relaxed: they miss tells, trust a little too easily, and don't coordinate much. |
-| Tricky | ±0 | ±0 | Each character's usual temperament. |
-| Merciless | +0.15 | +0.25 | Plays to win: tracks every vote, punishes contradictions, bluffs carefully. |
+| Difficulty | Knobs | Strategy |
+|---|---|---|
+| Cozy | suspicious −0.2, good liar −0.3 | Relaxed: they miss tells, trust a little too easily, and don't coordinate much. |
+| Tricky | as they are | None. |
+| Merciless | every knob pushed 1.5× further from the middle (their archetype turned up), then suspicious +0.15 and good liar +0.25; kept between 0.05 and 0.95 | Plays to win: tracks every vote, punishes contradictions, bluffs carefully. |
 
-Turning a character's knob by hand overrides the difficulty for that character (the lobby shows "custom knobs"); picking a difficulty again resets the knobs. The knobs reach the AI as plain words in its prompt ("you talk a lot; you are quick to accuse"), and talkative also sets how long its messages are.
+A knob turned by hand wins over the difficulty for that character until you reset it; changing the difficulty keeps hand-set knobs. The browser sends every seat's knobs with the new game, so what the Characters page shows is what plays. The knobs reach the AI as plain words in its prompt ("you talk a lot; you are quick to accuse"), and talkative also sets how long its messages are.
 
 **The screen**
 
@@ -137,7 +141,7 @@ Turning a character's knob by hand overrides the difficulty for that character (
 
 ## The cast
 
-The same eight characters play every game. Each has a voice (the Analyst, the Hothead…) that shapes how they talk, whom they suspect and how they lie, a voice card of three sample lines, plus three trait knobs from 0 to 1. The voice is fixed per character (it is not dealt at random) and is shown in the lobby, on the Characters page and on the results screen, never during a game.
+The same eight characters play every game. Each has a voice (the Analyst, the Hothead…) that shapes how they talk, whom they suspect and how they lie, a voice card of three sample lines, plus three trait knobs from 0 to 1. The voice is fixed per character (it is not dealt at random) and is shown on the Characters page and on the results screen (in the lobby only to screen readers), never during a game.
 
 | Character | Voice | Talkative | Suspicious | Good liar | Plays like |
 |---|---|---|---|---|---|
@@ -343,3 +347,44 @@ sqlite3 backend/kira.db "SELECT error, COUNT(*) FROM calls WHERE error IS NOT NU
 ```
 
 Timeouts mean `CALL_TIMEOUT_S` is too short for the current model or reasoning effort. Authentication or quota errors point to the key or the account's spending limit.
+
+## Updates
+
+**2026-10-26 · How to Play pages, one-screen lobbies, and difficulty on the Characters page.** Web only; no
+engine, prompt or API changes, and Mafia plays exactly as before for the same knobs.
+
+- **Game select:** each card has an **ⓘ** button beside its play button. Hovering it swaps their widths: ⓘ grows to
+  read **How to Play** and the play button shrinks to its arrow. The coming-soon game's play button shows an hourglass.
+- **How to Play** (`#/how/<game>`): roles, a round, how it ends, three tips, an animated scene acted by the cast, and a
+  one-question quiz, about 150 words a page. The coming-soon game gets a teaser. See [Play in the browser](#play-in-the-browser).
+- **Lobbies:** both games share one layout (`web/src/screens/lobby/LobbyParts.tsx`) that fits a laptop screen. The
+  table always shows its real cast: dealt at random, **Redraw** for a new one, and swaps done in the middle of the
+  table. There are no hidden random seats, no Advanced dropdowns and no seat count in the header. House rules and
+  the game's roles or extras share one card. Old saved settings carry over (a saved random table becomes a drawn one).
+- **Characters page:** Cozy / Tricky / Merciless are back (the lobby had pinned every game to Tricky), with sliders
+  for every character's knobs. Merciless now turns each archetype up instead of a flat shift (the table under
+  [Play in the browser](#play-in-the-browser)). The lobby has no knobs any more.
+- **What reaches the server:** a Mafia game now always sends its cast and every seat's knobs, worked out in the
+  browser (`web/src/game/tuning.ts`). The server already accepted both, so nothing there changed. Out of Place
+  always sends its cast, and doesn't take knobs yet.
+- **Rematch** keeps the same cast; press **Redraw** in the lobby for new faces.
+
+**2026-10-26 · Out of Place: the spy can name the place on anyone's turn.** Before, the spy could only guess on
+their own turn to ask, so a spy who asked first had to guess with nothing to go on. Now the spy may name the place at
+any point while questions are being asked or answered. A right guess still wins for the spy and a wrong one still
+loses; the vote and the last chance are unchanged.
+
+- **Playing as the spy:** while someone else is up, the dock shows **Name the place**. On your own turn to ask or
+  answer, a switch picks between that and **Name the place**. The places list in the side panel works at any point during
+  the questions. A guess sent while an AI is thinking stops that AI's turn and is ruled at once.
+- **AI spies:** they still get a chance on their own ask turns, and now also after each answer, before someone else
+  asks (seeded, and likelier as the round goes on, from `spy_guess_base` and `spy_guess_slope`). That adds a few
+  `spy_guess` calls a game. No typing indicator shows for these, since it would give the spy away.
+- **Engine:** a new opt-in `engine.interrupt()` plays a move out of turn and ends the current phase. Only Out of
+  Place uses it (`SPY_MODE.interrupts`); Mafia is untouched and its golden games replay unchanged.
+- **The rules text** every AI reads and **How to play** both say the spy may guess on anyone's turn.
+- **Tests:** out-of-turn guesses in the engine, the AI spy's new window, and a person guessing mid-answer. The
+  single-vote fingerprints (`backend/tests/data/spy_k1_fingerprints.json`) were re-recorded with
+  `spy_survive_votes=1`; games with an AI spy now play differently, and bot-only games are identical.
+- The win rates in [design.md](docs/design.md) predate this change; a fresh self-play run will show how much it helps
+  the spy.

@@ -118,7 +118,7 @@ export function SpyGameScreen({ gameId, onExit, onRematch, onSettings }: {
       : status.phase === "answer" ? `${nameOf(seats, status.answerer)} is answering`
         : status.phase === "vote" || status.phase === "revote" ? "Everyone votes"
           : status.phase === "last_chance" ? "The spy is guessing" : "";
-  const canGuess = !!status.turn && (status.turn.can_guess || status.turn.type === "last_chance");
+  const canGuess = status.can_guess || status.turn?.type === "last_chance";
   const shownNotices = Array.from(new Set([...status.notices, ...notices]));
 
   let stage: React.ReactNode;

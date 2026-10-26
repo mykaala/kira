@@ -77,6 +77,17 @@ def submit_action(state: GameState, pid: str, action: str, text: str = "") -> No
         _end_phase(state)
 
 
+def interrupt(state: GameState, pid: str, action: str, text: str = "") -> None:
+    """A move out of turn, where the mode allows one (Out of Place: the spy names the location while anyone is
+    up). It replaces whatever was submitted this phase and resolves the phase now."""
+    mode = mode_of(state)
+    p = state.player(pid)
+    if state.winner or not mode.interrupts or not p.alive or action not in mode.interrupts(state, p):
+        raise IllegalMove(f"{p.name} can't do that now")
+    state.submitted, state.submitted_text = {pid: action}, {pid: text.strip()} if text.strip() else {}
+    _end_phase(state)
+
+
 def claim_error(state: GameState, pid: str, claim: ClaimIn) -> str | None:
     """Why this claim can't be made (an unknown role, a bad target, or the real detective
     misreporting a result), or None."""

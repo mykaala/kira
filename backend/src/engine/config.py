@@ -51,6 +51,8 @@ class ModeConfig(BaseModel):
     intent: Callable[[GameState, Player], dict | None] | None = None
     # the phase after this one, for modes whose order depends on the game (overrides `transitions`)
     next_phase: Callable[[GameState], str] | None = None
+    # moves this player may make out of turn, each ending the current phase at once (see engine.interrupt)
+    interrupts: Callable[[GameState, Player], list[str]] | None = None
     # the game-over text from (state, winner, roles); None keeps "The <winner> wins! <roles>." (e.g. for a draw)
     end_text: Callable[[GameState, str, str], str] | None = None
 

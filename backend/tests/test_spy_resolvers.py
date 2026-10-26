@@ -3,7 +3,7 @@ from collections import Counter
 import pytest
 from spy_bots import NAMES, play_spy
 
-from engine.engine import IllegalMove, new_game, pending, submit_action
+from engine.engine import IllegalMove, interrupt, new_game, pending, submit_action
 from engine.modes.spy_location import (
     ANSWER,
     CIVILIAN,
@@ -78,6 +78,31 @@ def test_civilians_cannot_guess():
     assert not any(a.startswith(GUESS) for a in pending(s)[0].legal)
     with pytest.raises(IllegalMove):
         submit_action(s, asker(s), GUESS + location(s))
+
+
+def test_the_spy_can_name_the_place_on_anyone_s_turn():
+    wrong = lambda s: next(x for x in LOCATION_NAMES if x != location(s))  # noqa: E731
+    for phase in ("ask", "answer"):
+        for right, winner in ((True, SPY), (False, CIVILIANS)):
+            s = next(s for seed in range(20) if (s := game(seed=seed)).player(asker(s)).role == CIVILIAN)
+            if phase == "answer":
+                civilian = next(a for a in pending(s)[0].legal if a != spy(s).id)
+                submit_action(s, asker(s), civilian, text="what do you wear here?")
+            assert s.phase == phase and spy(s).id not in {r.pid for r in pending(s)}  # someone else is up
+            interrupt(s, spy(s).id, GUESS + (location(s) if right else wrong(s)))
+            assert s.winner == winner
+            assert [e.actor for e in s.events if e.kind == "guess"] == [spy(s).id]
+
+
+def test_only_the_spy_guesses_out_of_turn_and_only_during_the_questions():
+    s = game()
+    civilian = next(p.id for p in s.players if p.role == CIVILIAN)
+    with pytest.raises(IllegalMove):
+        interrupt(s, civilian, GUESS + location(s))
+    to_vote(s)
+    with pytest.raises(IllegalMove):
+        interrupt(s, spy(s).id, GUESS + location(s))
+    assert not s.winner
 
 
 def test_vote_on_spy_with_last_chance():

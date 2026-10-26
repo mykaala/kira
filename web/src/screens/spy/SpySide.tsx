@@ -9,7 +9,7 @@ export function SpySide({ gameId, status, places, onPickPlace, canGuess }: {
   status: SpyStatus;
   places: string[];
   onPickPlace: (p: string) => void;
-  canGuess: boolean; // your turn to name the place
+  canGuess: boolean; // you may name the place now
 }) {
   const [notes, setNotes] = usePersisted(`kira:${gameId}:notes`, "");
   const [showPlaces, setShowPlaces] = usePersisted("kira:spy-places-list", true);
@@ -40,7 +40,7 @@ export function SpySide({ gameId, status, places, onPickPlace, canGuess }: {
           <>
             <p className={noteStyles.secretText}>
               <strong style={{ color: "var(--coral)" }}>You're the spy.</strong> You don't know the place. Blend in,
-              and name it on your turn if you can tell.
+              and name it as soon as you can tell, even on someone else's turn.
             </p>
             <label className={styles.placesToggle}>
               <input type="checkbox" checked={showPlaces} onChange={(e) => setShowPlaces(e.target.checked)} />
@@ -51,7 +51,7 @@ export function SpySide({ gameId, status, places, onPickPlace, canGuess }: {
                 {places.map((p) => (
                   <li key={p}>
                     <button type="button" className={styles.placeBtn} disabled={!canGuess} onClick={() => onPickPlace(p)}
-                            title={canGuess ? "Put this in your guess" : "You can name the place on your turn to ask"}>
+                            title={canGuess ? "Put this in your guess" : "You can name the place while questions are being asked"}>
                       {p}
                     </button>
                   </li>

@@ -24,7 +24,10 @@ from engine.modes.spy_location import (
     PLACE_ROLE,
     SPY_MODE,
     generic_shortfall,
+    interrupt_actions,
     location,
+    spy,
+    spy_window,
 )
 from engine.views import build_view
 
@@ -88,7 +91,7 @@ class SpyGame:
         self.leaked_first: Counter = Counter()  # call type -> civilian turns whose first attempt named the location
         self.giveaway_first: Counter = Counter()  # call type -> civilian turns whose first attempt used a giveaway
         self.title_first: Counter = Counter()  # call type -> civilian turns whose first attempt said their role title
-        self.guess_windows = 0  # spy ask turns that offered a guess
+        self.guess_windows = 0  # spy turns (their own asks, or before someone else's) that offered a guess
         self.guesses: list[dict] = []  # every free-text guess with the server's ruling and the rule that made it
         self.empty: Counter = Counter()  # call type -> guess calls that came back empty twice (a pass)
         self.aborted: str | None = None
@@ -177,16 +180,33 @@ class SpyGame:
         return turn.move
 
     async def _rule(self, r: Request, guess: str, kind: str) -> None:
-        """The server decides whether the spy's words name the location, then the engine plays the ruling."""
+        """The server decides whether the spy's words name the location, then the engine plays the ruling: a
+        guess during the questions goes in out of turn (it may be anyone's turn), a last chance as the move."""
         truth = location(self.state)
         d = await self.runner.matcher.decide(game_id=self.id, guess=guess, truth=truth)
         self.guesses.append(
             {"kind": kind, "exchange": sum(e.kind == "ask" for e in self.state.events), **d.model_dump()}
         )
-        engine.submit_action(self.state, r.pid, GUESS + truth if d.match else GUESS_MISS, text=guess)
+        play = engine.interrupt if kind == "guess" else engine.submit_action
+        play(self.state, r.pid, GUESS + truth if d.match else GUESS_MISS, text=guess)
+
+    async def _spy_window(self) -> bool:
+        """Before someone else asks, an AI spy may get a window to name the location first. True if it did."""
+        the_spy = spy(self.state)
+        if the_spy.is_human or not spy_window(self.state):
+            return False
+        r = Request(pid=the_spy.id, phase="ask", kind="act", legal=interrupt_actions(self.state, the_spy))
+        self.guess_windows += 1
+        move = await self._call(r, "spy_guess")
+        if move and move["guess"]:
+            await self._rule(r, move["guess"], "guess")
+            return True
+        return False
 
     async def _turn(self, r: Request) -> None:
         phase, player = self.state.phase, self.state.player(r.pid)
+        if phase == "ask" and await self._spy_window():
+            return None
         if player.is_human:
             return await self._human(r)
         if phase == "ask":

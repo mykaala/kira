@@ -47,7 +47,7 @@ HOW TO VOTE
 - If you are the spy, vote for a civilian, ideally one whose answers already looked shaky.
 
 NAMING THE LOCATION (the spy only)
-- On a turn where you may name it, work out which real place every answer so far points to. If one specific place
+- You may name it at any point during the questions, on anyone's turn. When you're offered the chance, work out which real place every answer so far points to. If one specific place
   fits clearly better than any other, name it. If two or more still fit, return null and keep asking; a wrong name
   loses the game at once. Name one specific place in a few words, not a category and not several options.
 - If the vote catches you, you get one last chance: name your single best guess. Any answer beats none.
@@ -185,6 +185,8 @@ TASKS = {
     "vote": "Time to vote{when}. Choose who you think is the spy in `target`.",
     "spy_guess": "Your turn to ask, and you may name the location instead. If the clues point clearly at one "
     "place, set `guess` to it. Otherwise set `guess` to null; you'll ask a question next.",
+    "spy_interrupt": "{asker} is about to ask, and before they do you may name the location. If the clues point "
+    "clearly at one place, set `guess` to it. Otherwise set `guess` to null; the game goes on.",
     "last_chance": "The vote caught you. Name the location now: set `guess` to your single best guess, one specific "
     "place.",
 }
@@ -196,6 +198,12 @@ def choices(view: PlayerView, call_type: str) -> list[str]:
     if call_type in ("spy_guess", "last_chance"):
         return [a.removeprefix(GUESS) for a in view.legal_actions if a.startswith(GUESS)]
     return [names[a] for a in view.legal_actions if a in names]
+
+
+def _asker(view: PlayerView) -> str:
+    """Who asks next: whoever answered last, or the round's first asker (as the engine reads it)."""
+    e = next(e for e in reversed(view.events) if e.kind in ("first", "answer"))
+    return e.target if e.kind == "first" else e.actor
 
 
 def standing(view: PlayerView) -> str | None:
@@ -234,6 +242,8 @@ def observation(view: PlayerView, persona: Persona, call_type: str, error: str |
     if call_type == "ask" and (angle := (view.intent or {}).get("angle")):
         parts.append(f"YOUR ANGLE FOR THIS QUESTION: ask about {angle}, in general terms (don't presume a role).")
     task = TASKS[call_type]
+    if call_type == "spy_guess" and not view.legal_actions:  # out of turn: someone else is about to ask
+        task = TASKS["spy_interrupt"].format(asker=names[_asker(view)])
     if call_type == "vote":
         task = task.format(when=f" ({now})" if now else "")
     if call_type == "answer":

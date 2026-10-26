@@ -228,7 +228,7 @@ Working title "Out of Place" (one constant, `TITLE` in `engine/modes/spy_locatio
 **Rules as implemented**
 - 5 to 8 players (one human, 4 to 7 AIs). One spy; everyone else is a civilian and knows the same secret place, drawn from a 40-place pool in 10 clusters of four that share features (for example hot and wet, or transport).
 - The game runs in voting rounds. In each round every player still in asks one question (`asks_per_player`, default 1); the target answers in public, then asks next. Within a round you can't ask the player who just asked you unless nobody else is left. A seeded random player still in opens each new round.
-- The spy may name the place on its own ask turn. The guess is free text, one place, at most six words, no "or" or commas, one retry. The server rules on it: exact name, alias, name plus a describing word, a typo, another pool place, part of a name, or a judge call. Every ruling records its rule and reason.
+- The spy may name the place at any point during the questions, on anyone's turn: it ends that turn at once (the engine's `interrupt`). An AI spy is offered the chance on its own ask turns and, after each answer, before someone else asks (seeded, likelier as the round goes on); a person playing the spy can do it whenever questions are under way. The guess is free text, one place, at most six words, no "or" or commas, one retry. The server rules on it: exact name, alias, name plus a describing word, a typo, another pool place, part of a name, or a judge call. Every ruling records its rule and reason.
 - Each round ends in a vote, only after its last question. No early votes. A tie gets one revote between the tied players; a second tie accuses nobody.
 - A vote that accuses the spy lets the spy name the place once: right is a draw, wrong is a civilian win.
 - A vote that accuses a civilian puts that player out of the game, and everyone sees they were a civilian (the only role shown during play, never their role at the place). A second tie puts nobody out. Either way the spy has survived a vote, and a new round starts with the players still in.
@@ -287,7 +287,7 @@ Roles make civilian answers clearly role-specific (86-91% of answers can be trac
 - The specificity judge lists every place an answer fits; it rates almost every civilian answer as fitting the true place (98%), so it is a fair check of plausibility but says little about how much an answer gives away.
 
 **Manual playtest checklist** (the full list is `docs/spy-manual-checklist.md`)
-- [ ] Lobby: Advanced shows "Roles on" by default; both toggles survive a reload; a new game uses them.
+- [ ] Lobby: Extras shows "Place roles" on by default; both switches survive a reload; a new game uses them.
 - [ ] As a civilian with roles on: "Your secret" shows the place and your role card (wear, do, deal with), and nobody else's role appears anywhere until the results.
 - [ ] Typing your own role title in a question or answer gives the soft warning ("That says your role"), with Send anyway / Edit it.
 - [ ] Round counter and "the spy has survived x of 2 votes" are right after each vote; a civilian voted out fades as "out · civilian".
@@ -422,5 +422,6 @@ Mafia's engine, prompts, schemas and options are frozen. `backend/tests/test_gol
 
 ## Change log
 
-- **v0.1-mafia** (October 2026): Mafia frozen. Engine with per-player views and a leak test; Lantern Hour web UI (game select, lobby with house rules and advanced cast settings, characters, game screen with a running chat and always-open notes, results and review); 8 named characters with voices and voice cards; role claims with a claims log and judged detective claims; seeded mafia team plans; public accusations; reference check against the whole game; stock-phrase cap; doctor no-repeat; no night-1 kill; roles hidden on death by default; three-part prompt with fixed schemas for caching; cost, latency and balance metrics per run; golden games.
+- **Web, October 2026 (after v0.1-mafia):** game-select cards with an Info / Play pair; How to Play pages with an animated scene and a quiz; one-screen lobbies for both games built from shared parts, with the cast always shown (redraw, swap at the table); difficulty and per-character knobs moved to the Characters page, with Merciless sharpening each archetype. The browser sends Mafia's knobs explicitly, through the existing API, so the frozen engine and prompts are unchanged.
+- **v0.1-mafia** (October 2026): Mafia frozen. Engine with per-player views and a leak test; Lantern Hour web UI (game select, lobby with house rules and advanced cast settings (since redesigned, see above), characters, game screen with a running chat and always-open notes, results and review); 8 named characters with voices and voice cards; role claims with a claims log and judged detective claims; seeded mafia team plans; public accusations; reference check against the whole game; stock-phrase cap; doctor no-repeat; no night-1 kill; roles hidden on death by default; three-part prompt with fixed schemas for caching; cost, latency and balance metrics per run; golden games.
 - Earlier the project was called Berkira; renamed to Kira.

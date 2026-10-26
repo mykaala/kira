@@ -112,5 +112,3 @@
 .roleFacts dd { margin: 0; }
 
 /* lobby, Advanced: each switch sits tight against its own explanation */
-.option { display: flex; flex-direction: column; gap: 2px; }
-.optionHint { margin: 0; padding-right: 40px; }
