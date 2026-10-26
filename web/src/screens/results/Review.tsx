@@ -7,13 +7,15 @@ import { NotesPanel, useNotes } from "../game/Notes";
 import styles from "./Review.module.css";
 
 /** The whole game, start to finish; switch on Secrets to see every night action too. */
-export function Review({ gameId, status, seats, events, reveal, onBack }: {
+export function Review({ gameId, status, seats, events, reveal, onBack, log, side }: {
   gameId: string;
-  status: Status;
+  status?: Status; // Mafia's role card; another game passes its own `side`
   seats: Seat[];
   events: GameEvent[];
   reveal: GameEvent[] | null;
   onBack: () => void;
+  log?: React.ReactNode; // another game's log in place of the chat (Out of Place)
+  side?: React.ReactNode; // and its side panel in place of the notes and role card
 }) {
   const [secrets, setSecrets] = useState(false);
   const { notes, setNotes, pinned, pin } = useNotes(gameId);
@@ -33,9 +35,9 @@ export function Review({ gameId, status, seats, events, reveal, onBack }: {
         </header>
         <div className={styles.columns}>
           <div className={styles.chat}>
-            <ChatLog seats={seats} events={shown} pinned={pinned} onPin={pin} title="Every line" tall />
+            {log ?? <ChatLog seats={seats} events={shown} pinned={pinned} onPin={pin} title="Every line" tall />}
           </div>
-          <NotesPanel notes={notes} onNotes={setNotes} status={status} seats={seats} events={shown} />
+          {side ?? (status && <NotesPanel notes={notes} onNotes={setNotes} status={status} seats={seats} events={shown} />)}
         </div>
       </div>
     </div>

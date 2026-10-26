@@ -56,6 +56,18 @@ async def main(n_games: int, opponents: int, quiet: bool, parallel: int) -> None
 
 
 if __name__ == "__main__":
+    import sys
+
+    if "--mode" in sys.argv:  # --mode spy_location hands the rest of the arguments to that mode's self-play
+        i = sys.argv.index("--mode")
+        if sys.argv[i + 1] == "spy_location":
+            from .spy_selfplay import run
+
+            run(sys.argv[1:i] + sys.argv[i + 2 :])
+            raise SystemExit
+        if sys.argv[i + 1] != "mafia":
+            raise SystemExit(f"unknown mode {sys.argv[i + 1]!r}: mafia or spy_location")
+        del sys.argv[i : i + 2]
     ap = argparse.ArgumentParser()
     ap.add_argument("--games", type=int, default=1)
     ap.add_argument("--opponents", type=int, default=6, help="AI players besides the human's seat")

@@ -6,9 +6,10 @@ import styles from "./RoundTable.module.css";
 const RADIUS = 42; // % from the centre
 
 /** Seats around a table, "You" at the bottom. With no cast chosen, the AI seats are a mystery. */
-export function RoundTable({ seats, mafia, cast, selected, onSelect }: {
+export function RoundTable({ seats, mafia, cast, selected, onSelect, hiding = "Mafia hiding" }: {
   seats: (CharacterId | null)[]; // null = a random, unknown seat
   mafia: number;
+  hiding?: string; // what is hiding at the table (another game: "a spy hiding")
   cast: Partial<Record<CharacterId, Character>>;
   selected: CharacterId | null;
   onSelect: (id: CharacterId | null) => void;
@@ -23,7 +24,7 @@ export function RoundTable({ seats, mafia, cast, selected, onSelect }: {
       <div className={styles.top}>
         <LanternMark size={44} />
         <span className={styles.count}>{mafia} among {total}</span>
-        <span className={`meta ${styles.hiding}`}>Mafia hiding</span>
+        <span className={`meta ${styles.hiding}`}>{hiding}</span>
       </div>
       {seats.map((id, i) =>
         id ? (

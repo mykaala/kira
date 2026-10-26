@@ -1,0 +1,116 @@
+.qa { position: relative; display: flex; flex-direction: column; gap: 16px; padding: 4px; width: 100%; }
+.qaKicker { color: var(--lantern); }
+.qaRow { display: flex; gap: 14px; align-items: flex-start; }
+.bubble {
+  flex: 1; min-width: 0; background: var(--text); color: var(--bg); border-radius: 18px; padding: 12px 16px;
+  box-shadow: var(--shadow-hard);
+}
+.who { font-family: var(--font-meta); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.words { margin: 4px 0 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 2.4vw, 28px); line-height: 1.2; }
+.youTile {
+  width: 72px; height: 72px; flex: none; border-radius: 18px; background: #8fdccf; color: var(--bg); display: grid;
+  place-items: center; font-family: var(--font-display); font-weight: 800; font-size: 20px;
+}
+
+.dock { display: flex; flex-direction: column; gap: 12px; background: var(--surface); border-radius: var(--r-lg); padding: 14px; }
+.yourTurn { box-shadow: 0 0 0 3px var(--lantern); }
+.turnNote { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--lantern); margin: 0 4px; }
+.dockRow { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.dockMeta { display: flex; gap: 12px; justify-content: space-between; align-items: center; color: var(--muted); padding: 0 4px; }
+.over { color: var(--coral-text); }
+.error { color: var(--coral-text); font-size: 15px; }
+.muted { color: var(--muted); }
+.input {
+  flex: 1; min-width: 0; min-height: 52px; padding: 0 18px; border-radius: var(--r-md);
+  border: 2px solid var(--line); background: var(--bg); color: var(--text); font: inherit; font-size: 17px;
+}
+.input:focus-visible { outline: none; border-color: var(--lantern); }
+.input::placeholder { color: var(--muted); }
+.modes { display: flex; gap: 6px; background: var(--bg); border-radius: var(--r-md); padding: 6px; align-self: flex-start; }
+.mode {
+  min-height: 40px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: var(--text);
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+.mode[aria-pressed="true"] { background: var(--lantern); color: var(--bg); }
+.targets { display: flex; flex-wrap: wrap; gap: 8px; }
+.target {
+  min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 4px 14px 4px 4px;
+  border-radius: var(--r-pill); border: 2px solid transparent; background: var(--surface-2); color: var(--text);
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+.target:hover { background: var(--line); }
+.target[aria-pressed="true"] { border-color: var(--lantern); background: var(--surface-3); }
+.warning {
+  display: flex; flex-direction: column; gap: 10px; background: var(--surface-2); border: 2px solid var(--coral);
+  border-radius: var(--r-md); padding: 12px 14px;
+}
+.warnActions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.place { color: var(--lantern); }
+.placesToggle { display: flex; align-items: center; gap: 8px; font-size: 15px; cursor: pointer; flex-wrap: wrap; }
+.placesToggle input { accent-color: var(--lantern); width: 18px; height: 18px; }
+.places {
+  list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; max-height: 260px; overflow-y: auto;
+}
+.placeBtn {
+  min-height: 32px; padding: 0 10px; border-radius: var(--r-pill); border: 0; background: var(--surface-2);
+  color: var(--text); font: inherit; font-size: 14px; cursor: pointer;
+}
+.placeBtn:hover:not(:disabled) { background: var(--line); }
+.placeBtn:disabled { cursor: default; opacity: 0.8; }
+
+.notices { display: flex; flex-direction: column; gap: 6px; }
+.notice {
+  background: var(--surface-2); border-left: 4px solid var(--lantern); border-radius: var(--r-sm); padding: 8px 12px;
+  font-size: 15px;
+}
+
+.bar {
+  display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between;
+  background: var(--surface); border-radius: var(--r-lg); padding: 12px 18px;
+}
+.barTitle { display: flex; flex-direction: column; }
+.barName { font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+.barPhase { color: var(--muted); }
+.barTurn { font-family: var(--font-display); font-weight: 800; font-size: 18px; }
+.barTurnYou { color: var(--lantern); }
+.pace { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.toggle {
+  min-height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border-radius: 12px;
+  background: var(--surface-2); cursor: pointer; font-family: var(--font-meta); font-size: 12px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.toggle input { accent-color: var(--lantern); }
+.toggle select { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 4px; font: inherit; }
+
+@media (max-width: 560px) {
+  .dockRow { flex-wrap: wrap; }
+  .input { flex-basis: 100%; }
+  .dockRow > button { flex: 1; }
+  .qaRow :global(svg) { width: 52px; height: 52px; }
+  .youTile { width: 52px; height: 52px; font-size: 16px; }
+}
+.secretChip {
+  background: var(--bg); border: 2px solid var(--line); border-radius: var(--r-pill); padding: 6px 14px;
+  font-size: 15px; color: var(--text-soft);
+}
+.secretChip strong { color: var(--lantern); }
+/* the secret sits above the notes here: its divider goes underneath */
+.secretFirst { border-top: 0; padding-top: 0; padding-bottom: 14px; border-bottom: 1px solid var(--surface-3); }
+
+/* more than one vote: the spy's survival count under the title; players voted out fade on the table */
+.barSurvived { color: var(--muted); font-size: 12px; }
+.outSeat { opacity: 0.55; }
+.outSeat img, .outSeat svg { filter: grayscale(1); }
+.outTag { color: var(--dead); }
+
+/* roles on: a civilian's own role card, inside Your secret */
+.roleCard { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+.roleCard strong { color: var(--lantern); }
+.roleFacts { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 0; font-size: 13px; }
+.roleFacts dt { color: var(--muted); font-family: var(--font-meta); font-size: 11px; padding-top: 2px; }
+.roleFacts dd { margin: 0; }
+
+/* lobby, Advanced: each switch sits tight against its own explanation */
+.option { display: flex; flex-direction: column; gap: 2px; }
+.optionHint { margin: 0; padding-right: 40px; }

@@ -1,0 +1,7128 @@
+{
+ "model": "gpt-5.6-luna",
+ "rows": [
+  {
+   "place": "airport lounge",
+   "title": "business traveler",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "overnight bus"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "airport lounge",
+   "title": "family chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "airport lounge",
+   "title": "remote worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "botanical garden",
+    "cable car",
+    "cinema",
+    "ferry",
+    "hot spring",
+    "ice fishing camp",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "overnight bus",
+    "photo studio",
+    "planetarium",
+    "radio station",
+    "recording studio",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 21,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "airport lounge",
+   "title": "night traveler",
+   "generic": true,
+   "fits": [
+    "overnight bus"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "airport lounge",
+   "title": "access host",
+   "generic": false,
+   "fits": [
+    "airport lounge"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "airport lounge",
+   "title": "rebooking specialist",
+   "generic": false,
+   "fits": [
+    "airport lounge"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "airport lounge",
+   "title": "shower attendant",
+   "generic": false,
+   "fits": [
+    "hot spring",
+    "sauna",
+    "swimming pool"
+   ],
+   "count": 3,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "airport lounge",
+   "title": "buffet runner",
+   "generic": false,
+   "fits": [
+    "airport lounge",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "airport lounge",
+   "title": "nap-pod guest",
+   "generic": false,
+   "fits": [
+    "airport lounge"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "airport lounge",
+   "title": "amenity stocker",
+   "generic": false,
+   "fits": [
+    "airport lounge",
+    "hot spring",
+    "sauna"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "tank diver",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "jellyfish keeper",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "ray feeder",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "water chemist",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "hot spring",
+    "ice fishing camp",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "coral grower",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "filtration mechanic",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "hot spring",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "aquarium",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "aquarium",
+   "title": "school chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ice rink",
+    "lecture hall",
+    "nature reserve",
+    "planetarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "aquarium",
+   "title": "gift shop cashier",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "planetarium"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "aquarium",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "orchid keeper",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "rose pruner",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "seed collector",
+   "generic": false,
+   "fits": [
+    "botanical garden",
+    "nature reserve"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "botanical garden",
+   "title": "plant labeler",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "irrigation technician",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "greenhouse grower",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "botanical garden",
+   "title": "school chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ice rink",
+    "lecture hall",
+    "nature reserve",
+    "planetarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "botanical garden",
+   "title": "grounds cleaner",
+   "generic": true,
+   "fits": [
+    "botanical garden",
+    "county fair",
+    "nature reserve",
+    "ski lodge",
+    "street festival",
+    "water park"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "botanical garden",
+   "title": "weekend volunteer",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "county fair",
+    "food truck rally",
+    "nature reserve",
+    "planetarium",
+    "street festival"
+   ],
+   "count": 8,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "botanical garden",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "bowling alley",
+   "title": "pinsetter technician",
+   "generic": false,
+   "fits": [
+    "bowling alley"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "bowling alley",
+   "title": "shoe counter clerk",
+   "generic": false,
+   "fits": [
+    "bowling alley"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "bowling alley",
+   "title": "league captain",
+   "generic": false,
+   "fits": [
+    "bowling alley",
+    "ice rink",
+    "roller rink"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "bowling alley",
+   "title": "ball fitter",
+   "generic": false,
+   "fits": [
+    "bowling alley"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "bowling alley",
+   "title": "oil technician",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "bowling alley",
+   "title": "practice coach",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink",
+    "swimming pool"
+   ],
+   "count": 3,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "bowling alley",
+   "title": "birthday parent",
+   "generic": true,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "bowling alley",
+   "title": "snack server",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "ice rink",
+    "night market",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "bowling alley",
+   "title": "weekend regular",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "night market",
+    "opera house",
+    "roller rink",
+    "sauna",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "bowling alley",
+   "title": "shift manager",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "car wash",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "overnight bus",
+    "roller rink",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "butterfly house",
+   "title": "wing keeper",
+   "generic": false,
+   "fits": [
+    "butterfly house"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "butterfly house",
+   "title": "nectar mixer",
+   "generic": false,
+   "fits": [
+    "butterfly house"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "butterfly house",
+   "title": "pupa caretaker",
+   "generic": false,
+   "fits": [
+    "butterfly house"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "butterfly house",
+   "title": "plant tender",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "butterfly house",
+   "title": "climate monitor",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "nature reserve"
+   ],
+   "count": 3,
+   "home_fits": false,
+   "cluster_fits": 3
+  },
+  {
+   "place": "butterfly house",
+   "title": "school chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ice rink",
+    "lecture hall",
+    "nature reserve",
+    "planetarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "butterfly house",
+   "title": "curious visitor",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "planetarium",
+    "street festival",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 17,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "butterfly house",
+   "title": "gift counter clerk",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "night market",
+    "opera house",
+    "planetarium",
+    "ski lodge",
+    "street festival",
+    "water park"
+   ],
+   "count": 16,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "butterfly house",
+   "title": "floor cleaner",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 32,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "butterfly house",
+   "title": "photography hobbyist",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "county fair",
+    "nature reserve",
+    "night market",
+    "photo studio",
+    "planetarium",
+    "street festival",
+    "water park"
+   ],
+   "count": 10,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "cable car",
+   "title": "line operator",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "cable car",
+   "title": "cabin attendant",
+   "generic": false,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cable car",
+   "title": "rope mechanic",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cable car",
+   "title": "wind monitor",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ice fishing camp",
+    "mountain hut",
+    "nature reserve",
+    "ski lodge"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cable car",
+   "title": "boarding host",
+   "generic": false,
+   "fits": [
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "cable car",
+   "title": "summit guide",
+   "generic": false,
+   "fits": [
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "cable car",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "cable car",
+   "title": "family chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "cable car",
+   "title": "window photographer",
+   "generic": true,
+   "fits": [
+    "photo studio"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "cable car",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "car wash",
+   "title": "tunnel attendant",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "car wash",
+   "title": "detailer",
+   "generic": false,
+   "fits": [
+    "car wash"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "car wash",
+   "title": "vacuum bay worker",
+   "generic": false,
+   "fits": [
+    "car wash"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "car wash",
+   "title": "membership seller",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "cinema",
+    "planetarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 6,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "car wash",
+   "title": "chemical technician",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 3,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "car wash",
+   "title": "maintenance mechanic",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "ferry",
+    "hot spring",
+    "ice rink",
+    "laundromat",
+    "opera house",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "car wash",
+   "title": "first-time customer",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "photo studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 27,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "car wash",
+   "title": "shift supervisor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 31,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "car wash",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": false,
+   "cluster_fits": 3
+  },
+  {
+   "place": "car wash",
+   "title": "regular customer",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 29,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "cinema",
+   "title": "projectionist",
+   "generic": false,
+   "fits": [
+    "cinema"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "popcorn maker",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "street festival"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "ticket scanner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "ice rink",
+    "opera house",
+    "planetarium",
+    "roller rink",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "cinema",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "cinema",
+   "title": "movie reviewer",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "3d glasses clerk",
+   "generic": false,
+   "fits": [
+    "cinema"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "cinema",
+   "title": "matinee regular",
+   "generic": false,
+   "fits": [
+    "cinema"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "snack cashier",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "ice rink",
+    "roller rink",
+    "ski lodge",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "cinema",
+   "title": "caption technician",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "livestock exhibitor",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "ribbon judge",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "tractor pull driver",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "ride mechanic",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "prize booth worker",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "video arcade"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "pie contestant",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "county fair",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "county fair",
+   "title": "parent with kids",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "tv newsroom",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "county fair",
+   "title": "cleanup worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "county fair",
+   "title": "snack seller",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "ice rink",
+    "night market",
+    "roller rink",
+    "street festival",
+    "water park"
+   ],
+   "count": 9,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "dentist office",
+   "title": "dental hygienist",
+   "generic": false,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "examining doctor",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "dentist office",
+   "title": "chairside assistant",
+   "generic": false,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "x-ray technician",
+   "generic": false,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "braces specialist",
+   "generic": false,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "lab courier",
+   "generic": false,
+   "fits": [
+    "dentist office",
+    "vet clinic"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "dentist office",
+   "title": "anxious patient",
+   "generic": true,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "accompanying parent",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "ice rink",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 13,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "dentist office",
+   "title": "front desk clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "dentist office",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ferry",
+   "title": "deckhand",
+   "generic": false,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ferry",
+   "title": "vehicle driver",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "ferry",
+   "title": "wheelhouse officer",
+   "generic": false,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ferry",
+   "title": "engine mechanic",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ferry"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ferry",
+   "title": "galley cook",
+   "generic": false,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ferry",
+   "title": "commuter",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "cable car",
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ferry",
+   "title": "traveling parent",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "laundromat",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "overnight bus",
+    "planetarium",
+    "roller rink",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 23,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ferry",
+   "title": "first-time traveler",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "cable car",
+    "ferry",
+    "overnight bus",
+    "passport office"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ferry",
+   "title": "ticket checker",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "ice rink",
+    "opera house",
+    "planetarium",
+    "roller rink",
+    "ski lodge",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ferry",
+   "title": "rope handler",
+   "generic": false,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "food truck rally",
+   "title": "mobile chef",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "night market",
+    "street festival"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "food truck rally",
+   "title": "order caller",
+   "generic": false,
+   "fits": [
+    "food truck rally"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "food truck rally",
+   "title": "fryer cook",
+   "generic": false,
+   "fits": [
+    "food truck rally"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "food truck rally",
+   "title": "sauce runner",
+   "generic": false,
+   "fits": [
+    "food truck rally"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "food truck rally",
+   "title": "power wrangler",
+   "generic": false,
+   "fits": [
+    "opera house",
+    "photo studio",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 4,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "food truck rally",
+   "title": "propane checker",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "food truck rally",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "food truck rally",
+   "title": "cleanup worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "food truck rally",
+   "title": "parent chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ice rink",
+    "nature reserve",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 14,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "food truck rally",
+   "title": "local blogger",
+   "generic": true,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "night market",
+    "street festival"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hair salon",
+   "title": "stylist",
+   "generic": false,
+   "fits": [
+    "hair salon",
+    "photo studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "colorist",
+   "generic": false,
+   "fits": [
+    "hair salon"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "shampoo assistant",
+   "generic": false,
+   "fits": [
+    "hair salon"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "apprentice",
+   "generic": false,
+   "fits": [
+    "hair salon"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "extension specialist",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "hair salon",
+   "title": "blowout specialist",
+   "generic": false,
+   "fits": [
+    "hair salon"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "front desk clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hair salon",
+   "title": "walk-in client",
+   "generic": true,
+   "fits": [
+    "car wash",
+    "dentist office",
+    "hair salon",
+    "passport office",
+    "photo studio",
+    "vet clinic"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hair salon",
+   "title": "closing cleaner",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "hair salon",
+    "karaoke bar",
+    "laundromat",
+    "opera house",
+    "roller rink",
+    "sauna",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hair salon",
+   "title": "shop manager",
+   "generic": true,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "hardware store",
+   "title": "paint mixer",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "key cutter",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "lumber loader",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "tool demonstrator",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "fastener specialist",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "weekend fixer",
+   "generic": true,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "checkout cashier",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "night market",
+    "roller rink",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 15,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "hardware store",
+   "title": "stock receiver",
+   "generic": true,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "regular contractor",
+   "generic": true,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hardware store",
+   "title": "garden advisor",
+   "generic": false,
+   "fits": [
+    "botanical garden"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "hot spring",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hot spring",
+   "title": "weekend regular",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "night market",
+    "opera house",
+    "roller rink",
+    "sauna",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hot spring",
+   "title": "towel runner",
+   "generic": true,
+   "fits": [
+    "hot spring",
+    "sauna",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "hot spring",
+   "title": "family chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "hot spring",
+   "title": "mineral guide",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "hot spring",
+   "title": "source keeper",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "hot spring",
+   "title": "mud wrapper",
+   "generic": false,
+   "fits": [
+    "hot spring"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "hot spring",
+   "title": "quiet soaker",
+   "generic": false,
+   "fits": [
+    "hot spring",
+    "sauna"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "hot spring",
+   "title": "robe renter",
+   "generic": false,
+   "fits": [
+    "hot spring",
+    "sauna"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "hot spring",
+   "title": "temperature tester",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "butterfly house",
+    "hot spring",
+    "ice rink",
+    "sauna",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "hole driller",
+   "generic": false,
+   "fits": [
+    "ice fishing camp"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "tip-up watcher",
+   "generic": false,
+   "fits": [
+    "ice fishing camp"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "minnow keeper",
+   "generic": false,
+   "fits": [
+    "aquarium"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "shack hauler",
+   "generic": false,
+   "fits": [
+    "ice fishing camp"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "catch cook",
+   "generic": false,
+   "fits": [
+    "ice fishing camp"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "family chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "gear renter",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "ice fishing camp",
+    "ice rink",
+    "roller rink",
+    "ski lodge"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "overnight guest",
+   "generic": true,
+   "fits": [
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ice fishing camp",
+   "title": "lake guide",
+   "generic": false,
+   "fits": [
+    "ice fishing camp"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "hockey goalie",
+   "generic": false,
+   "fits": [
+    "ice rink"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "figure skater",
+   "generic": false,
+   "fits": [
+    "ice rink"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "resurfacer driver",
+   "generic": false,
+   "fits": [
+    "ice rink"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "skate sharpener",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "hockey referee",
+   "generic": false,
+   "fits": [
+    "ice rink"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "learn-to-skate coach",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ice rink",
+   "title": "birthday parent",
+   "generic": true,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "ice rink",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "ice rink",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ice rink",
+   "title": "snack counter clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "roller rink",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "song host",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "radio station"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "lyric screen operator",
+   "generic": false,
+   "fits": [
+    "karaoke bar"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "duet regular",
+   "generic": false,
+   "fits": [
+    "karaoke bar"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "key-change singer",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "opera house",
+    "radio station",
+    "recording studio"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "microphone runner",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "karaoke bar",
+    "lecture hall",
+    "radio station",
+    "recording studio",
+    "street festival",
+    "tv newsroom"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "karaoke bar",
+   "title": "request collector",
+   "generic": false,
+   "fits": [
+    "radio station"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "karaoke bar",
+   "title": "birthday guest",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "karaoke bar",
+    "roller rink",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "karaoke bar",
+   "title": "drink server",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "karaoke bar",
+    "night market",
+    "opera house",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 14,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "karaoke bar",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "karaoke bar",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "laundromat",
+   "title": "wash-and-fold clerk",
+   "generic": false,
+   "fits": [
+    "laundromat"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "stain helper",
+   "generic": false,
+   "fits": [
+    "laundromat"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "machine repairer",
+   "generic": false,
+   "fits": [
+    "hardware store"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "change seller",
+   "generic": false,
+   "fits": [
+    "laundromat",
+    "video arcade"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "bulk washer",
+   "generic": false,
+   "fits": [
+    "laundromat"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "dryer watcher",
+   "generic": false,
+   "fits": [
+    "laundromat"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "laundromat",
+   "title": "regular customer",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 29,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "laundromat",
+   "title": "parent with kids",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "tv newsroom",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "laundromat",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "laundromat",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "lecture hall",
+   "title": "course lecturer",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "teaching assistant",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "guest speaker",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "thesis presenter",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "seminar moderator",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "first-time attendee",
+   "generic": true,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "note taker",
+   "generic": true,
+   "fits": [
+    "lecture hall",
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "latecomer",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "lecture hall",
+    "opera house",
+    "planetarium"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "lecture hall",
+   "title": "room cleaner",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "cinema",
+    "ferry",
+    "hair salon",
+    "hot spring",
+    "mountain hut",
+    "overnight bus",
+    "sauna",
+    "ski lodge"
+   ],
+   "count": 9,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "lecture hall",
+   "title": "microphone runner",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "karaoke bar",
+    "lecture hall",
+    "radio station",
+    "recording studio",
+    "street festival",
+    "tv newsroom"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "mountain hut",
+   "title": "hut keeper",
+   "generic": false,
+   "fits": [
+    "mountain hut"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "mountain hut",
+   "title": "overnight guest",
+   "generic": true,
+   "fits": [
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "mountain hut",
+   "title": "trail guide",
+   "generic": false,
+   "fits": [
+    "botanical garden",
+    "mountain hut",
+    "nature reserve",
+    "ski lodge"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "mountain hut",
+   "title": "soup cook",
+   "generic": false,
+   "fits": [
+    "food truck rally"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "mountain hut",
+   "title": "map reader",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ferry",
+    "mountain hut",
+    "nature reserve",
+    "overnight bus",
+    "ski lodge"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "mountain hut",
+   "title": "supply carrier",
+   "generic": false,
+   "fits": [
+    "ferry",
+    "ice fishing camp",
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "mountain hut",
+   "title": "bunk neighbor",
+   "generic": true,
+   "fits": [
+    "ice fishing camp",
+    "mountain hut",
+    "overnight bus",
+    "ski lodge"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "mountain hut",
+   "title": "weather watcher",
+   "generic": false,
+   "fits": [
+    "airport lounge",
+    "botanical garden",
+    "cable car",
+    "county fair",
+    "ferry",
+    "ice fishing camp",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "ski lodge",
+    "tv newsroom"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "mountain hut",
+   "title": "day visitor",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "planetarium",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "mountain hut",
+   "title": "firewood stacker",
+   "generic": false,
+   "fits": [
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "nature reserve",
+   "title": "habitat ranger",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "nature reserve",
+   "title": "bird bander",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "nature reserve",
+   "title": "wildlife tracker",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "nature reserve",
+   "title": "invasive plant worker",
+   "generic": false,
+   "fits": [
+    "botanical garden",
+    "nature reserve"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "nature reserve",
+   "title": "nest surveyor",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "nature reserve",
+   "title": "burn crew member",
+   "generic": false,
+   "fits": [
+    "nature reserve"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "nature reserve",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "nature reserve",
+   "title": "volunteer helper",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "county fair",
+    "food truck rally",
+    "nature reserve",
+    "street festival"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "nature reserve",
+   "title": "family chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hot spring",
+    "ice rink",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "nature reserve",
+   "title": "wildlife photographer",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "county fair",
+    "nature reserve",
+    "photo studio",
+    "planetarium",
+    "tv newsroom"
+   ],
+   "count": 8,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "night market",
+   "title": "incense seller",
+   "generic": false,
+   "fits": [
+    "night market"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "night market",
+   "title": "lantern vendor",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "night market",
+    "street festival"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "night market",
+   "title": "skewer griller",
+   "generic": true,
+   "fits": [
+    "food truck rally",
+    "night market",
+    "street festival"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "night market",
+   "title": "tea pourer",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "night market",
+   "title": "trinket hawker",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "night market",
+    "street festival"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "night market",
+   "title": "late shopper",
+   "generic": true,
+   "fits": [
+    "night market"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "night market",
+   "title": "cleanup worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "night market",
+   "title": "delivery rider",
+   "generic": true,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "night market",
+   "title": "noodle cook",
+   "generic": false,
+   "fits": [
+    "food truck rally",
+    "night market"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "night market",
+   "title": "phone case seller",
+   "generic": false,
+   "fits": [
+    "night market",
+    "street festival"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "opera house",
+   "title": "lead soprano",
+   "generic": false,
+   "fits": [
+    "opera house",
+    "recording studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "opera house",
+   "title": "pit violinist",
+   "generic": false,
+   "fits": [
+    "opera house"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "opera house",
+   "title": "conductor",
+   "generic": false,
+   "fits": [
+    "opera house",
+    "recording studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "opera house",
+   "title": "stagehand",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "opera house",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "opera house",
+   "title": "wig dresser",
+   "generic": false,
+   "fits": [
+    "hair salon",
+    "opera house"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "opera house",
+   "title": "language coach",
+   "generic": false,
+   "fits": [
+    "lecture hall"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "opera house",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "opera house",
+   "title": "usher",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "opera house"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "opera house",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "opera house",
+   "title": "regular patron",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "night market",
+    "opera house",
+    "planetarium",
+    "roller rink",
+    "sauna",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 22,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "overnight bus",
+   "title": "reclining sleeper",
+   "generic": false,
+   "fits": [
+    "overnight bus"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "overnight bus",
+   "title": "relief driver",
+   "generic": false,
+   "fits": [
+    "overnight bus"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "overnight bus",
+   "title": "onboard attendant",
+   "generic": false,
+   "fits": [
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "overnight bus",
+   "title": "late traveler",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "overnight bus"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "overnight bus",
+   "title": "window watcher",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "overnight bus",
+   "title": "snack runner",
+   "generic": false,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "night market",
+    "opera house",
+    "roller rink",
+    "street festival",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 15,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "overnight bus",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "overnight bus",
+   "title": "anxious parent",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "ice rink",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 13,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "overnight bus",
+   "title": "luggage loader",
+   "generic": false,
+   "fits": [
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "overnight bus",
+   "title": "seatmate",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "ferry",
+    "overnight bus"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "passport office",
+   "title": "first-time applicant",
+   "generic": true,
+   "fits": [
+    "passport office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "renewal applicant",
+   "generic": true,
+   "fits": [
+    "passport office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "waiting parent",
+   "generic": true,
+   "fits": [
+    "dentist office",
+    "hair salon",
+    "ice rink",
+    "roller rink",
+    "swimming pool"
+   ],
+   "count": 5,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "passport office",
+   "title": "lobby cleaner",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "cinema",
+    "dentist office",
+    "ferry",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 20,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "passport office",
+   "title": "document examiner",
+   "generic": false,
+   "fits": [
+    "passport office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "biometric clerk",
+   "generic": false,
+   "fits": [
+    "passport office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "photo checker",
+   "generic": false,
+   "fits": [
+    "passport office",
+    "photo studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "appointment marshal",
+   "generic": false,
+   "fits": [
+    "dentist office",
+    "hair salon",
+    "passport office",
+    "vet clinic"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "passport office",
+   "title": "fraud reviewer",
+   "generic": false,
+   "fits": [
+    "passport office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "passport office",
+   "title": "urgent traveler",
+   "generic": false,
+   "fits": [
+    "airport lounge",
+    "ferry",
+    "overnight bus",
+    "passport office"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "photo studio",
+   "title": "headshot photographer",
+   "generic": false,
+   "fits": [
+    "photo studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "photo studio",
+   "title": "retoucher",
+   "generic": false,
+   "fits": [
+    "photo studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "photo studio",
+   "title": "prop stylist",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "photo studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "photo studio",
+   "title": "backdrop handler",
+   "generic": false,
+   "fits": [
+    "cinema",
+    "opera house",
+    "photo studio"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "photo studio",
+   "title": "print finisher",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "photo studio",
+   "title": "new parent",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "photo studio",
+   "title": "makeup artist",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "hair salon",
+    "opera house",
+    "photo studio",
+    "tv newsroom"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "photo studio",
+   "title": "receptionist",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "mountain hut",
+    "opera house",
+    "photo studio",
+    "radio station",
+    "recording studio",
+    "sauna",
+    "ski lodge",
+    "vet clinic"
+   ],
+   "count": 15,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "photo studio",
+   "title": "cleaner",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 35,
+   "home_fits": false,
+   "cluster_fits": 3
+  },
+  {
+   "place": "photo studio",
+   "title": "product model",
+   "generic": false,
+   "fits": [
+    "photo studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "planetarium",
+   "title": "star presenter",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "planetarium",
+   "title": "dome operator",
+   "generic": false,
+   "fits": [
+    "planetarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "planetarium",
+   "title": "telescope technician",
+   "generic": false,
+   "fits": [
+    "planetarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "planetarium",
+   "title": "meteorite curator",
+   "generic": false,
+   "fits": [
+    "planetarium"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "planetarium",
+   "title": "sky educator",
+   "generic": false,
+   "fits": [
+    "lecture hall",
+    "planetarium"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "planetarium",
+   "title": "exhibit mechanic",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "butterfly house",
+    "planetarium"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "planetarium",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "planetarium",
+   "title": "school chaperone",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ice rink",
+    "lecture hall",
+    "nature reserve",
+    "planetarium",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "planetarium",
+   "title": "ticket clerk",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "ferry",
+    "ice rink",
+    "opera house",
+    "planetarium",
+    "roller rink",
+    "ski lodge",
+    "water park"
+   ],
+   "count": 8,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "planetarium",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "post office",
+   "title": "counter clerk",
+   "generic": false,
+   "fits": [
+    "bowling alley",
+    "car wash",
+    "cinema",
+    "food truck rally",
+    "hardware store",
+    "passport office",
+    "post office"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "post office",
+   "title": "letter carrier",
+   "generic": false,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "box renter",
+   "generic": false,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "parcel sender",
+   "generic": false,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "bulk mailer",
+   "generic": false,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "stamp collector",
+   "generic": false,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "waiting customer",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "car wash",
+    "dentist office",
+    "ferry",
+    "hair salon",
+    "laundromat",
+    "passport office",
+    "post office",
+    "vet clinic"
+   ],
+   "count": 10,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "post office",
+   "title": "parcel recipient",
+   "generic": true,
+   "fits": [
+    "post office"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "post office",
+   "title": "maintenance worker",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "post office",
+   "title": "security guard",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 33,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "radio station",
+   "title": "morning host",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "radio station",
+   "title": "call screener",
+   "generic": false,
+   "fits": [
+    "radio station"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "radio station",
+   "title": "board operator",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "recording studio"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "radio station",
+   "title": "traffic reporter",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "radio station",
+   "title": "music programmer",
+   "generic": false,
+   "fits": [
+    "radio station"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "radio station",
+   "title": "news reader",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "tv newsroom"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "radio station",
+   "title": "interview guest",
+   "generic": true,
+   "fits": [
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "radio station",
+   "title": "new intern",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "butterfly house",
+    "cinema",
+    "lecture hall",
+    "nature reserve",
+    "opera house",
+    "planetarium",
+    "radio station",
+    "recording studio",
+    "tv newsroom",
+    "vet clinic"
+   ],
+   "count": 12,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "radio station",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "radio station",
+   "title": "computer technician",
+   "generic": true,
+   "fits": [
+    "hardware store",
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "recording studio",
+   "title": "mix engineer",
+   "generic": false,
+   "fits": [
+    "recording studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "recording studio",
+   "title": "lead vocalist",
+   "generic": false,
+   "fits": [
+    "opera house",
+    "radio station",
+    "recording studio"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "recording studio",
+   "title": "tracking drummer",
+   "generic": false,
+   "fits": [
+    "recording studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "recording studio",
+   "title": "guitar player",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "opera house",
+    "radio station",
+    "recording studio",
+    "street festival"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "recording studio",
+   "title": "microphone tech",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "opera house",
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "recording studio",
+   "title": "session producer",
+   "generic": false,
+   "fits": [
+    "recording studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "recording studio",
+   "title": "voice actor",
+   "generic": true,
+   "fits": [
+    "recording studio"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "recording studio",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "recording studio",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "recording studio",
+   "title": "front desk host",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "opera house",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "floor guard",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "skate clerk",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "speed regular",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "roller rink",
+   "title": "derby skater",
+   "generic": false,
+   "fits": [
+    "roller rink"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "lesson coach",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "lecture hall",
+    "roller rink",
+    "ski lodge",
+    "swimming pool"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "birthday parent",
+   "generic": true,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "roller rink",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "roller rink",
+   "title": "snack cashier",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "ice rink",
+    "roller rink",
+    "ski lodge",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "roller rink",
+   "title": "music operator",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "opera house",
+    "radio station",
+    "recording studio"
+   ],
+   "count": 4,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "roller rink",
+   "title": "maintenance tech",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "hair salon",
+    "ice rink",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "planetarium",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 25,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "sauna",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "sauna",
+   "title": "regular",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "hair salon",
+    "hot spring",
+    "karaoke bar",
+    "laundromat",
+    "opera house",
+    "roller rink",
+    "sauna",
+    "swimming pool",
+    "video arcade"
+   ],
+   "count": 11,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "sauna",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "sauna",
+   "title": "front desk clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "sauna",
+   "title": "stove tender",
+   "generic": false,
+   "fits": [
+    "ice fishing camp",
+    "mountain hut"
+   ],
+   "count": 2,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "sauna",
+   "title": "whisk therapist",
+   "generic": false,
+   "fits": [
+    "sauna"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "sauna",
+   "title": "aroma keeper",
+   "generic": false,
+   "fits": [
+    "sauna"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "sauna",
+   "title": "cold-dip coach",
+   "generic": false,
+   "fits": [
+    "hot spring",
+    "sauna",
+    "swimming pool"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "sauna",
+   "title": "towel runner",
+   "generic": true,
+   "fits": [
+    "hot spring",
+    "sauna",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "sauna",
+   "title": "heat-room host",
+   "generic": false,
+   "fits": [
+    "sauna"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "ski instructor",
+   "generic": false,
+   "fits": [
+    "ski lodge"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "boot fitter",
+   "generic": false,
+   "fits": [
+    "ski lodge"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "lift operator",
+   "generic": false,
+   "fits": [
+    "cable car",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "patrol medic",
+   "generic": false,
+   "fits": [
+    "nature reserve",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "snow reporter",
+   "generic": false,
+   "fits": [
+    "radio station",
+    "ski lodge",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "ski lodge",
+   "title": "rental technician",
+   "generic": false,
+   "fits": [
+    "ice rink",
+    "roller rink",
+    "ski lodge"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ski lodge",
+   "title": "fire tender",
+   "generic": false,
+   "fits": [
+    "ice fishing camp",
+    "mountain hut",
+    "sauna",
+    "ski lodge"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "ski lodge",
+   "title": "weekend guest",
+   "generic": true,
+   "fits": [
+    "mountain hut",
+    "ski lodge"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ski lodge",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "ski lodge",
+   "title": "parent with kids",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "tv newsroom",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "street festival",
+   "title": "parade marshal",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "street festival"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "street festival",
+   "title": "stilt walker",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "night market",
+    "street festival"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "street festival",
+   "title": "permit inspector",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "night market",
+    "street festival"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "street festival",
+   "title": "banner installer",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "street festival"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "street festival",
+   "title": "neighborhood host",
+   "generic": false,
+   "fits": [
+    "street festival"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "street festival",
+   "title": "craft seller",
+   "generic": true,
+   "fits": [
+    "county fair",
+    "night market",
+    "street festival"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "street festival",
+   "title": "snack seller",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "county fair",
+    "food truck rally",
+    "ice rink",
+    "night market",
+    "roller rink",
+    "street festival",
+    "water park"
+   ],
+   "count": 9,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "street festival",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "street festival",
+   "title": "cleanup worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "street festival",
+   "title": "face painter",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "street festival",
+    "water park"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "swimming pool",
+   "title": "lifeguard",
+   "generic": false,
+   "fits": [
+    "swimming pool",
+    "water park"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "swimming pool",
+   "title": "swim instructor",
+   "generic": false,
+   "fits": [
+    "swimming pool",
+    "water park"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "swimming pool",
+   "title": "lane swimmer",
+   "generic": false,
+   "fits": [
+    "swimming pool"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "swimming pool",
+   "title": "diving coach",
+   "generic": false,
+   "fits": [
+    "swimming pool"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "swimming pool",
+   "title": "water tester",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "hot spring",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 4,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "swimming pool",
+   "title": "deck cleaner",
+   "generic": true,
+   "fits": [
+    "ferry"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "swimming pool",
+   "title": "front desk clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "swimming pool",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "swimming pool",
+   "title": "maintenance worker",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "swimming pool",
+   "title": "birthday chaperone",
+   "generic": false,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "ice rink",
+    "roller rink",
+    "swimming pool",
+    "video arcade",
+    "water park"
+   ],
+   "count": 7,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "tv newsroom",
+   "title": "evening anchor",
+   "generic": false,
+   "fits": [
+    "tv newsroom"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "tv newsroom",
+   "title": "field reporter",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "food truck rally",
+    "night market",
+    "radio station",
+    "street festival",
+    "tv newsroom"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "tv newsroom",
+   "title": "assignment editor",
+   "generic": false,
+   "fits": [
+    "tv newsroom"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "tv newsroom",
+   "title": "teleprompter operator",
+   "generic": false,
+   "fits": [
+    "tv newsroom"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "tv newsroom",
+   "title": "gallery director",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "tv newsroom",
+   "title": "graphics producer",
+   "generic": false,
+   "fits": [
+    "tv newsroom"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "tv newsroom",
+   "title": "camera operator",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "photo studio",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "tv newsroom",
+   "title": "makeup artist",
+   "generic": true,
+   "fits": [
+    "cinema",
+    "hair salon",
+    "opera house",
+    "photo studio",
+    "tv newsroom"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "tv newsroom",
+   "title": "guest interviewee",
+   "generic": true,
+   "fits": [
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 3,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "tv newsroom",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "vet clinic",
+   "title": "animal doctor",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "butterfly house",
+    "county fair",
+    "nature reserve",
+    "vet clinic",
+    "water park"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "vet clinic",
+   "title": "exam room helper",
+   "generic": false,
+   "fits": [
+    "dentist office"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 1
+  },
+  {
+   "place": "vet clinic",
+   "title": "front desk clerk",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "bowling alley",
+    "dentist office",
+    "hair salon",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "mountain hut",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 18,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "vet clinic",
+   "title": "pet owner",
+   "generic": true,
+   "fits": [
+    "vet clinic"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "vet clinic",
+   "title": "medicine runner",
+   "generic": false,
+   "fits": [],
+   "count": 0,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "vet clinic",
+   "title": "sample technician",
+   "generic": false,
+   "fits": [
+    "aquarium",
+    "hot spring",
+    "nature reserve",
+    "swimming pool",
+    "vet clinic"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "vet clinic",
+   "title": "kennel caretaker",
+   "generic": false,
+   "fits": [
+    "vet clinic"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "vet clinic",
+   "title": "new visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 35,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "vet clinic",
+   "title": "cleanup worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 36,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "vet clinic",
+   "title": "imaging specialist",
+   "generic": false,
+   "fits": [
+    "photo studio",
+    "radio station",
+    "recording studio",
+    "tv newsroom"
+   ],
+   "count": 4,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "video arcade",
+   "title": "rhythm challenger",
+   "generic": false,
+   "fits": [
+    "karaoke bar",
+    "video arcade"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "video arcade",
+   "title": "prize clerk",
+   "generic": false,
+   "fits": [
+    "county fair",
+    "video arcade"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "video arcade",
+   "title": "machine fixer",
+   "generic": false,
+   "fits": [
+    "bowling alley",
+    "cable car",
+    "car wash",
+    "ice rink",
+    "laundromat",
+    "roller rink",
+    "video arcade",
+    "water park"
+   ],
+   "count": 8,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "video arcade",
+   "title": "claw regular",
+   "generic": false,
+   "fits": [
+    "video arcade"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "video arcade",
+   "title": "birthday guest",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "karaoke bar",
+    "roller rink",
+    "swimming pool",
+    "water park"
+   ],
+   "count": 6,
+   "home_fits": false,
+   "cluster_fits": 3
+  },
+  {
+   "place": "video arcade",
+   "title": "after-school regular",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "cinema",
+    "ice rink",
+    "roller rink",
+    "swimming pool",
+    "video arcade"
+   ],
+   "count": 6,
+   "home_fits": true,
+   "cluster_fits": 3
+  },
+  {
+   "place": "video arcade",
+   "title": "party host",
+   "generic": true,
+   "fits": [
+    "bowling alley",
+    "karaoke bar",
+    "roller rink",
+    "video arcade",
+    "water park"
+   ],
+   "count": 5,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "video arcade",
+   "title": "night cleaner",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "bowling alley",
+    "cinema",
+    "dentist office",
+    "hair salon",
+    "hardware store",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "opera house",
+    "passport office",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 24,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "video arcade",
+   "title": "score hunter",
+   "generic": false,
+   "fits": [
+    "video arcade"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "video arcade",
+   "title": "card reload helper",
+   "generic": false,
+   "fits": [
+    "video arcade"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "water park",
+   "title": "first-time visitor",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 37,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "water park",
+   "title": "parent with kids",
+   "generic": true,
+   "fits": [
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cinema",
+    "county fair",
+    "ferry",
+    "food truck rally",
+    "ice rink",
+    "karaoke bar",
+    "lecture hall",
+    "nature reserve",
+    "night market",
+    "planetarium",
+    "roller rink",
+    "swimming pool",
+    "tv newsroom",
+    "video arcade",
+    "water park"
+   ],
+   "count": 19,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "water park",
+   "title": "locker attendant",
+   "generic": true,
+   "fits": [
+    "ice rink",
+    "sauna",
+    "ski lodge",
+    "swimming pool"
+   ],
+   "count": 4,
+   "home_fits": false,
+   "cluster_fits": 2
+  },
+  {
+   "place": "water park",
+   "title": "cleaning worker",
+   "generic": true,
+   "fits": [
+    "airport lounge",
+    "aquarium",
+    "botanical garden",
+    "bowling alley",
+    "butterfly house",
+    "cable car",
+    "car wash",
+    "cinema",
+    "county fair",
+    "dentist office",
+    "ferry",
+    "food truck rally",
+    "hair salon",
+    "hardware store",
+    "hot spring",
+    "ice fishing camp",
+    "ice rink",
+    "karaoke bar",
+    "laundromat",
+    "lecture hall",
+    "mountain hut",
+    "nature reserve",
+    "night market",
+    "opera house",
+    "overnight bus",
+    "passport office",
+    "photo studio",
+    "planetarium",
+    "post office",
+    "radio station",
+    "recording studio",
+    "roller rink",
+    "sauna",
+    "ski lodge",
+    "street festival",
+    "swimming pool",
+    "tv newsroom",
+    "vet clinic",
+    "video arcade",
+    "water park"
+   ],
+   "count": 40,
+   "home_fits": true,
+   "cluster_fits": 4
+  },
+  {
+   "place": "water park",
+   "title": "slide dispatcher",
+   "generic": false,
+   "fits": [
+    "water park"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "water park",
+   "title": "tube handler",
+   "generic": false,
+   "fits": [
+    "water park"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "water park",
+   "title": "wave operator",
+   "generic": false,
+   "fits": [
+    "water park"
+   ],
+   "count": 1,
+   "home_fits": true,
+   "cluster_fits": 1
+  },
+  {
+   "place": "water park",
+   "title": "cabana host",
+   "generic": false,
+   "fits": [
+    "swimming pool",
+    "water park"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  },
+  {
+   "place": "water park",
+   "title": "ride mechanic",
+   "generic": false,
+   "fits": [
+    "county fair"
+   ],
+   "count": 1,
+   "home_fits": false,
+   "cluster_fits": 0
+  },
+  {
+   "place": "water park",
+   "title": "sunscreen vendor",
+   "generic": false,
+   "fits": [
+    "swimming pool",
+    "water park"
+   ],
+   "count": 2,
+   "home_fits": true,
+   "cluster_fits": 2
+  }
+ ]
+}

@@ -32,6 +32,11 @@ def main() -> None:
     summaries = []
     if a.run:
         summaries = [s for line in open(a.run) if (s := json.loads(line))["type"] == "game"]
+        if summaries and summaries[0].get("mode") == "spy_location":  # the hidden-location game's own report
+            from server.spy_summary import aggregate as spy_aggregate, format_aggregate
+
+            print(format_aggregate(spy_aggregate(CostLog(Path(a.db)), summaries)))
+            return
         ids = [s["game_id"] for s in summaries]
         games = db.execute(
             f"SELECT id, started_at, ended_at FROM games WHERE id IN ({','.join('?' * len(ids))})", ids

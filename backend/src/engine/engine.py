@@ -6,9 +6,10 @@ from . import referee
 from .config import ModeConfig
 from .models import Claim, ClaimIn, Event, GameState, NewEvent, Outcome, PhaseType, Player
 from .modes.mafia import MAFIA_MODE
+from .modes.spy_location import SPY_MODE
 from .speakers import extra_speakers, round_one_order
 
-MODES: dict[str, ModeConfig] = {MAFIA_MODE.name: MAFIA_MODE}
+MODES: dict[str, ModeConfig] = {MAFIA_MODE.name: MAFIA_MODE, SPY_MODE.name: SPY_MODE}
 
 
 class IllegalMove(Exception):
@@ -27,11 +28,16 @@ def mode_of(state: GameState) -> ModeConfig:
 
 
 def new_game(
-    mode: ModeConfig, names: list[str], human_index: int | None, seed: int, extra_roles: tuple[str, ...] = ()
+    mode: ModeConfig,
+    names: list[str],
+    human_index: int | None,
+    seed: int,
+    extra_roles: tuple[str, ...] = (),
+    options: dict | None = None,  # this game's own switches over the mode's; the mode reads them, if it does
 ) -> GameState:
     roles = mode.roles_for(len(names), extra_roles)
     players = [Player(id=f"p{i}", name=n, is_human=(i == human_index)) for i, n in enumerate(names)]
-    state = GameState(mode=mode.name, seed=seed, players=players)
+    state = GameState(mode=mode.name, seed=seed, players=players, options=dict(options or {}))
     state.rng("roles").shuffle(roles)
     for p, role in zip(players, roles):
         p.role = role
@@ -55,7 +61,8 @@ def pending(state: GameState) -> list[Request]:
     return []
 
 
-def submit_action(state: GameState, pid: str, action: str) -> None:
+def submit_action(state: GameState, pid: str, action: str, text: str = "") -> None:
+    """An action, optionally with words the mode's resolver posts (a question, an answer)."""
     mode = mode_of(state)
     if mode.phases[state.phase].type != PhaseType.SIMULTANEOUS:
         raise IllegalMove(f"no actions during {state.phase}")
@@ -64,6 +71,8 @@ def submit_action(state: GameState, pid: str, action: str) -> None:
     if err := referee.validate(mode, state, pid, action):
         raise IllegalMove(err)
     state.submitted[pid] = action
+    if text.strip():
+        state.submitted_text[pid] = text.strip()
     if not pending(state):
         _end_phase(state)
 
@@ -162,7 +171,7 @@ def _enter_phase(state: GameState, name: str) -> None:
     if name == mode.new_day_phase:
         state.day += 1
         state.accusations = {}
-    state.phase, state.round, state.queue, state.submitted = name, 0, [], {}
+    state.phase, state.round, state.queue, state.submitted, state.submitted_text = name, 0, [], {}, {}
     _emit(state, NewEvent(kind="phase", text=f"Day {state.day}: {name}"))
     if spec.type == PhaseType.AUTOMATIC:
         _end_phase(state)
@@ -198,6 +207,7 @@ def _end_phase(state: GameState) -> None:
     if winner := mode.win_check(state):
         state.winner = winner
         roles = ", ".join(f"{p.name} was {p.role}" for p in state.players)
-        _emit(state, NewEvent(kind="game_over", target=winner, text=f"The {winner} wins! {roles}."))
+        text = mode.end_text(state, winner, roles) if mode.end_text else f"The {winner} wins! {roles}."
+        _emit(state, NewEvent(kind="game_over", target=winner, text=text))
         return
-    _enter_phase(state, mode.transitions[state.phase])
+    _enter_phase(state, mode.next_phase(state) if mode.next_phase else mode.transitions[state.phase])

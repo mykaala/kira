@@ -24,6 +24,7 @@ class ModeConfig(BaseModel):
     title: str
     rules: str  # plain-language rules shown to every agent
     rules_roles_hidden: str = ""  # the same rules when roles are not revealed on death
+    rules_for: Callable[[GameState], str] | None = None  # rules worded for one game's own switches, if they vary
     min_players: int
     max_players: int
     roles_by_count: dict[int, dict[str, int]]
@@ -48,6 +49,10 @@ class ModeConfig(BaseModel):
     judge_claim: Callable[[GameState, Player, ClaimIn], tuple[str | None, bool]] | None = None
     # a private per-day plan for this player (e.g. the mafia's bluffing intent), or None
     intent: Callable[[GameState, Player], dict | None] | None = None
+    # the phase after this one, for modes whose order depends on the game (overrides `transitions`)
+    next_phase: Callable[[GameState], str] | None = None
+    # the game-over text from (state, winner, roles); None keeps "The <winner> wins! <roles>." (e.g. for a draw)
+    end_text: Callable[[GameState, str, str], str] | None = None
 
     def roles_for(self, n: int, extras: tuple[str, ...] = ()) -> list[str]:
         if n not in self.roles_by_count:

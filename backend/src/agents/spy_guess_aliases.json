@@ -1,0 +1,354 @@
+{
+ "_about": "Other names for each place, for matching the spy's free-text guess. Generated once by scripts/spy_guess_aliases.py (model: gpt-5.6-luna); no alias belongs to two places. Edit by hand freely; games only read this file.",
+ "_rule": "Aliases are other names for exactly this place. A short form is an alias only when it is the common name, fits only this one place in the pool, and is not a broader category (so arcade, bowling and karaoke are aliases; airport is not one for airport lounge). No alias may belong to two places or be another place's name. Lists are not padded to a minimum length.",
+ "aliases": {
+  "airport lounge": [
+   "airport waiting lounge",
+   "airport passenger lounge",
+   "airport club lounge",
+   "airline lounge",
+   "departure lounge",
+   "airport vip lounge",
+   "airport hospitality lounge"
+  ],
+  "aquarium": [
+   "public aquarium",
+   "aquatic museum",
+   "marine life aquarium",
+   "oceanarium",
+   "aquarium exhibit"
+  ],
+  "botanical garden": [
+   "botanic garden",
+   "botanical park",
+   "botanic park",
+   "plant garden",
+   "horticultural garden",
+   "public botanical garden",
+   "botanical conservatory"
+  ],
+  "bowling alley": [
+   "bowling center",
+   "bowling centre",
+   "bowling hall",
+   "bowling lane",
+   "bowling establishment",
+   "bowling venue",
+   "bowling"
+  ],
+  "butterfly house": [
+   "butterfly conservatory",
+   "butterfly conservatory house",
+   "butterfly pavilion",
+   "butterfly dome",
+   "butterfly enclosure",
+   "butterfly garden house"
+  ],
+  "cable car": [
+   "cableway",
+   "ropeway",
+   "aerial tramway",
+   "aerial cable car",
+   "aerial ropeway",
+   "cable tramway"
+  ],
+  "car wash": [
+   "auto wash",
+   "automobile wash",
+   "car cleaning service",
+   "vehicle wash",
+   "car wash station",
+   "self-service car wash",
+   "automatic car wash"
+  ],
+  "cinema": [
+   "movie theater",
+   "film theater",
+   "picture theater",
+   "cinema hall",
+   "movie house",
+   "film house",
+   "motion-picture theater"
+  ],
+  "county fair": [
+   "county agricultural fair",
+   "county exposition",
+   "county fairgrounds event",
+   "county harvest fair",
+   "county livestock fair",
+   "county annual fair",
+   "county community fair"
+  ],
+  "dentist office": [
+   "dental office",
+   "dental clinic",
+   "dental practice",
+   "dentistry office",
+   "dental surgery"
+  ],
+  "ferry": [
+   "ferry boat",
+   "ferry vessel",
+   "ferry service",
+   "ferry crossing",
+   "ferry transport",
+   "car ferry",
+   "passenger ferry",
+   "vehicle ferry"
+  ],
+  "food truck rally": [
+   "food truck festival",
+   "food truck gathering",
+   "food truck meet-up",
+   "food truck fair",
+   "food truck event",
+   "mobile food truck rally",
+   "food truck roundup"
+  ],
+  "hair salon": [
+   "hairdresser",
+   "hairdressing salon",
+   "hair studio",
+   "salon de coiffure",
+   "coiffeur",
+   "coiffure salon",
+   "hair parlor"
+  ],
+  "hardware store": [
+   "hardware shop",
+   "home improvement store",
+   "diy store",
+   "builders' merchant",
+   "ironmonger's shop",
+   "tool store"
+  ],
+  "hot spring": [
+   "thermal spring",
+   "geothermal spring",
+   "mineral spring",
+   "thermal pool",
+   "hotwater spring",
+   "onsen"
+  ],
+  "ice fishing camp": [
+   "ice fishing lodge",
+   "ice fishing hut",
+   "ice fishing shack",
+   "ice fishing cabin",
+   "ice fishing outpost",
+   "ice fishing shelter",
+   "ice fishing station",
+   "ice fishing base camp"
+  ],
+  "ice rink": [
+   "ice-skating rink",
+   "ice arena",
+   "ice skating arena",
+   "skating arena"
+  ],
+  "karaoke bar": [
+   "karaoke lounge",
+   "karaoke pub",
+   "karaoke club",
+   "sing-along bar",
+   "singalong lounge",
+   "karaoke"
+  ],
+  "laundromat": [
+   "launderette",
+   "washateria",
+   "self-service laundry",
+   "coin laundry",
+   "laundry mat",
+   "laundry shop"
+  ],
+  "lecture hall": [
+   "lecture room",
+   "lecture theater",
+   "lecture theatre",
+   "teaching hall",
+   "instruction room"
+  ],
+  "mountain hut": [
+   "alpine hut",
+   "mountain refuge",
+   "mountain shelter",
+   "hiking hut",
+   "backcountry hut",
+   "mountaineering hut",
+   "mountain bothy"
+  ],
+  "nature reserve": [
+   "wildlife reserve",
+   "nature sanctuary",
+   "natural reserve",
+   "protected nature area",
+   "protected natural area",
+   "conservation reserve",
+   "ecological reserve",
+   "nature preserve"
+  ],
+  "night market": [
+   "evening market",
+   "night bazaar",
+   "nocturnal market",
+   "after-dark market",
+   "nighttime market",
+   "night street market",
+   "night fair"
+  ],
+  "opera house": [
+   "opera theater",
+   "opera theatre",
+   "opera hall",
+   "opera auditorium",
+   "opera venue",
+   "operatic theater",
+   "operatic theatre"
+  ],
+  "overnight bus": [
+   "night bus",
+   "overnight coach",
+   "night coach",
+   "sleeper bus",
+   "sleeper coach",
+   "overnight transit bus"
+  ],
+  "passport office": [
+   "passport agency",
+   "passport service office",
+   "passport application office",
+   "passport issuing office",
+   "passport processing office",
+   "passport center"
+  ],
+  "photo studio": [
+   "photography studio",
+   "photographic studio",
+   "photo workshop",
+   "portrait studio",
+   "photographer's studio",
+   "professional photo studio"
+  ],
+  "planetarium": [
+   "astronomical theater",
+   "astronomy theater",
+   "star theater",
+   "celestial theater",
+   "planetary theater"
+  ],
+  "post office": [
+   "postal office",
+   "mail office",
+   "postal station"
+  ],
+  "radio station": [
+   "broadcasting station",
+   "radio broadcast station",
+   "radio broadcaster",
+   "wireless station",
+   "broadcast radio station"
+  ],
+  "recording studio": [
+   "audio recording studio",
+   "sound recording studio",
+   "music recording studio",
+   "recording room",
+   "recording facility",
+   "sound studio",
+   "audio studio"
+  ],
+  "roller rink": [
+   "roller skating rink"
+  ],
+  "sauna": [
+   "sweat room",
+   "steam sauna",
+   "dry sauna",
+   "finnish sauna",
+   "sauna room"
+  ],
+  "ski lodge": [
+   "ski chalet",
+   "mountain ski lodge",
+   "ski resort lodge",
+   "winter sports lodge",
+   "ski-in lodge"
+  ],
+  "street festival": [
+   "street fair",
+   "street party",
+   "road festival",
+   "street celebration",
+   "open-street festival",
+   "urban street festival"
+  ],
+  "swimming pool": [
+   "swim pool",
+   "swimming bath",
+   "natatorium",
+   "swim basin",
+   "indoor pool",
+   "outdoor pool"
+  ],
+  "tv newsroom": [
+   "television newsroom",
+   "tv news bureau",
+   "broadcast newsroom",
+   "television news office",
+   "news broadcasting newsroom",
+   "tv news department",
+   "television news center"
+  ],
+  "vet clinic": [
+   "veterinary clinic",
+   "animal hospital",
+   "veterinary hospital",
+   "vet's office",
+   "animal clinic",
+   "veterinary practice",
+   "veterinary medical center"
+  ],
+  "video arcade": [
+   "amusement arcade",
+   "arcade game center",
+   "coin-op arcade",
+   "video game arcade",
+   "game arcade",
+   "arcade parlor",
+   "arcade hall",
+   "arcade"
+  ],
+  "water park": [
+   "aquatic park",
+   "water amusement park",
+   "water theme park",
+   "water adventure park",
+   "aquatic fun park",
+   "water recreation park",
+   "water playground",
+   "water resort"
+  ]
+ },
+ "dropped": [
+  "ice rink: 'skating rink' also given for ['roller rink']",
+  "ice rink: 'rink' also given for ['roller rink']",
+  "roller rink: 'skating rink' also given for ['ice rink']",
+  "roller rink: 'rink' also given for ['ice rink']",
+  "video arcade: 'arcade' only part of the place's name",
+  "lecture hall: 'classroom' removed in review",
+  "lecture hall: 'auditorium' removed in review",
+  "sauna: 'sweat lodge' removed in review",
+  "hair salon: 'beauty salon' removed in review",
+  "post office: 'post station' removed in review",
+  "post office: 'posthouse' removed in review",
+  "post office: 'post depot' removed in review",
+  "post office: 'mail depot' removed in review",
+  "radio station: 'radio channel' removed in review",
+  "radio station: 'radio outlet' removed in review",
+  "hot spring: 'hot pool' removed in review",
+  "mountain hut: 'mountain lodge' removed in review",
+  "ski lodge: 'alpine lodge' removed in review",
+  "roller rink: 'skate rink' removed in review"
+ ]
+}

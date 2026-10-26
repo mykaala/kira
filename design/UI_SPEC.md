@@ -1,6 +1,6 @@
 # Kira — UI spec (Direction B: "Lantern Hour")
 
-Single-player social deduction (Mafia, Secret Hitler, Spyfall) against AI characters.
+Single-player social deduction (Mafia, Secret Hitler, Out of Place) against AI characters.
 Mood: a candlelit table at night. Cozy but tense. Hand-made indie game, not a SaaS dashboard.
 
 The reference mockups are in `screens/`. Open them in a browser. They're static HTML with inline styles: treat them as **visual truth**, not as code to copy. Rebuild them as real components.

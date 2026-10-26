@@ -31,6 +31,7 @@ class PlayerView(BaseModel):
     claims: list[PublicClaim] = []  # every public role claim, never whether it is true
     accusations: dict[str, str] = {}  # public: who each player is accusing right now
     intent: dict | None = None  # this player's own private plan for today, if the mode gives one
+    options: dict = {}  # the game's own mode switches (Out of Place), the same for every viewer
 
 
 def can_see(mode: ModeConfig, state: GameState, viewer: str, e: Event) -> bool:
@@ -54,7 +55,11 @@ def build_view(mode: ModeConfig, state: GameState, viewer: str) -> PlayerView:
     ]
     return PlayerView(
         mode=mode.name,
-        rules=mode.rules if mode.reveal_role_on_death else (mode.rules_roles_hidden or mode.rules),
+        rules=mode.rules_for(state)
+        if mode.rules_for
+        else mode.rules
+        if mode.reveal_role_on_death
+        else (mode.rules_roles_hidden or mode.rules),
         roles_revealed_on_death=mode.reveal_role_on_death,
         you=viewer,
         role=me.role,
@@ -67,6 +72,7 @@ def build_view(mode: ModeConfig, state: GameState, viewer: str) -> PlayerView:
         day=state.day,
         phase=state.phase,
         events=[e for e in state.events if can_see(mode, state, viewer, e)],
+        options=state.options,
         legal_actions=mode.legal_actions(state, me),
         winner=state.winner,
         claims=[c.public() for c in state.claims],
