@@ -13,7 +13,7 @@ from ..config import ModeConfig, PhaseSpec
 from ..models import GameState, NewEvent, Outcome, PhaseType, Player, channel, private
 from .spy_roles import ROLES
 
-TITLE = "Out of Place"  # working title, shown to players; our own name comes later
+TITLE = "Out of Place"  # the name shown to players
 SPY, CIVILIAN = "spy", "civilian"
 CIVILIANS = "civilians"  # the team, and the channel that carries the location
 DRAW = "draw"  # a game outcome that is neither side's win

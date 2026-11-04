@@ -43,14 +43,11 @@ const TEMPLATE: Record<Intent, (target: string) => string> = {
 };
 
 /** Quick intents (each opens a target picker and drafts a line you can edit), a free-text box,
- * and the controls that move the chat along: Speak up, Next, Pass. */
-export function ActionDock({ status, seats, nextName, busy, onSay, onNext, onPass, error }: {
+ * Speak up, and Pass on your turn. The chat moves along on its own. */
+export function ActionDock({ status, seats, onSay, onPass, error }: {
   status: Status;
-  busy: boolean; // someone is mid-message
   seats: Seat[];
-  nextName: string | null;
   onSay: (text: string, accuses: string | null) => Promise<boolean>;
-  onNext: () => void;
   onPass: () => void;
   error: string;
 }) {
@@ -60,7 +57,6 @@ export function ActionDock({ status, seats, nextName, busy, onSay, onNext, onPas
   const input = useRef<HTMLInputElement>(null);
   const discussion = status.phase === "discussion";
   const yourTurn = discussion && status.waiting_on_you;
-  const canNext = discussion && status.waiting_for_next && !busy && !text.trim();
   const others = seats.filter((s) => s.alive && !s.you);
 
   useEffect(() => {
@@ -76,28 +72,27 @@ export function ActionDock({ status, seats, nextName, busy, onSay, onNext, onPas
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (text.trim()) {
-      if (await onSay(text.trim(), accusing && others.some((s) => s.id === accusing) ? accusing : null)) {
-        setText("");
-        setAccusing(null);
-      }
-    } else if (canNext) onNext();
+    if (!text.trim()) return;
+    if (await onSay(text.trim(), accusing && others.some((s) => s.id === accusing) ? accusing : null)) {
+      setText("");
+      setAccusing(null);
+    }
   };
 
   return (
     <form className={`${styles.dock} ${yourTurn ? styles.yourTurn : ""}`} onSubmit={submit}>
       {yourTurn && <p className={styles.turnNote}>Your turn. The table is waiting on you.</p>}
-      <div className={styles.intents}>
+      {discussion && <div className={styles.intents}>
         {INTENTS.map((i) => (
-          <button key={i.id} type="button" disabled={!discussion}
+          <button key={i.id} type="button"
                   className={`${styles.intent} ${picking === i.id ? styles.intentOpen : ""}`}
                   aria-expanded={picking === i.id} onClick={() => setPicking(picking === i.id ? null : i.id)}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" strokeWidth="2.6" aria-hidden="true">{i.icon}</svg>
             {i.label}
           </button>
         ))}
-      </div>
-      {picking && (
+      </div>}
+      {discussion && picking && (
         <div className={styles.picker} role="dialog" aria-label={`${picking}: pick`}>
           <span className={styles.pickerTitle}>
             {picking === "claim" ? "Claim which role?" : picking === "ask" ? "Ask whom?" : `${picking[0].toUpperCase()}${picking.slice(1)} whom?`}
@@ -137,15 +132,11 @@ export function ActionDock({ status, seats, nextName, busy, onSay, onNext, onPas
           placeholder={
             !discussion
               ? status.phase === "vote" ? "The vote is open…" : "The town sleeps…"
-              : canNext ? "Jump in, or press Enter for the next voice…" : "Say something to the table…"
+              : "Jump in: say something to the table…"
           }
           onChange={(e) => setText(e.target.value)}
         />
-        {canNext ? (
-          <Button variant="surface" type="submit">Next{nextName ? `: ${nextName}` : ""} ▸</Button>
-        ) : (
-          <Button variant="lantern" type="submit" disabled={!discussion || !text.trim()}>Speak up</Button>
-        )}
+        <Button variant="lantern" type="submit" disabled={!discussion || !text.trim()}>Speak up</Button>
         {yourTurn && <Button variant="ghost" onClick={onPass}>Pass</Button>}
       </div>
       {error && <p className={styles.error} role="alert">{error}</p>}
@@ -153,12 +144,11 @@ export function ActionDock({ status, seats, nextName, busy, onSay, onNext, onPas
   );
 }
 
-/** Out of the game: watch, and keep the chat moving. */
-export function SpectatorDock({ canNext, nextName, onNext }: { canNext: boolean; nextName: string | null; onNext: () => void }) {
+/** Out of the game: watch how it ends. */
+export function SpectatorDock() {
   return (
     <div className={`${styles.dock} ${styles.spectator}`}>
       <span className={styles.muted}>You're out. Watch how it ends.</span>
-      {canNext && <Button variant="surface" onClick={onNext}>Next{nextName ? `: ${nextName}` : ""} ▸</Button>}
     </div>
   );
 }

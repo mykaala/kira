@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is a single-player, Jackbox-style game: you pick a game from a lobby, choose how many AI opponents to play against, and play a round of about ten minutes. The MVP ships three social-deduction games on one shared engine: Mafia, a fascist-themed hidden-role game with its own name and theme, and Impostor (Among Us style). Games built around CS 515 concepts follow after the MVP.
+This is a single-player, Jackbox-style game: you pick a game from a lobby, choose how many AI opponents to play against, and play a round of about ten minutes. The MVP ships three social-deduction games on one shared engine: Mafia, Trojan Horse (a hidden-role voting game with its own name and theme), and Impostor (Among Us style). Games built around CS 515 concepts follow after the MVP.
 
 **Goals**
 
@@ -221,7 +221,7 @@ The JSON schema is **one fixed schema per call type**, listing every cast name (
 
 ## Spy: Out of Place
 
-Working title "Out of Place" (one constant, `TITLE` in `engine/modes/spy_location.py`). Code name `spy_location`.
+The name "Out of Place" lives in one constant, `TITLE` in `engine/modes/spy_location.py`. Code name `spy_location`.
 
 **Credit.** The idea of a hidden-location party game with one spy is borrowed from Spyfall (Alexandr Ushan). Our location list, names and every line of text are our own. Nothing in the UI names the original.
 
@@ -308,7 +308,7 @@ The first two gates matter most: together they test whether cheap LLM players ar
 
 1. **Mafia against AI players.** *(Done.)* Build the engine (state, phases, referee, game config loader), the view builder with a test proving no AI player's view contains another player's secret, AI players on GPT-5.6 Luna with personas and structured belief state, parallel votes and night actions, streamed discussion, and per-call token, dollar and latency logging. Gate: 20 full games finish, and cost, p95 latency, invalid-action rate and round length are measured against the targets below.
 2. **Product shell and quality pass.** *(Built except deploy, daily summaries and the human rubric.)* Build the lobby, game picker, opponent-count slider (4 to 8), a recurring cast of named AI characters and a results screen, then deploy it. Fix what the 20 games showed: mafia deception plans, GPT-5.6 Terra for any call type that reads badly, daily summaries, prefix caching. Gate: at least five people score the rubric below, the model per call type is decided from measured numbers, and a friend can play a round from a link.
-3. **Fascist game.** Add the election and policy-deck resolvers, with your own name and theme. Gate: it plays through on the same engine with only a new config and resolver.
+3. **Trojan Horse.** Add the election and policy-deck resolvers, with our own theme and text. Gate: it plays through on the same engine with only a new config and resolver.
 4. **Impostor.** Add a small simulated map, a movement log and a meeting phase, so an alibi can be checked against the truth. Gate: an AI can lie about where it was and get caught by the log.
 5. **CS 515 games, one at a time.** Rigged council first (plurality, ranked choice, Borda), then Traitors, Haggle, Bluff, Auction house and the rest, in the order of the games table. Multiplayer with other humans can come after. Gate for each: the game's concept visibly shows up in play.
 
@@ -346,7 +346,7 @@ The biggest risk is that cheap models make boring or unconvincing players, which
 | Latency                                | Discussion calls depend on earlier messages, so they run one after another       | Parallel votes and night actions, streamed messages, 3 or 4 speakers per round; hold to the p95 targets                        |
 | Costs run higher than estimated        | The estimates are untested                                                       | Log tokens per call from day one; hard per-game budget and daily key cap                                                       |
 | Scope creep across games               | Each new game needs its own resolver, and Impostor needs a simulated map         | No second game until Mafia passes its gates; Impostor third                                                                    |
-| Fascist game too close to the original | Reusing its name, art or text could cause problems                               | Own name, theme and text; keep only the hidden-role mechanics                                                                  |
+| Trojan Horse too close to its source   | Reusing its name, art or text could cause problems                               | Own name, theme and text; keep only the hidden-role mechanics                                                                  |
 | Model names and prices shift quickly   | This doc's first draft named a model generation that had already been superseded | Keep model names in config, and recheck OpenAI's pricing page before each build                                                |
 | API key exposed or abused              | A public link can drain credits                                                  | Keep the key on the server only; rate-limit rounds; set a spending cap                                                         |
 | Midterm season takes the hours         | Only so many weekend hours                                                       | Plan on a few weekends for milestone 1; pause freely, since each milestone stands alone                                        |
@@ -422,6 +422,7 @@ Mafia's engine, prompts, schemas and options are frozen. `backend/tests/test_gol
 
 ## Change log
 
+- **Web, November 2026:** the Mafia game screen fits one window. The chat paces itself (the browser asks for each next speaker after a reading pause, so Auto, Pace and Next are gone), the newest line is highlighted in the chat instead of on a stage, and Pause, Call the vote, your secret and folded Notes sit in a control center. Web only; the frozen engine and prompts are unchanged.
 - **Web, October 2026 (after v0.1-mafia):** game-select cards with an Info / Play pair; How to Play pages with an animated scene and a quiz; one-screen lobbies for both games built from shared parts, with the cast always shown (redraw, swap at the table); difficulty and per-character knobs moved to the Characters page, with Merciless sharpening each archetype. The browser sends Mafia's knobs explicitly, through the existing API, so the frozen engine and prompts are unchanged.
 - **v0.1-mafia** (October 2026): Mafia frozen. Engine with per-player views and a leak test; Lantern Hour web UI (game select, lobby with house rules and advanced cast settings (since redesigned, see above), characters, game screen with a running chat and always-open notes, results and review); 8 named characters with voices and voice cards; role claims with a claims log and judged detective claims; seeded mafia team plans; public accusations; reference check against the whole game; stock-phrase cap; doctor no-repeat; no night-1 kill; roles hidden on death by default; three-part prompt with fixed schemas for caching; cost, latency and balance metrics per run; golden games.
 - Earlier the project was called Berkira; renamed to Kira.

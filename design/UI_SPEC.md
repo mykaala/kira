@@ -1,6 +1,6 @@
 # Kira — UI spec (Direction B: "Lantern Hour")
 
-Single-player social deduction (Mafia, Secret Hitler, Out of Place) against AI characters.
+Single-player social deduction (Mafia, Out of Place, and Trojan Horse coming soon) against AI characters.
 Mood: a candlelit table at night. Cozy but tense. Hand-made indie game, not a SaaS dashboard.
 
 The reference mockups are in `screens/`. Open them in a browser. They're static HTML with inline styles: treat them as **visual truth**, not as code to copy. Rebuild them as real components.
@@ -98,16 +98,19 @@ Every lobby is built from `screens/lobby/LobbyParts.tsx` (`LobbyFrame`, `SeatTab
 A one-row **How sharp are they?** card: the heading beside three compact choices (Cozy / Tricky / Merciless), each with a few words on what it means. Below it, each character's card has their three knobs as sliders. A hand-set card gets a lantern outline, "Set by hand", and **Reset to <difficulty>**; **Reset all** appears when any are hand-set.
 
 ### 03 Live discussion (the most important screen)
-Layout from top to bottom:
-1. **Phase bar**: "Day 2", the candle timer, the time left, and a "Call the vote" button in coral.
-2. **Table strip**: every living player as a compact chip (portrait, name, status line). The speaker's chip is filled lantern. Status lines show live vote intent (`→ Kit`) in coral text. Eliminated players sit at the end as dimmed initials.
-3. **Stage** (main column): the current speaker's large portrait (220px) beside a cream speech bubble. The text streams in, with typing dots while it's still generating. A "replying to X" pill sits above the bubble, and short reaction lines from other characters sit below it ("Odile narrows her eyes").
-4. **Action dock**: quick intents (Accuse / Defend / Ask / Claim role, each opening a target picker) plus a free-text input and a "Speak up" button.
-5. **Side log**: "Earlier today", a compact transcript with each speaker's colour dot. Lines can be pinned to private notes. Your secret role card sits at the bottom of the log.
+The whole screen fits one viewport on desktop: only the chat and the notes scroll inside. Layout from top to bottom:
+1. **Phase bar**: "Day 2", the candle timer and the time left. Nothing else.
+2. **Table strip**: every living player as a compact chip (portrait, name, status line). The speaker's chip is filled lantern and pulses with typing dots while they talk. Status lines show live vote intent (`→ Kit`) in coral text. Whoever the newest line names reacts in a small thought bubble over their chip ("scoffs loudly"), capped at three, gone in about 4 s. Click a chip for your read on them (the popover flips left at the screen edge). Eliminated players sit at the end as dimmed initials.
+3. **Banner** (main column, only when it matters): the morning's news before anyone speaks, the night (or your night pick), and the vote tray with its verdict. During the talk there is no banner.
+4. **The chat** (main column, fills what's left): the compact transcript with day dividers, and the **live line** highlighted at the bottom: portrait, name, "replying to X" pill, larger text typing out. Lines can be pinned with ★.
+5. **Action dock**: quick intents (Accuse / Defend / Ask / Claim role, discussion only) plus a free-text input, "Speak up" and, on your turn, "Pass".
+6. **Control center** (side column): a big **Pause / Continue** (Space toggles it) and **Call the vote** under it, your secret role, then **Notes**, folded by default with a count badge: your reads on each player (the same cue / role / note as the chip popover), pinned lines as a list you can unpin, and a small scratchpad.
 
-Anti-clutter rules: only one speaker is ever large. The history stays compact on the side. Reactions are capped at about three and fade out.
+Pacing: the talk moves on by itself, no Next button. Each finished line stays the newest for at least 3.5 s (more for long lines, plus up to 1 s of jitter) before the next starts. The browser asks the server for each next speaker, so it is never more than one line ahead of what you've read, and Pause stops the talk within a line.
 
-Vote phase (not mocked yet): the stage becomes a vote tray of portraits. Choosing one locks your vote, and the other players' votes land one at a time with a short delay for tension.
+Anti-clutter rules: only one line is ever large. Reactions are capped at three and fade out.
+
+Vote phase: the banner becomes a vote tray of portraits. Choosing one locks your vote, and the other players' votes land one at a time with a short delay for tension.
 
 ### 04 Results & role reveal
 A sunrise banner in warm orange with the outcome headline, plus Rematch and New game buttons → **"Cards on the table"**: a role card for everyone, flipped (the reveal can animate as a staggered card flip). Mafia cards are coral, the Detective lavender, the Doctor teal, villagers cream, and eliminated players dimmed with X eyes → a "turning point" quote from the MVP → earned stickers → replay link.
@@ -115,7 +118,7 @@ A sunrise banner in warm orange with the outcome headline, plus Rematch and New 
 ## 6. Responsive rules
 - Containers are `max-width: 1320–1392px` and centred, with a 24px gutter (16px on phones).
 - Multi-column rows use `flex-wrap` with `flex: 999 1 <min>` for the main column so side panels drop below on narrow screens.
-- On mobile in the discussion screen, the table strip scrolls horizontally, the stage stacks (portrait above bubble), and the log becomes a bottom sheet.
+- On mobile in the discussion screen, the table strip scrolls horizontally, the page scrolls normally, and the control center drops below the chat.
 - Touch targets are at least 44px. Keep visible focus rings using `--lantern`.
 
 ## 7. Accessibility

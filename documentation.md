@@ -110,34 +110,34 @@ A knob turned by hand wins over the difficulty for that character until you rese
 
 **The screen**
 
-- **Phase bar** (top): the day and phase, a candle that burns down as the discussion's turns are used up ("7 turns left"), **Auto**, **Pace** and **Call the vote**.
-- **The table**: every living player as a chip. The speaker's chip lights up. Under each name is who that player is accusing right now (`→ Kit`). It comes from a public `accuses` field each message carries, not from guessing at the text, and it resets after each vote and at the start of each day. Eliminated players sit at the end as faded initials.
-- **The stage**: the latest message, large: the speaker beside a speech bubble that types out. A "replying to" pill shows whom they're answering, and the people they named react underneath. The speaker's name tag shows only their name: their voice (the Analyst, the Hothead…) stays off the game screen, because it would hint at how they think. At night and during the vote, the stage becomes a tray of portraits to pick from.
-- **The chat**: under the stage, one running, scrollable chat of the whole game, with day dividers. When the next message arrives, the one on stage joins the chat. It follows new messages while you're at the bottom; scroll up to read back and **↓ Latest** jumps down again. The ★ on a line pins it to your notes.
-- **The action dock**: **Accuse / Defend / Ask / Claim role** each open a picker and draft a line you can edit before sending. **Accuse** also sets your public accusation, shown as a chip you can clear with ✕. Then type and press **Speak up**.
-- **Notes** (right; under the dock on phones): always open, with your secret role card underneath.
+On a laptop the whole screen fits one window: only the chat and the notes scroll.
+
+- **Phase bar** (top): the day and phase, and a candle that burns down as the discussion's turns are used up ("7 turns left").
+- **The table**: every living player as a chip. The speaker's chip lights up and shows typing dots while they talk. Under each name is who that player is accusing right now (`→ Kit`). It comes from a public `accuses` field each message carries, not from guessing at the text, and it resets after each vote and at the start of each day. Players named in the newest line react in a small thought bubble over their chip (at most three, gone in about 4 seconds). Eliminated players sit at the end as faded initials.
+- **The banner** (only when it matters): the morning's news before anyone speaks, the night (your pick, if you have one) and the vote tray. During the talk there is no banner.
+- **The chat**: one running, scrollable chat of the whole game, with day dividers, filling the main column. The newest line sits highlighted at the bottom, larger, with the speaker's portrait and a "replying to" pill, and types out there. The speaker's name tag shows only their name: their voice (the Analyst, the Hothead…) stays off the game screen, because it would hint at how they think. The chat follows new messages while you're at the bottom; scroll up to read back and **↓ Latest** jumps down again. The ★ on a line pins it to your notes.
+- **The action dock**: during the discussion, **Accuse / Defend / Ask / Claim role** each open a picker and draft a line you can edit before sending. **Accuse** also sets your public accusation, shown as a chip you can clear with ✕. Then type and press **Speak up**, or **Pass** on your turn.
+- **Control center** (right; under the chat on phones): a big **Pause / Continue** (the Space bar toggles it when you're not typing), **Call the vote**, your secret role, then **Notes**. Notes are folded by default, with a badge counting what's in them: your reads on each player, your pinned lines (✕ unpins) and a small scratchpad.
 
 **How a game goes**
 
-1. **Night.** If you are mafia, the doctor or the detective, the stage shows portraits to pick your target (or **Skip tonight**). Villagers wait. Your result shows on your secret card and in the log, visible only to you.
-2. **Morning.** The stage announces who died, if anyone. Nobody dies on night 1: the mafia only start killing on night 2.
+1. **Night.** If you are mafia, the doctor or the detective, the banner shows portraits to pick your target (or **Skip tonight**). Villagers wait. Your result shows on your secret card and in the chat, visible only to you.
+2. **Morning.** The banner announces who died, if anyone. Nobody dies on night 1: the mafia only start killing on night 2.
 3. **Discussion.** In round 1, every living player speaks exactly once, in a random order, and that includes you. When your turn comes, the dock lights up: say something or press **Pass**. If you do neither within 3 minutes, your turn is skipped. You can also speak at any other time; a message before your turn counts as your round-1 turn. Round 2 adds up to 3 extra AI speakers, picked first from the players who were accused or addressed. **Call the vote** skips the rest of the discussion.
 4. **Vote.** Click a portrait to lock your vote, or **Abstain**. Everyone's ballots land one by one under the person they voted for.
 5. This repeats until the village has removed every mafia member or the mafia equal everyone else.
 
-**Pacing.** **Auto** is on by default: the AI players talk without waiting for you. Switch it off to step through the chat yourself: each AI message is then only generated when you press **Next** (or Enter in an empty message box), and the button names who speaks next. If you type something instead, the next speaker reacts to it. Your choice is remembered.
-
-**Pace.** Messages type out at a readable speed, and votes, deaths and phase changes are revealed one at a time with a pause after each. **Pace** (Slow / Normal / Fast) changes both. It starts on **Slow** and your choice is remembered. Votes and night actions wait for you indefinitely.
+**Pacing.** The talk moves on by itself; there is no Next button. Each finished line stays the newest for at least 3.5 seconds (longer for long lines, plus up to a second of jitter) before the next one starts. The browser asks the server for each next speaker only once you've seen the last line, so the game is never more than one line ahead of you. **Pause** stops the talk within a line; **Continue** picks it up again. If you speak, the next speaker reacts to it. Votes, deaths and phase changes are revealed one at a time with a pause after each. Votes and night actions wait for you indefinitely.
 
 **When a day ends.** A day is a fixed number of turns, not a time limit: in discussion round 1 every living player speaks once (you can pass), round 2 adds up to 3 extra AI speakers (those accused or named first), then the vote opens. The candle shows how many turns are left.
 
-**Your reads.** Click any player's chip to record a read (**Trust / Unsure / Suspect / Mafia!**), a role guess (**Detective / Doctor / Villager**) and a short note. Your read shows as a coloured ring around their portrait, with the guess and note under their name. In the chat, the ★ on any line pins it to your **Notes**. Reads, pins and notes are saved in your browser for each game.
+**Your reads.** Click any player's chip to record a read (**Trust / Unsure / Suspect / Mafia!**), a role guess (**Detective / Doctor / Villager**) and a short note (the popover opens to the left for chips near the screen edge). The same reads are listed in **Notes**. Your read shows as a coloured ring around their portrait, with the guess and note under their name. In the chat, the ★ on any line pins it to your **Notes**. Reads, pins and notes are saved in your browser for each game.
 
 **Reloading.** The game id is kept in the address bar, so refreshing the page rejoins the same game with its chat history. If the backend was restarted in the meantime, the game is gone and the page offers a new one.
 
 **After the game.** The results screen flips everyone's card face up (hover a card for their last words), with your reads marked on each. It names an MVP and the turning-point quote, and gives you stickers for what you did (saves, mafia found, good votes, surviving). **Replay the whole game** shows the full transcript; switch on **Show secrets** to also see every night action: the mafia's picks, the detective's results and the doctor's saves. **Rematch** starts a new game with the same settings.
 
-**If you are eliminated,** you keep watching: the dock is replaced by a **Next** button while the chat waits.
+**If you are eliminated,** you keep watching: the dock says "You're out. Watch how it ends." and the chat keeps moving on its own (Pause still works).
 
 ## The cast
 
@@ -304,7 +304,7 @@ Every setting can go in `backend/.env` or be set as an environment variable for 
 | `GAME_TOKEN_BUDGET`        | `400000`       | Hard token limit per game. Past it, AI players use default moves until the game ends. |
 | `DB_PATH`                  | `backend/kira.db` | Where the cost log is written.                                |
 | `MAX_GAMES_PER_IP_PER_HOUR` | `20`          | How many games one visitor can start per hour.                      |
-| `DISCUSSION_PAUSE_S`       | `1.2`          | Pause between AI speakers in browser games on **Auto**. On-screen pacing (typing speed, pauses after votes and deaths) is set by **Pace** in the browser. |
+| `DISCUSSION_PAUSE_S`       | `1.2`          | Pause between AI turns when the server runs a game on its own (Out of Place on **Auto**). A Mafia browser game paces itself in the browser instead: it asks for each next speaker after a reading pause. |
 | `HUMAN_TURN_TIMEOUT_S`     | `180`          | How long the game waits for you on your discussion turn before skipping it. |
 
 **Upgrading a call type to Terra.** The design doc's plan is to try GPT-5.6 Terra for discussion if Luna's bluffing reads as weak. Only that call type changes:
@@ -349,6 +349,20 @@ sqlite3 backend/kira.db "SELECT error, COUNT(*) FROM calls WHERE error IS NOT NU
 Timeouts mean `CALL_TIMEOUT_S` is too short for the current model or reasoning effort. Authentication or quota errors point to the key or the account's spending limit.
 
 ## Updates
+
+**2026-11-03 · Mafia game screen: one window, a chat that paces itself, and a control center.** Web only; no
+engine, prompt or API changes.
+
+- **No more Auto, Pace or Next.** The browser asks the server for each next speaker (the existing `next` call)
+  once the last line has had its reading pause: at least 3.5 s, more for long lines, up to 1 s of jitter. A game
+  started earlier on Auto is switched back with the existing `pace` call when you open it.
+- **Pause / Continue** (or Space) and **Call the vote** moved from the phase bar to a control center on the right,
+  above your secret and the Notes.
+- **The stage is gone.** The newest line is highlighted at the bottom of the chat; the big banner shows only for
+  the morning's news, the night and the vote. The speaker's chip pulses while they type, and players the line
+  names react over their chips.
+- **Notes** fold away by default with a count badge, and list your reads, pinned lines (unpin with ✕) and a
+  scratchpad. Old saved Auto and Pace settings are simply ignored.
 
 **2026-10-26 · How to Play pages, one-screen lobbies, and difficulty on the Characters page.** Web only; no
 engine, prompt or API changes, and Mafia plays exactly as before for the same knobs.

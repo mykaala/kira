@@ -4,7 +4,7 @@ Run with the fake model first (`FAKE_LLM=1`), then once with the real model. Sta
 `documentation.md`. Tick each line in a desktop window and again at phone width (devtools, 390 px).
 
 ## Picker and lobby
-- [ ] The game picker shows Mafia, Secret Hitler (soon) and Out of Place (playable, "NEW"). No console errors.
+- [ ] The game picker shows Mafia, Trojan Horse (soon) and Out of Place (playable, "NEW"). No console errors.
 - [ ] The tab shows the lantern favicon (no 404 for `/favicon.ico` in the network tab) and the title "Kira".
 - [ ] Out of Place opens the lobby. The start button stays off until you type a name.
 - [ ] Players steps between 5 and 8. Role: Random, Civilian, Spy. "Who plays": choosing exactly players minus one

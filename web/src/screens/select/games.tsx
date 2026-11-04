@@ -44,7 +44,7 @@ export const GAMES: Game[] = [
   },
   {
     id: "secret-hitler",
-    title: "Secret Hitler",
+    title: "Trojan Horse",
     pitch: "Pass policies, read the room, and stop the hidden leader from taking power.",
     chips: ["5–10 seats", "~25 min"],
     bluff: 3,
@@ -70,7 +70,7 @@ export const GAMES: Game[] = [
   },
   {
     id: "out-of-place",
-    title: "", // the server's working title (/api/spy/config): one name, kept in one place
+    title: "", // the server's title (/api/spy/config): one name, kept in one place
     pitch: "Everyone knows where you are, except the spy. Ask well, answer carefully.",
     chips: ["5–8 seats", "~8 min"],
     bluff: 1,

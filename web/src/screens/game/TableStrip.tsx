@@ -1,14 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Portrait } from "../../components/Portrait";
 import { CUES, cueColor, type Mark, type Marks } from "../../game/marks";
 import { ROLE_COLOR, type Seat } from "../../game/model";
 import styles from "./TableStrip.module.css";
 
-/** Every living player as a compact chip; the speaker's chip is lit. Click a chip to note your read. */
-export function TableStrip({ seats, speaking, leanings, acted, phase, marks, onMark, guesses }: {
+/** Every living player as a compact chip; the speaker's chip is lit, and whoever they name reacts in a
+ * thought bubble. Click a chip to note your read. */
+export function TableStrip({ seats, speaking, typing, leanings, reactions, reactKey, acted, phase, marks, onMark, guesses }: {
   seats: Seat[];
   guesses: string[]; // roles you can guess
   speaking: string | null;
+  typing: boolean;
+  reactions: Record<string, string>; // pid -> a small physical reaction to the latest line
+  reactKey: number | null; // the line they react to, so each new line replays the bubble
   leanings: Record<string, string>;
   acted: Set<string>;
   phase: string;
@@ -31,7 +35,13 @@ export function TableStrip({ seats, speaking, leanings, acted, phase, marks, onM
 
   const statusLine = (s: Seat) => {
     if (s.you) return <span className={styles.status} style={{ color: ROLE_COLOR[s.role ?? ""] }}>{s.role}</span>;
-    if (s.id === speaking) return <span className={styles.status}>speaking</span>;
+    if (s.id === speaking) {
+      return (
+        <span className={styles.status}>
+          {typing ? <span className={styles.talking} aria-label="talking"><i /><i /><i /></span> : "speaking"}
+        </span>
+      );
+    }
     if ((phase === "vote" || phase === "night") && acted.has(s.id))
       return <span className={styles.status}>{phase === "vote" ? "voted" : "done"}</span>;
     if (leanings[s.id]) return <span className={`${styles.status} ${styles.lean}`}>→ {name(leanings[s.id])}</span>;
@@ -42,9 +52,13 @@ export function TableStrip({ seats, speaking, leanings, acted, phase, marks, onM
     <section aria-label="The table" className={styles.strip} ref={strip}>
       {living.map((s) => {
         const mark = marks[s.id] ?? {};
-        const cls = [styles.seat, s.id === speaking && styles.speaking, s.you && styles.you].filter(Boolean).join(" ");
+        const cls = [styles.seat, s.id === speaking && styles.speaking, s.id === speaking && typing && styles.pulse,
+          s.you && styles.you].filter(Boolean).join(" ");
         return (
           <div key={s.id} className={styles.seatWrap} data-seat={s.id}>
+            {reactions[s.id] && (
+              <span key={`${reactKey}-${s.id}`} className={styles.thought} role="status">{reactions[s.id]}</span>
+            )}
             <button
               type="button"
               className={cls}
@@ -92,14 +106,22 @@ export function TableStrip({ seats, speaking, leanings, acted, phase, marks, onM
   );
 }
 
-function ReadPopover({ seat, mark, guesses, onMark, onClose }: {
+/** Your read on one player: a cue, a role guess, a short note. Floats under their chip (flipped to the
+ * left edge when it would run off screen), or sits in place in the notes. */
+export function ReadPopover({ seat, mark, guesses, onMark, onClose, inline = false }: {
   seat: Seat;
   guesses: string[];
   mark: Mark;
   onMark: (m: Mark) => void;
   onClose: () => void;
+  inline?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [flip, setFlip] = useState(false);
+  useLayoutEffect(() => {
+    const r = ref.current?.getBoundingClientRect();
+    if (!inline && r && r.right > window.innerWidth - 16) setFlip(true);
+  }, [inline]);
   useEffect(() => {
     const away = (e: MouseEvent) => {
       if (ref.current && !ref.current.parentElement?.contains(e.target as Node)) onClose();
@@ -114,7 +136,7 @@ function ReadPopover({ seat, mark, guesses, onMark, onClose }: {
   }, [onClose]);
 
   return (
-    <div ref={ref} className={styles.popover} role="dialog" aria-label={`Your read on ${seat.name}`}>
+    <div ref={ref} className={`${styles.popover} ${flip ? styles.flip : ""} ${inline ? styles.inline : ""}`} role="dialog" aria-label={`Your read on ${seat.name}`}>
       <div className={styles.popTitle}>Your read on {seat.name}</div>
       <div className={styles.row}>
         {CUES.map((c) => (

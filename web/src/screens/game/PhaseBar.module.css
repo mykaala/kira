@@ -1,16 +1,4 @@
 .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
 .day { display: flex; align-items: baseline; gap: 12px; }
-.dayLabel { font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -0.02em; }
+.dayLabel { font-family: var(--font-display); font-weight: 800; font-size: 28px; letter-spacing: -0.02em; }
 .phase { color: var(--muted); font-size: 13px; }
-.pace { display: flex; align-items: center; gap: 8px; }
-.toggle {
-  min-height: 44px; padding: 0 12px; border-radius: 12px;
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--surface); color: var(--text-soft); cursor: pointer;
-  font-family: var(--font-meta); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-}
-.toggle input { accent-color: var(--lantern); width: 16px; height: 16px; margin: 0; }
-.toggle select {
-  font: inherit; color: var(--text); background: var(--surface-2); border: 0;
-  border-radius: 8px; padding: 6px 8px; cursor: pointer;
-}

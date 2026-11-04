@@ -32,10 +32,20 @@ const SPEED: Record<Speed, { gap: number; cps: number }> = {
 };
 const TICK_MS = 40;
 
+export type Playback = {
+  dwell?: (e: GameEvent) => number | undefined; // the pause after a live event, in ms, in place of the gap above
+  holdTyping?: boolean; // show "X is typing" only once what's queued has played, so the last line keeps its dwell
+};
+
 /** Subscribes to a game's SSE stream and plays it back at a readable pace: AI messages are typed
  * out, and votes, deaths and phase changes are revealed one at a time. History replayed on
- * (re)connect appears instantly. */
-export function useGame<S extends { you: string } = Status, R = unknown>(gameId: string | null, speed: Speed = "normal") {
+ * (re)connect appears instantly. `serverWaiting` and `backlog` let a screen ask for the next message itself:
+ * the server is idle waiting for "next", and how many typed lines are queued but not yet started. */
+export function useGame<S extends { you: string } = Status, R = unknown>(
+  gameId: string | null,
+  speed: Speed = "normal",
+  playback: Playback = {},
+) {
   const [events, setEvents] = useState<GameEvent[]>([]);
   const [status, setStatus] = useState<S | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({}); // "" = typing indicator
@@ -45,14 +55,19 @@ export function useGame<S extends { you: string } = Status, R = unknown>(gameId:
   const [failure, setFailure] = useState<string | null>(null);
   const [notices, setNotices] = useState<string[]>([]); // things that went wrong but didn't stop the game
   const [revealData, setRevealData] = useState<R | null>(null); // the whole end-of-game payload
+  const [serverWaiting, setServerWaiting] = useState(false);
+  const [backlog, setBacklog] = useState(0);
   const queue = useRef<GameEvent[]>([]);
   const seen = useRef<Set<number>>(new Set()); // a reconnect replays history; show each event once
   const pendingStatus = useRef<S | null>(null);
   const timer = useRef<number | null>(null);
   const live = useRef(false); // false while the history replay is arriving
   const replayed = useRef<Set<number>>(new Set()); // history events: shown instantly
+  const heldTyping = useRef<Set<string>>(new Set()); // typing indicators waiting for playback to go idle
   const speedRef = useRef(SPEED[speed]);
   speedRef.current = SPEED[speed];
+  const playbackRef = useRef(playback);
+  playbackRef.current = playback;
 
   useEffect(() => {
     if (!gameId) return;
@@ -64,18 +79,26 @@ export function useGame<S extends { you: string } = Status, R = unknown>(gameId:
     setFailure(null);
     setNotices([]);
     setRevealData(null);
+    setServerWaiting(false);
+    setBacklog(0);
     queue.current = [];
     seen.current = new Set();
     live.current = false;
     replayed.current = new Set();
+    heldTyping.current = new Set();
 
+    const startTyping = (pid: string) => setDrafts((d) => (pid in d ? d : { ...d, [pid]: "" }));
     const show = (e: GameEvent) => {
+      if (e.actor) heldTyping.current.delete(e.actor);
       setEvents((es) => [...es, e]);
       if (TYPED.has(e.kind) && e.actor) setDrafts(({ [e.actor!]: _, ...rest }) => rest);
       if (e.kind === "phase") setActed(new Set());
     };
+    const countBacklog = () => setBacklog(queue.current.filter((q) => TYPED.has(q.kind)).length);
     const after = (e: GameEvent) => {
-      const gap = replayed.current.has(e.seq) ? 0 : (GAP_MS[e.kind] ?? DEFAULT_GAP_MS) * speedRef.current.gap;
+      const gap = replayed.current.has(e.seq)
+        ? 0
+        : (playbackRef.current.dwell?.(e) ?? (GAP_MS[e.kind] ?? DEFAULT_GAP_MS) * speedRef.current.gap);
       timer.current = window.setTimeout(drain, gap);
     };
     const typeOut = (e: GameEvent) => {
@@ -98,8 +121,11 @@ export function useGame<S extends { you: string } = Status, R = unknown>(gameId:
       // history isn't slowed by timer throttling in a background tab
       while (queue.current.length && replayed.current.has(queue.current[0].seq)) show(queue.current.shift()!);
       const next = queue.current.shift();
+      countBacklog();
       if (!next) {
         if (pendingStatus.current) setStatus(pendingStatus.current);
+        heldTyping.current.forEach(startTyping);
+        heldTyping.current.clear();
         return;
       }
       const you = pendingStatus.current?.you;
@@ -121,20 +147,24 @@ export function useGame<S extends { you: string } = Status, R = unknown>(gameId:
       seen.current.add(e.seq);
       if (!live.current) replayed.current.add(e.seq);
       queue.current.push(e);
+      countBacklog();
       kick();
     });
     es.addEventListener("status", (m) => {
       pendingStatus.current = JSON.parse((m as MessageEvent).data);
+      setServerWaiting(!!(pendingStatus.current as { waiting_for_next?: boolean }).waiting_for_next);
       live.current = true; // the server sends history first, then a status
       kick();
     });
     es.addEventListener("typing", (m) => {
       const { pid } = JSON.parse((m as MessageEvent).data);
-      setDrafts((d) => (pid in d ? d : { ...d, [pid]: "" }));
+      if (playbackRef.current.holdTyping && timer.current !== null) heldTyping.current.add(pid);
+      else startTyping(pid);
     });
     // raw model output streams in as deltas; the final, cleaned-up message is typed out instead
     es.addEventListener("retract", (m) => {
       const { pid } = JSON.parse((m as MessageEvent).data);
+      heldTyping.current.delete(pid);
       setDrafts((d) => (d[pid] === "" ? (({ [pid]: _, ...rest }) => rest)(d) : d));
     });
     es.onerror = () => {
@@ -166,7 +196,7 @@ export function useGame<S extends { you: string } = Status, R = unknown>(gameId:
     };
   }, [gameId]);
 
-  return { events, status, drafts, acted, reveal, gone, failure, notices, revealData };
+  return { events, status, drafts, acted, reveal, gone, failure, notices, revealData, serverWaiting, backlog };
 }
 
 export async function post(path: string, body: unknown, timeoutMs = 10000) {

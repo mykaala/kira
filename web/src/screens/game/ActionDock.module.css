@@ -1,9 +1,9 @@
-.dock { display: flex; flex-direction: column; gap: 12px; background: var(--surface); border-radius: var(--r-lg); padding: 14px; position: relative; }
+.dock { flex: none; display: flex; flex-direction: column; gap: 10px; background: var(--surface); border-radius: var(--r-lg); padding: 12px; position: relative; }
 .yourTurn { box-shadow: 0 0 0 3px var(--lantern); }
 .turnNote { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--lantern); margin: 0 4px; }
 .intents { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
 .intent {
-  min-height: 52px; border-radius: var(--r-md); border: 0; background: var(--surface-2); color: var(--text);
+  min-height: 44px; border-radius: var(--r-md); border: 0; background: var(--surface-2); color: var(--text);
   font: inherit; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center;
   gap: 8px; cursor: pointer;
 }

@@ -5,7 +5,7 @@ import { DEFAULT_TUNING, seatTraits, type Tuning } from "./game/tuning";
 import { usePersisted } from "./persisted";
 import { Characters } from "./screens/characters/Characters";
 import { PortraitGallery } from "./screens/dev/PortraitGallery";
-import { AUTO_KEY, GameScreen } from "./screens/game/GameScreen";
+import { GameScreen } from "./screens/game/GameScreen";
 import { Lobby } from "./screens/lobby/Lobby";
 import { HowToPlay } from "./screens/howto/HowToPlay";
 import { gameById } from "./screens/select/games";
@@ -28,7 +28,6 @@ export default function App() {
   const [saved, setLobby] = usePersisted<LobbySettings>("kira:lobby", DEFAULT_LOBBY);
   const lobby = fromSaved(saved);
   const [tuning, setTuning] = usePersisted<Tuning>("kira:tuning", DEFAULT_TUNING);
-  const [auto] = usePersisted(AUTO_KEY, true);
   const [lastSpyGame, setLastSpyGame] = usePersisted<string | null>("kira:last-spy-game", null);
   const [savedSpy, setSpyLobby] = usePersisted<SpyLobbySettings>("kira:spy-lobby", DEFAULT_SPY_LOBBY);
   const spyLobby = fromSavedSpy(savedSpy);
@@ -54,7 +53,7 @@ export default function App() {
   };
   const start = async () => {
     const t = { ...DEFAULT_TUNING, ...tuning };
-    const { game_id } = await post("/api/games", newGameRequest(lobby, auto, t.difficulty, await seatTraits(lobby.cast, t)));
+    const { game_id } = await post("/api/games", newGameRequest(lobby, false, t.difficulty, await seatTraits(lobby.cast, t)));
     setLastGame(game_id);
     go(`game=${game_id}`);
   };
